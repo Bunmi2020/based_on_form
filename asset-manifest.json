@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/based_on_form/static/css/main.1b20868d.css",
+    "main.js": "/based_on_form/static/js/main.7c39fc9d.js",
+    "static/js/453.b06b44aa.chunk.js": "/based_on_form/static/js/453.b06b44aa.chunk.js",
+    "static/media/football-488714_1920.jpg": "/based_on_form/static/media/football-488714_1920.869676a27145840bc0ab.jpg",
+    "static/media/logo.png": "/based_on_form/static/media/logo.cebbe32070d32ec8d4dc.png",
+    "static/media/whistle.png": "/based_on_form/static/media/whistle.042ab5edab7ac7027853.png",
+    "static/media/stadium.png": "/based_on_form/static/media/stadium.cc3854dc896787f16acf.png",
+    "static/media/mail.png": "/based_on_form/static/media/mail.1507d40df8736b33152c.png",
+    "static/media/google.png": "/based_on_form/static/media/google.cadee8cdb0c0afb1a713.png",
+    "static/media/twitter.png": "/based_on_form/static/media/twitter.e58e4997ef85cbd7054c.png",
+    "static/media/cloudy_sunny.png": "/based_on_form/static/media/cloudy_sunny.a6d0b7d87d2022baaf47.png",
+    "static/media/football-field.png": "/based_on_form/static/media/football-field.259c758479d90c7ff0cc.png",
+    "static/media/linkedin.png": "/based_on_form/static/media/linkedin.f249b38224ca41a0b909.png",
+    "index.html": "/based_on_form/index.html",
+    "main.1b20868d.css.map": "/based_on_form/static/css/main.1b20868d.css.map",
+    "main.7c39fc9d.js.map": "/based_on_form/static/js/main.7c39fc9d.js.map",
+    "453.b06b44aa.chunk.js.map": "/based_on_form/static/js/453.b06b44aa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b20868d.css",
+    "static/js/main.7c39fc9d.js"
+  ]
+}
