@@ -1,0 +1,206 @@
+.match_info {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    min-width: 100px;
+    justify-content: space-between;
+    
+}
+
+
+.team_info img {
+    width: 70px; 
+    
+    margin: auto;
+}
+
+.match_info .home_team_info,
+.match_info .away_team_info,
+.match_info_table {
+    display: block;
+    margin: 10px;
+    font-size: 16px;
+}
+
+
+.match_info .home_team_info img,
+.match_info .away_team_info img {
+    width: 70px; 
+    height: auto;
+    margin: auto;
+}
+
+
+
+.head_to_head {
+    display: block;
+    background-color: #e0e0e0; /* Light grey background */
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.prediction {
+    display: block;
+    background-color: #ecdada; /* Light grey background */
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.prediction_list {
+    list-style: none;
+    text-align: left;
+    padding: 5px;
+}
+
+.prediction_list li {
+    margin: 3px;
+}
+
+.head_to_head table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.head_to_head th,
+.head_to_head td {
+    border: none;
+    text-align: center;
+}
+
+.head_to_head th#Small_icon img,
+.head_to_head td#Small_icon img {
+    width: 30px; /* Smaller size */
+    height: auto;
+}
+
+.head_to_head th#icon img,
+.head_to_head td#icon img {
+    width: 30px; /* Smaller size */
+    height: auto;
+}
+
+.provocative_players,
+.aggressive_players {
+    display: block;
+    background-color: #d1bbbb; /* Light grey background */
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.provocative_players table,
+.aggressive_players table {
+    margin: auto;
+}
+
+
+.recent_matches {
+    display: block;
+    background-color: #d0d0d0; /* Light grey background */
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+
+.recent_matches table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.recent_matches th,
+.recent_matches td {
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    padding: 4px;
+}
+
+.recent_matches th#Small_icon img,
+.recent_matches td#Small_icon img {
+    width: 25px; /* Smaller size */
+    height: auto;
+}
+
+.match_info_table {
+    max-width: 170px;
+}
+
+.match_info_table img {
+    width: 25px; /* Smaller size */
+    margin: 2px;
+}
+.match_info_table #icon {
+    width: 30px; /* Smaller size */
+    margin: 2px;
+}
+
+
+.recent_matches th#icon img,
+.recent_matches td#icon img {
+    width: 20px; /* Smaller size */
+    height: auto;
+}
+
+.content_body {
+    background-color: var(--secondary-color); 
+    padding: 0.7em;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+   
+    height: fit-content;
+}
+
+@media (max-width: 390px) {
+    .content_body {
+        
+        padding: 0.5em;
+       
+        height: fit-content;
+    }
+
+    .recent_matches .recent_cards {
+        min-width: 54px; 
+    }
+  
+}
+
+.team_info p {
+    max-width: 150px;
+}
+
+.recent_matches .recent_cards {
+    width: 70px;
+}
+
+
+.match_info ul {
+    list-style: none;
+    text-align: left;
+    max-width: 150px;
+    padding: 0px;
+    
+}
+
+.match_info_table {
+    border-right: 1px solid #9be495; 
+    border-left: 1px solid #9be495; 
+ 
+}
+
+

@@ -1,0 +1,134 @@
+/* src/components/LoginPrompt.css */
+.login-prompt {
+    position: fixed;
+    width: 300px;
+    top: 20px;
+   
+    justify-content: center;
+    align-items: center;
+  }
+
+  .green {
+    color: var(--primary-color);
+  }
+  
+  .login-prompt-content {
+    background: rgb(202, 116, 66);
+    padding: 20px;
+    display: block;
+    color: black;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+
+  .error_message {
+    color: red;
+    font-size: 15px;
+    font-style: italic;
+  }
+  .facebook_signin_button, .google_signin_button {
+    margin: auto 5px;
+    padding: 5px 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+
+  }
+  .facebook_signin_button img, .google_signin_button img {
+    width: 20px;
+  }
+
+  .facebook_signin_button {
+    background-color: #21219b;
+    color: white;
+  }
+
+  .google_signin_button {
+    background-color: white;
+    color: black;
+  }
+
+  .x_bold {
+    position: absolute;
+    right: 0;   
+    color: aliceblue;
+    margin: 0px;
+    cursor: pointer;
+    top: 0;
+    font-size: 24px;
+    padding: 5px 10px;
+  }
+
+
+.login_button {
+  flex-direction: row;
+  margin: 10px auto;
+ 
+}
+
+button {
+  cursor: pointer;
+}
+
+.login-prompt-content h3 {
+  padding: 0px;
+  margin: 0px; 
+}
+
+input {
+  margin: 5px;
+  
+}
+
+.comment_box {
+  height: 30px;
+}
+
+.each_comment {
+  margin: 10px auto;
+  border-bottom: 1px solid #21219b; /* Add a bottom border */
+  padding-bottom: 10px; /* Add padding to ensure some space inside the border */
+}
+
+.comments {
+  border-top: 1px solid #21219b;
+  margin: 10px auto;
+}
+.each_comment img {
+ width: 35px;
+ border-radius: 20%;
+}
+
+.each_comment p, .each_reply p {
+  margin: 0px;
+  font-style: italic;
+ }
+
+ .each_reply h4 {
+  margin: 3px;
+ }
+
+ .each_reply {
+  background-color: #f1f3ef ;
+  padding: 3px 5px;
+  border-radius: 10px;
+  margin: 3px;
+ }
+
+ .each_comment {
+  background-color: #bdc9b3 ;
+  padding: 3px 5px;
+  border-radius: 10px;
+ }
+
+.id_head {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.id_head img, .id_head h5 {
+  margin: auto 2px;
+}
+
