@@ -37,6 +37,7 @@
   }
   .facebook_signin_button img, .google_signin_button img {
     width: 20px;
+    height: 20px;
   }
 
   .facebook_signin_button {
@@ -97,6 +98,7 @@ input {
 }
 .each_comment img {
  width: 35px;
+ height: 35px;
  border-radius: 20%;
 }
 

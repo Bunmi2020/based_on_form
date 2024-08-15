@@ -126,7 +126,7 @@ function Home () {
                     Based on Form
                   </NavLink>
                 </h1>
-                <img className='comment_button' src={chat} alt="Comment_button" title="Comment" style={{ width: '35px', margin: 'auto 5px', padding: 'auto 5px', float: 'right', cursor: 'pointer'}} onClick={onClickTwo}/>
+                <img className='comment_button' src={chat} alt="Comment_button" title="Comment" onClick={onClickTwo}/>
             </header>
             <div className="Home">
                 {(isToggle || screenWidth > 959) && (

@@ -23,7 +23,7 @@ header .navbar__a {
 }
 
 .Side_menu {
-  margin: 10px auto;
+  margin: 10px;
   padding: auto;
   border-radius: 16px;
   opacity: 1;
@@ -87,7 +87,7 @@ header .navbar__a {
 .Side_bar {
   background-color: var(--secondary-color);
   border-radius: 16px;
-  min-width: 250px;
+  width: 250px;
   
   margin: 30px auto;
   padding: 10px;
@@ -119,4 +119,50 @@ header .navbar__a {
 .top_picks {
   display: none;
   color: aliceblue;
+}
+
+
+@media (max-width: 570px) {
+  .League_menu img {
+      width: 10px;
+      height: 10px;
+  }
+
+  header .comment_button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .mobile-menu-button {
+    width: 45px;
+    height: 30px;
+  }
+
+  .socials img {
+    width: 24px;
+    height: 24px;
+}
+}
+
+
+@media (max-width: 960px) {
+  .League_menu img {
+      width: 20px;
+      height: 10px;
+  }
+
+header .comment_button {
+  width: 35px;
+  height: 35px;
+}
+
+.mobile-menu-button {
+  width: 45px;
+  height: 30px;
+}
+
+.socials img {
+  width: 24px;
+  height: 24px;
+}
 }

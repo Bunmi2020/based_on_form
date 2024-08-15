@@ -14,7 +14,7 @@
 
 .team_info img {
     width: 70px; 
-    
+    max-height: 80px;
     margin: auto;
 }
 
@@ -30,7 +30,7 @@
 .match_info .home_team_info img,
 .match_info .away_team_info img {
     width: 70px; 
-    height: auto;
+    height: 70px;
     margin: auto;
 }
 
@@ -60,8 +60,16 @@
     padding: 5px;
 }
 
+.prediction_list .bold {
+    font-weight: bold;
+}
+
 .prediction_list li {
     margin: 3px;
+}
+
+.prediction p {
+    margin: 10px 15px;
 }
 
 .head_to_head table {
@@ -79,13 +87,13 @@
 .head_to_head th#Small_icon img,
 .head_to_head td#Small_icon img {
     width: 30px; /* Smaller size */
-    height: auto;
+    height: 30px;
 }
 
 .head_to_head th#icon img,
 .head_to_head td#icon img {
     width: 30px; /* Smaller size */
-    height: auto;
+    height: 30px;
 }
 
 .provocative_players,
@@ -133,7 +141,7 @@
 .recent_matches th#Small_icon img,
 .recent_matches td#Small_icon img {
     width: 25px; /* Smaller size */
-    height: auto;
+    height: 25px;
 }
 
 .match_info_table {
@@ -143,17 +151,19 @@
 .match_info_table img {
     width: 25px; /* Smaller size */
     margin: 2px;
+    height: 25px;
 }
 .match_info_table #icon {
     width: 30px; /* Smaller size */
     margin: 2px;
+    height: 30px;
 }
 
 
 .recent_matches th#icon img,
 .recent_matches td#icon img {
     width: 20px; /* Smaller size */
-    height: auto;
+    height: 20px;
 }
 
 .content_body {

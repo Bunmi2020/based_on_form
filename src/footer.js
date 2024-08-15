@@ -22,7 +22,7 @@ function Footer () {
                 <div className="footer_logo">
                     <span className="divider" style={{}}></span>
 
-                        <img src={logo} alt="Valor" style={{ minWidth: '10vw', maxWidth: '100px', margin: 'auto 0%' }} />
+                        <img className='footer_logo' src={logo} alt="BnF" style={{ minWidth: '10vw', minHeight:'10vw', maxWidth: '100px', maxHeight: '100px', margin: 'auto 0%' }} />
                     <span className="divider" style={{}}></span>
                 </div>
 
