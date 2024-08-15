@@ -7,6 +7,15 @@
 @media (min-width: 960px) {
     .content, .content_body {
         min-width: 350px;
+        max-width: 550px;
+       
+    }
+}
+
+@media (max-width: 370px) {
+    .content, .content_body {
+        min-width: 250px;
+        max-width: 550px;
        
     }
 }
