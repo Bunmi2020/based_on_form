@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/based_on_form/static/css/main.5787ddcb.css",
-    "main.js": "/based_on_form/static/js/main.e8fea221.js",
-    "static/js/453.b06b44aa.chunk.js": "/based_on_form/static/js/453.b06b44aa.chunk.js",
-    "static/media/football-488714_1920.jpg": "/based_on_form/static/media/football-488714_1920.869676a27145840bc0ab.jpg",
-    "static/media/logo.png": "/based_on_form/static/media/logo.cebbe32070d32ec8d4dc.png",
-    "static/media/whistle.png": "/based_on_form/static/media/whistle.042ab5edab7ac7027853.png",
-    "static/media/stadium.png": "/based_on_form/static/media/stadium.cc3854dc896787f16acf.png",
-    "static/media/mail.png": "/based_on_form/static/media/mail.1507d40df8736b33152c.png",
-    "static/media/google.png": "/based_on_form/static/media/google.cadee8cdb0c0afb1a713.png",
-    "static/media/twitter.png": "/based_on_form/static/media/twitter.e58e4997ef85cbd7054c.png",
-    "static/media/cloudy_sunny.png": "/based_on_form/static/media/cloudy_sunny.a6d0b7d87d2022baaf47.png",
-    "static/media/football-field.png": "/based_on_form/static/media/football-field.259c758479d90c7ff0cc.png",
-    "static/media/linkedin.png": "/based_on_form/static/media/linkedin.f249b38224ca41a0b909.png",
-    "index.html": "/based_on_form/index.html",
-    "main.5787ddcb.css.map": "/based_on_form/static/css/main.5787ddcb.css.map",
-    "main.e8fea221.js.map": "/based_on_form/static/js/main.e8fea221.js.map",
-    "453.b06b44aa.chunk.js.map": "/based_on_form/static/js/453.b06b44aa.chunk.js.map"
+    "main.css": "/static/css/main.60580fe4.css",
+    "main.js": "/static/js/main.25c86969.js",
+    "static/js/453.b06b44aa.chunk.js": "/static/js/453.b06b44aa.chunk.js",
+    "static/media/football-488714_1920.jpg": "/static/media/football-488714_1920.869676a27145840bc0ab.jpg",
+    "static/media/logo.png": "/static/media/logo.cebbe32070d32ec8d4dc.png",
+    "static/media/whistle.png": "/static/media/whistle.042ab5edab7ac7027853.png",
+    "static/media/stadium.png": "/static/media/stadium.cc3854dc896787f16acf.png",
+    "static/media/mail.png": "/static/media/mail.1507d40df8736b33152c.png",
+    "static/media/google.png": "/static/media/google.cadee8cdb0c0afb1a713.png",
+    "static/media/twitter.png": "/static/media/twitter.e58e4997ef85cbd7054c.png",
+    "static/media/cloudy_sunny.png": "/static/media/cloudy_sunny.a6d0b7d87d2022baaf47.png",
+    "static/media/football-field.png": "/static/media/football-field.259c758479d90c7ff0cc.png",
+    "static/media/linkedin.png": "/static/media/linkedin.f249b38224ca41a0b909.png",
+    "index.html": "/index.html",
+    "main.60580fe4.css.map": "/static/css/main.60580fe4.css.map",
+    "main.25c86969.js.map": "/static/js/main.25c86969.js.map",
+    "453.b06b44aa.chunk.js.map": "/static/js/453.b06b44aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5787ddcb.css",
-    "static/js/main.e8fea221.js"
+    "static/css/main.60580fe4.css",
+    "static/js/main.25c86969.js"
   ]
 }
