@@ -171,8 +171,8 @@ function Summary ({ summary }) {
         <div className="prediction"  id ="prediction">
             <p>{summary.discuss}</p>
             <ul className='prediction_list'>
-                <li>{summary.ht}</li>
-                <li>{summary.ft}</li>
+                <li><span className='bold'>{summary.ht}</span></li>
+                <li><span className='bold'>{summary.ft}</span></li>
             </ul>
         </div>
     );

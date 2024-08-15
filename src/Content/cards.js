@@ -208,8 +208,8 @@ function Summary ({ summary }) {
         <div className="prediction"  id ="prediction">
             <p>{summary.discuss}</p>
             <ul className='prediction_list'>
-                <li>Halftime: {summary.ht}</li>
-                <li>Fulltime: {summary.ft}</li>
+                <li>Halftime: <span className='bold'>{summary.ht}</span> </li>
+                <li>Fulltime: <span className='bold'>{summary.ft}</span></li>
             </ul>
         </div>
     );

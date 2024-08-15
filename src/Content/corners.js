@@ -165,8 +165,8 @@ function Summary ({ summary }) {
         <div className="prediction"  id ="prediction">
             <p>{summary.discuss}</p>
             <ul className='prediction_list'>
-                <li>Full-Time Total Corners: {summary.ht}</li>
-                <li>Team with the Most Corners: {summary.ft}</li>
+                <li>Full-Time Total Corners:<span className='bold'> {summary.ht}</span></li>
+                <li>Team with the Most Corners:<span className='bold'> {summary.ft}</span></li>
             </ul>
         </div>
     );
