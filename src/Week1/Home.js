@@ -133,8 +133,9 @@ function Home () {
                     <div className='Side_menu'>
                         <LaligaMenu setContent={handleMenuItemClick} />
                         <PLMenu setContent={handleMenuItemClick} />
-                        <SerieAMenu setContent={handleMenuItemClick} />
                         <Ligue1Menu setContent={handleMenuItemClick} />
+                        <SerieAMenu setContent={handleMenuItemClick} />
+                        
                         
                     </div>
                 )}
