@@ -12,15 +12,12 @@
         margin: auto;
        
     }
-
-    .Side_menu {
-        margin: 10px 20px;
+    .Side_bar, .Side_menu {
+        margin: 20px auto;
         
     }
 
-    .Side_bar {
-        margin: 10px 20px;
-    }
+  
 
     .Home {
         padding: 10px;
