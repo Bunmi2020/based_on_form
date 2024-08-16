@@ -206,7 +206,7 @@ function RecentMatches({ title, recent }) {
 function Summary ({ fixture, summary }) {
     return (
         <div className="prediction"  id ="prediction">
-        <h3>{fixture} cards' prediction</h3>
+        <h4>{fixture} Cards' Prediction</h4>
             <p>{summary.discuss}</p>
             <ul className='prediction_list'>
                 <li>Halftime: <span className='bold'>{summary.ht}</span> </li>
