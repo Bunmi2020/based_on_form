@@ -15,7 +15,7 @@ function Corners({ content }) {
     ReactGA.send({
         hitType:"pageview",
         page:"/",
-        title:"Home",
+        title:"Corners",
     });
 
     if (!content) return null;

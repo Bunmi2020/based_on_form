@@ -14,7 +14,7 @@ function Cards({ content }) {
     ReactGA.send({
         hitType:"pageview",
         page:"/",
-        title:"Home",
+        title:"Cards",
     });
 
     if (!content) return null;

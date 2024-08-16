@@ -14,7 +14,7 @@ function Goals({ content }) {
     ReactGA.send({
         hitType:"pageview",
         page:"/",
-        title:"Home",
+        title:"Goals",
     });
 
     if (!content) return null;

@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import ReactGA from 'react-ga4';
+
 import './about.css';
 import { NavLink } from 'react-router-dom';
 import {Helmet} from "react-helmet";
 function TermsOfUse () {
+  ReactGA.send({
+    hitType:"pageview",
+    page:"/terms_of_use",
+    title:"Terms of Use",
+});
+
 
     const [isScrollingUp, setIsScrollingUp] = useState(true);
     const [prevScrollPos, setPrevScrollPos] = useState(0);

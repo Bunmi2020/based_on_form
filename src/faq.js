@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import ReactGA from 'react-ga4';
+
 import './about.css';
 import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 function PrivacyPolicy() {
+    ReactGA.send({
+        hitType:"pageview",
+        page:"/FAQ",
+        title:"FAQ",
+    });
+    
+
     const [isScrollingUp, setIsScrollingUp] = useState(true);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
 

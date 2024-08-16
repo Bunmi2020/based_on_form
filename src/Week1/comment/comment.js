@@ -1,6 +1,5 @@
-
 import './comment.css';
-// src/comment.js
+import ReactGA from 'react-ga4';
 
 import React, { useState, useEffect } from 'react';
 import Auth from './Auth';
@@ -8,6 +7,13 @@ import CommentSection from './CommentSection';
 import { auth } from './firebaseConfig';
 
 function Comment() {
+
+  ReactGA.send({
+    hitType:"pageview",
+    page:"/#comments",
+    title:"Comment",
+});
+
   const [user, setUser] = useState(null);
 
   useEffect(() => {
