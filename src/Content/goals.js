@@ -166,10 +166,10 @@ function RecentMatches({ title, logo, recent }) {
     );
 }
 
-function Summary ({ title,summary }) {
+function Summary ({ fixture, summary }) {
     return (
         <div className="prediction"  id ="prediction">
-        <h3>{title} goal's prediction</h3>
+        <h3>{fixture} goal's prediction</h3>
             <p>{summary.discuss}</p>
             <ul className='prediction_list'>
                 <li><span className='bold'>{summary.ht}</span></li>
