@@ -118,7 +118,8 @@ header .navbar__a {
 }
 
 .top_picks {
-  display: none;
+  display: flex;
+  flex-direction: column;
   color: aliceblue;
 }
 
