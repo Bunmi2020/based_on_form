@@ -2,6 +2,11 @@ import React, { useEffect } from 'react';
 
 const AdSenseComponent = () => {
   useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+    document.head.appendChild(script);
+
     if (window.adsbygoogle) {
       window.adsbygoogle.push({});
     }
@@ -10,10 +15,11 @@ const AdSenseComponent = () => {
   return (
     <ins className="adsbygoogle"
       style={{ display: 'block' }}
-      data-ad-client="ca-pub-XXXXXX"
-      data-ad-slot="1234567890"
-      data-ad-format="auto"></ins>
+      data-ad-client="ca-pub-9560599576413400"  // Your AdSense Publisher ID
+      data-ad-format="auto"                    // Auto format for responsive ads
+      data-full-width-responsive="true"></ins> // Ensures responsive behavior
   );
 };
 
 export default AdSenseComponent;
+

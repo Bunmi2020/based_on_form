@@ -4,6 +4,7 @@ import ReactGA from 'react-ga4';
 import './about.css';
 import { NavLink } from 'react-router-dom';
 import {Helmet} from "react-helmet";
+import AdSenseComponent from './AdSense ';
 function TermsOfUse () {
   ReactGA.send({
     hitType:"pageview",
@@ -80,6 +81,7 @@ function TermsOfUse () {
                   <li class="subheading">Use of the Website</li>
                   <ul>
                       <li><span class="bold_list">Permitted Use: </span> You may use the Website for personal and non-commercial purposes only. You agree not to use the Website for any illegal or unauthorized purpose.</li>
+                      <AdSenseComponent />
                       <li><span class="bold_list">Prohibited Activities: </span> You agree not to:</li>
                       <ul>
                         <li>Use the Website to engage in any form of gambling or betting that violates applicable laws.</li>
@@ -97,6 +99,7 @@ function TermsOfUse () {
                       
                   </ul>
                   <p></p>
+                  <AdSenseComponent />
                   <li class="subheading">Disclaimers</li>
                   <ul>
                       <li><span class="bold_list">No Warranties: </span>The Website is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the Website will be uninterrupted, error-free, or secure, nor do we make any warranties regarding the accuracy, reliability, or completeness of any content on the Website.</li>

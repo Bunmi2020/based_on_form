@@ -7,6 +7,7 @@ import StadiumIcon from './../media/stadium.png';
 import WeatherIcon from './../media/cloudy_sunny.png';
 import PitchIcon from './../media/football-field.png';
 import { Helmet } from 'react-helmet';
+import AdSenseComponent from '../AdSense ';
 
 
 
@@ -36,10 +37,11 @@ function Corners({ content }) {
                 <TeamInfo team={away_team} />
             </div>
             <UnavailablePlayers home_unavailable={home_unavailable} away_unavailable={away_unavailable} />
-            
+            <AdSenseComponent />
             <HeadToHeadCorners home_team={home_team} away_team={away_team} corners={corners} teams={teams}/>
             <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams}/>
             <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams}/>
+            <AdSenseComponent />
             <Summary summary={summary.corners} id ="prediction"/>
             
         </div>

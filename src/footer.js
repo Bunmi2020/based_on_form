@@ -8,6 +8,7 @@ import twitter from './media/twitter.png';
 import email from './media/mail.png';
 import linkedin from './media/linkedin.png';
 import Comment from './Week1/comment/comment';
+import AdSenseComponent from './AdSense ';
 function Footer () {
   
      
@@ -43,6 +44,7 @@ function Footer () {
             </div>
            
             <div className='footer_body'>  
+            <AdSenseComponent />
                 <div className='footer_left'>  
                     <Comment />
 
@@ -77,7 +79,7 @@ function Footer () {
                         </NavLink>
                     </li>
                 </div>
-        
+                <AdSenseComponent />
             </div>
             <div className="copyrights">
                 <p>&copy; 2024 Based on Form.  All rights reserved</p>

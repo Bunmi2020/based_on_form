@@ -4,6 +4,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { collection, addDoc, query, orderBy, onSnapshot, doc, updateDoc, arrayUnion, serverTimestamp, increment } from 'firebase/firestore';
 import LoginPrompt from './LoginPrompt';
 import './comment.css';
+import AdSenseComponent from '../../AdSense ';
 
 const CommentSection = () => {
   const [user, setUser] = useState(null);
@@ -142,6 +143,7 @@ const CommentSection = () => {
         />
           {error && <p className='error_message'>{error}</p>}
         <button type="submit">Post</button>
+        <AdSenseComponent />
       </form>
       <div className='comments'>
         {comments.map((comment) => (
