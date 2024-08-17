@@ -98,11 +98,14 @@ header .navbar__a {
 .Side_bar li {
   list-style-type: none; 
   font-size: small;
+  padding: 10px auto;
+  margin-bottom: 5px;
 }
 
 .Side_bar .bold {
-  font-size: small;
+  margin: 10px;
   font-weight: bold;
+  color: aqua;
 }
 
 .Side_bar button {
@@ -126,6 +129,11 @@ header .navbar__a {
 .top_picks {
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  text-align: left;
+  background-color: #292828;
   color: aliceblue;
 }
 

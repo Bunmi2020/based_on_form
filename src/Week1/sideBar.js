@@ -39,7 +39,9 @@ function Sidebar() {
       <ul className="top_picks">
         {menuItems.map((match, index) => (
           <li key={index}>
-            {match.matchLabel}: <span className='bold'>{match.matchDetail}</span> 
+            {match.matchLabel}: 
+            <br></br>
+            <i className='bold'>{match.matchDetail}</i> 
           </li>
         ))}
       </ul>
