@@ -79,7 +79,7 @@ function PrivacyPolicy() {
                     <p className='answer'>
                         Our predictions combine advanced data analytics with expert knowledge, assessing teams' recent form, player performance, historical data, and other crucial factors to deliver reliable betting insights.
                     </p>
-                    <AdSenseComponent />
+                     
                     <li>Who can benefit from Based on Form?</li>
                     <p className='answer'>
                         Football enthusiasts and bettors, both casual and professional, can benefit from our services. Our tools and analyses are designed to enhance your football betting experience and increase your chances of success.
@@ -94,7 +94,7 @@ function PrivacyPolicy() {
                     <p className='answer'>
                         We offer in-depth analysis and predictions for matches in the five major leagues: Premier League, Ligue 1, Serie A, La Liga, and Bundesliga, as well as the three major European competitions: UEFA Champions League, Europa League, and Europa Conference League. We are planning to expand our coverage to include more leagues soon.
                     </p>
-                    <AdSenseComponent />
+                     
                     <li>Is there a subscription fee to use BasedOnForm.com?</li>
                     <p className='answer'>
                         BasedOnForm.com is completely free to use. All of our services are currently free and will remain free for the foreseeable future.
@@ -114,7 +114,7 @@ function PrivacyPolicy() {
                     <p className='answer'>
                         We offer a wide range of predictions using a proven formula that has been refined over time. We continually improve our methods, learning from outcomes to enhance our prediction accuracy.
                     </p>
-                    <AdSenseComponent />
+                     
 
                     <li>I have other questions</li>
                     <p className='answer'>

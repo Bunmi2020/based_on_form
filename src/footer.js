@@ -44,7 +44,7 @@ function Footer () {
             </div>
            
             <div className='footer_body'>  
-            <AdSenseComponent />
+             
                 <div className='footer_left'>  
                     <Comment />
 
@@ -79,7 +79,7 @@ function Footer () {
                         </NavLink>
                     </li>
                 </div>
-                <AdSenseComponent />
+                 
             </div>
             <div className="copyrights">
                 <p>&copy; 2024 Based on Form.  All rights reserved</p>

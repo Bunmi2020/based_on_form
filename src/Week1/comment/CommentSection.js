@@ -143,7 +143,7 @@ const CommentSection = () => {
         />
           {error && <p className='error_message'>{error}</p>}
         <button type="submit">Post</button>
-        <AdSenseComponent />
+         
       </form>
       <div className='comments'>
         {comments.map((comment) => (

@@ -62,7 +62,7 @@ function InstallBaseOnForm () {
                 <i>Last Updated: 01/08/2024</i>
 
                 <h4>Installing on iPhone or iPad</h4>
-                <AdSenseComponent />
+                 
                 <ol>
                     <li>Open Safari</li>
                     {/* Placeholder for Open Safari Image */}
@@ -78,7 +78,7 @@ function InstallBaseOnForm () {
                 <p>After installation, you can access the web app directly from your home screen. Safari can be closed, but the "Based on Form" web app will remain accessible.</p>
 
                 <h4>Installing on Android</h4>
-                <AdSenseComponent />
+                 
                 <ol>
                     <li>Open Chrome</li>
                     {/* Placeholder for Open Chrome Image */}
@@ -94,7 +94,7 @@ function InstallBaseOnForm () {
                 <p>The "Based on Form" web app will now be available on your home screen. You can launch it just like any other app.</p>
 
                 <h4>Installing on Desktop (Windows/Mac)</h4>
-                <AdSenseComponent />
+                 
                 <ol>
                     <li>Open Chrome or Edge</li>
                     {/* Placeholder for Open Browser Image */}

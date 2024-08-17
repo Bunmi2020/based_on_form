@@ -62,7 +62,7 @@ function About() {
                 <p className="pitch">
                     Looking to enhance your football betting strategy? Based on Form provides expert predictions and insights, analyzing every aspect of the game, from bookings to goals, fouls, and more. Our data-driven approach helps you bet smarter, with predictions based on the latest team form and critical match factors.
                 </p>
-                <AdSenseComponent />
+                 
                 <h3 className="red_lettered">We are live!</h3>
                 <p>
                     Welcome to BasedOnForm.com – your premier destination for accurate football predictions and betting insights. Our platform delivers in-depth analysis on bookings, corners, goals, fouls, and other match statistics, ensuring you make informed betting decisions. By evaluating recent team form, player statistics, and historical data, we offer reliable advice to boost your football betting success.

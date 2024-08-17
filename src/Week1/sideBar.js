@@ -37,7 +37,7 @@ function Sidebar() {
   return ( 
     <div id="Side_bar">
       <h3>{name}'s Top Ten Picks</h3> 
-      <AdSenseComponent />
+       
       <ul className="top_picks">
         {menuItems.map((match, index) => (
           <li key={index}>
@@ -47,7 +47,7 @@ function Sidebar() {
           </li>
         ))}
       </ul>
-      <AdSenseComponent />
+       
     </div>
   );
 }
