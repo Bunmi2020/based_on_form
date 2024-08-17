@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
+import AdSenseComponent from '../AdSense ';
 
 function Sidebar() {
   const [menuItems, setMenuItems] = useState([]);
@@ -35,7 +36,8 @@ function Sidebar() {
 
   return ( 
     <div id="Side_bar">
-      <h3>{name}'s Top Ten Picks</h3> {/* Displaying the name */}
+      <h3>{name}'s Top Ten Picks</h3> 
+      <AdSenseComponent />
       <ul className="top_picks">
         {menuItems.map((match, index) => (
           <li key={index}>
@@ -45,6 +47,7 @@ function Sidebar() {
           </li>
         ))}
       </ul>
+      <AdSenseComponent />
     </div>
   );
 }
