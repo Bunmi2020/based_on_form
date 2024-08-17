@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactGA from 'react-ga4';
+import { HashLink } from 'react-router-hash-link';
 
 import './Home.css';
 
@@ -78,13 +79,7 @@ function Home () {
         };
       }, [prevScrollPos]);
 
-  const onClick = () => {
-    window.location.href = "#prediction";
-  };
-
-  const onClickTwo = () => {
-    window.location.href = "#comments"; 
-  };
+ 
 
   const handleMenuItemClick = (item) => {
     setContent(item);
@@ -126,7 +121,7 @@ function Home () {
                     Based on Form
                   </NavLink>
                 </h1>
-                <img className='comment_button' src={chat} alt="Comment_button" title="Comment" onClick={onClickTwo}/>
+                <HashLink smooth to="/#comments"><img className='comment_button' src={chat} alt="Comment_button" title="Comment" /></HashLink>
             </header>
             <div className="Home">
                 {(isToggle || screenWidth > 959) && (
@@ -178,7 +173,7 @@ function Home () {
                            
                         </div>
 
-                        <span onClick={onClick} style={{ width: '4.5em', display: isVisible ? 'none' : 'flex', position: 'fixed',flexDirection: 'column',justifyContent: 'center', zIndex: 9, boxShadow: '3px, 2px, gray',
+                        <HashLink smooth to="/#prediction"><span style={{ width: '4.5em', display: isVisible ? 'none' : 'flex', position: 'fixed',flexDirection: 'column',justifyContent: 'center', zIndex: 9, boxShadow: '3px, 2px, gray',
                             bottom: '0%',
                             background: 'linear-gradient(90deg, var(--highlight-color), red)',
                             borderRadius: '10px',
@@ -188,7 +183,7 @@ function Home () {
                             cursor: 'pointer',
                             color: 'white',
                             margin: '1em 0.5em',
-                            padding: '0.5em 1em'}}>{activeComponent}'s prediction</span>
+                            padding: '0.5em 1em'}}>{activeComponent}'s prediction</span></HashLink>
 
                     </div>
                 )}
