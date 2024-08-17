@@ -8,10 +8,12 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <React.StrictMode>
   <HashRouter basename={process.env.PUBLIC_URL}>
     <App />
-  </HashRouter>,
-  document.getElementById('root')
+  </HashRouter>
+  
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
