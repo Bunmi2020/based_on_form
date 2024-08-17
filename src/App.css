@@ -97,6 +97,12 @@ header .navbar__a {
 
 .Side_bar li {
   list-style-type: none; 
+  font-size: small;
+}
+
+.Side_bar .bold {
+  font-size: small;
+  font-weight: bold;
 }
 
 .Side_bar button {

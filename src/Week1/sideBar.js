@@ -3,7 +3,8 @@ import '../App.css';
 
 function Sidebar() {
   const [menuItems, setMenuItems] = useState([]);
-  
+  const [name, setName] = useState(''); // State for the name
+
   useEffect(() => {
     const apiUrl = process.env.REACT_APP_API_URL_SIDEBAR;
 
@@ -23,6 +24,9 @@ function Sidebar() {
         matchDetail: match[1],
       }));
       setMenuItems(formattedMenuItems);
+
+      const fetchedName = data[0].name; // Accessing the name
+      setName(fetchedName); // Setting the name in state
     })
     .catch(error => {
       console.error('Error fetching data:', error);
@@ -31,11 +35,11 @@ function Sidebar() {
 
   return ( 
     <div id="Side_bar">
-      <h3>Our Top Ten Picks</h3>
+      <h3>{name}'s Top Ten Picks</h3> {/* Displaying the name */}
       <ul className="top_picks">
         {menuItems.map((match, index) => (
           <li key={index}>
-            {match.matchLabel}: {match.matchDetail}
+            {match.matchLabel}: <span className='bold'>{match.matchDetail}</span> 
           </li>
         ))}
       </ul>
