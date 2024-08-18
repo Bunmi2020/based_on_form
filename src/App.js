@@ -10,6 +10,7 @@ import { Routes, Route } from 'react-router-dom';
 import Footer from './footer';
 import PrivacyPolicy from './privacyPolicy';
 import TermsOfUse from './termsofuse';
+import InstallBaseOnForm from './install_base_on_form';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/privacy_policy" element={<PrivacyPolicy/>} />
           <Route path="/terms_of_use" element={<TermsOfUse/>} />
+          <Route path="/install_app" element={<InstallBaseOnForm/>} />
       </Routes>
 
       <Footer />

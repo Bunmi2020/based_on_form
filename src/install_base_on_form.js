@@ -4,8 +4,20 @@ import ReactGA from 'react-ga4';
 import './about.css';
 import { NavLink } from 'react-router-dom';
 import {Helmet} from "react-helmet";
+import safari from './media/to_do/iph_1.jpg';
+import visit from './media/to_do/iph_2.jpg';
+import share from './media/to_do/iph_3.jpg';
+import home from './media/to_do/iph_4.jpg';
+import add from './media/to_do/iph_5.jpg';
+import done from './media/to_do/iph_6.jpg';
 
+import chrome from './media/to_do/and_1.jpg';
+import visite2 from './media/to_do/and_2.jpg';
+import done2 from './media/to_do/and_6.jpg';
+import add2 from './media/to_do/and_3.jpg';
+import install from './media/to_do/and_4.jpg';
 
+import install2 from './media/to_do/desktop1.PNG';
 function InstallBaseOnForm () {
   ReactGA.send({
     hitType: "pageview",
@@ -62,44 +74,44 @@ function InstallBaseOnForm () {
               </h1>
             </header>
 
-          <div id='privacy_policy' className='main_privacy_policy'>
+          <div id='install_app' className='main_install_app'>
           
-          <h3 className="pitch">How to Install "Based on Form" on Mobile and Desktop</h3>
+          <h2 className="pitch">How to Install "Based on Form" on Mobile and Desktop</h2>
                 <i>Last Updated: 01/08/2024</i>
 
-                <h4>Installing on iPhone or iPad</h4>
+                <h3>Installing on iPhone or iPad</h3>
                  
                 <ol>
                     <li>Open Safari</li>
-                    {/* Placeholder for Open Safari Image */}
+                    <img src={safari} alt="open safari"/>
                     <li>Go to <a href="https://basedonform.com" target="_blank" rel="noreferrer">basedonform.com</a></li>
-                    {/* Placeholder for Go to Website Image */}
+                    <img src={visit} alt="go to basedonform.com"/>
                     <li>Tap the Share Icon (Located at the bottom of the screen)</li>
-                    {/* Placeholder for Share Icon Image */}
+                    <img src={share} alt="tap share"/>
                     <li>Select "Add to Home Screen"</li>
-                    {/* Placeholder for Add to Home Screen Image */}
+                    <img src={home} alt="add to home screen"/>
                     <li>Confirm or Edit the Name (Optional) and tap "Add"</li>
-                    {/* Placeholder for Confirm and Add Image */}
+                    <img src={add} alt="tap add"/>
                 </ol>
                 <p>After installation, you can access the web app directly from your home screen. Safari can be closed, but the "Based on Form" web app will remain accessible.</p>
-
-                <h4>Installing on Android</h4>
+                <img src={done} alt="done with install"/>
+                <h3>Installing on Android</h3>
                  
                 <ol>
                     <li>Open Chrome</li>
-                    {/* Placeholder for Open Chrome Image */}
+                    <img src={chrome} alt="open chrome"/>
                     <li>Go to <a href="https://basedonform.com" target="_blank" rel="noreferrer">basedonform.com</a></li>
-                    {/* Placeholder for Go to Website Image */}
+                    <img src={visite2} alt="go to basedonform.com"/>
                     <li>Tap the Menu Icon (Three dots at the top right corner)</li>
-                    {/* Placeholder for Menu Icon Image */}
+                    
                     <li>Select "Add to Home Screen"</li>
-                    {/* Placeholder for Add to Home Screen Image */}
+                    <img src={add2} alt="add to home screen"/>
                     <li>Tap "Install"</li>
-                    {/* Placeholder for Install Image */}
+                    <img src={install} alt="tap install"/>
                 </ol>
                 <p>The "Based on Form" web app will now be available on your home screen. You can launch it just like any other app.</p>
-
-                <h4>Installing on Desktop (Windows/Mac)</h4>
+                <img src={done2} alt="done with install"/>
+                <h3>Installing on Desktop (Windows/Mac)</h3>
                  
                 <ol>
                     <li>Open Chrome or Edge</li>
@@ -107,7 +119,7 @@ function InstallBaseOnForm () {
                     <li>Visit <a href="https://basedonform.com" target="_blank" rel="noreferrer">basedonform.com</a></li>
                     {/* Placeholder for Go to Website Image */}
                     <li>Click on the Install Icon (Located at the right end of the address bar)</li>
-                    {/* Placeholder for Install Icon Image */}
+                    <img src={install2} alt="tap install"/>
                     <li>Confirm Installation by clicking "Install" in the prompt</li>
                     {/* Placeholder for Confirm Installation Image */}
                 </ol>

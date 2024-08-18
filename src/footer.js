@@ -62,7 +62,11 @@ function Footer () {
                             About Us
                         </NavLink>
                     </li>
-                    
+                    <li>
+                        <NavLink to="/install_app" className="navbar__a" onClick={handleToTop}>
+                            Install Based on Form
+                        </NavLink>
+                    </li>
                     <li>
                         <NavLink to="/FAQ" className="navbar__a" onClick={handleToTop}>
                             FAQ
