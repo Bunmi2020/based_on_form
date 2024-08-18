@@ -15,7 +15,7 @@ const AdSenseComponent = () => {
   return (
     <ins className="adsbygoogle"
       style={{ display: 'block' }}
-      data-ad-client="ca-pub-9560599576413400"  // Your AdSense Publisher ID
+      data-ad-client="ca-pub-4268079192646406"  // Your AdSense Publisher ID
       data-ad-format="auto"                    // Auto format for responsive ads
       data-full-width-responsive="true"></ins> // Ensures responsive behavior
   );

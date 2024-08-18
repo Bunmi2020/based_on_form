@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Auth from './Auth';
 import CommentSection from './CommentSection';
 import { auth } from './firebaseConfig';
+import { Helmet } from 'react-helmet';
 
 function Comment() {
 
@@ -26,6 +27,21 @@ function Comment() {
 
   return (
     <div id='comments'>
+     <Helmet>
+          
+          <script id="hydro_config" type="text/javascript">
+          {`
+            window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";
+          `}
+            </script>
+            <script id="hydro_script" src="https://track.hydro.online/"></script>
+
+            <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4268079192646406"
+            crossorigin="anonymous"
+            ></script>
+        </Helmet>
       {user ? (
         <div>
           <i class="green">Welcome, {user.displayName}</i>

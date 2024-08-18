@@ -4,7 +4,7 @@ import ReactGA from 'react-ga4';
 import './about.css';
 import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import AdSenseComponent from './AdSense ';
+
 
 function PrivacyPolicy() {
     ReactGA.send({
@@ -40,6 +40,12 @@ function PrivacyPolicy() {
                 <title>Based on Form - FAQ | Football Prediction & Betting Tips</title>
                 <meta name="description" content="Find answers to your questions about Based on Form's football prediction services, betting tips, and match analysis." />
                 <meta name="keywords" content="football predictions, betting tips, football match analysis, sports betting FAQ, football betting insights" />
+                <script id="hydro_config" type="text/javascript">
+          {`
+            window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";
+          `}
+            </script>
+            <script id="hydro_script" src="https://track.hydro.online/"></script>
             </Helmet>
 
             <header 

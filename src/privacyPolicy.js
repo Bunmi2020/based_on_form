@@ -38,6 +38,12 @@ function PrivacyPolicy () {
         <div>
           <Helmet>
             <title>Based on Form - Privacy Policy</title>
+            <script id="hydro_config" type="text/javascript">
+          {`
+            window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";
+          `}
+            </script>
+            <script id="hydro_script" src="https://track.hydro.online/"></script>
           </Helmet>
         
             <header 

@@ -5,7 +5,7 @@ import './about.css';
 import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import logo from './media/logo.png';
-import AdSenseComponent from './AdSense ';
+
 
 function About() {
     ReactGA.send({
@@ -41,6 +41,13 @@ function About() {
                 <title>Based on Form - About Us | Football Prediction & Betting Insights</title>
                 <meta name="description" content="Learn about Based on Form, your go-to platform for expert football predictions, betting tips, and in-depth analysis based on the latest team form and match factors." />
                 <meta name="keywords" content="football predictions, betting tips, team form analysis, match insights, football betting, sports predictions" />
+
+                <script id="hydro_config" type="text/javascript">
+          {`
+            window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";
+          `}
+            </script>
+            <script id="hydro_script" src="https://track.hydro.online/"></script>
             </Helmet>
 
             <header 

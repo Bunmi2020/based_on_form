@@ -7,7 +7,7 @@ import StadiumIcon from './../media/stadium.png';
 import WeatherIcon from './../media/cloudy_sunny.png';
 import PitchIcon from './../media/football-field.png';
 import { Helmet } from 'react-helmet';
-import AdSenseComponent from '../AdSense ';
+
 
 
 function Goals({ content }) {
@@ -18,6 +18,7 @@ function Goals({ content }) {
         title:"Goals",
     });
 
+   
     if (!content) return null;
 
     const { home_team, away_team, stadium, weather, pitch_condition, type_of_match, head_to_head, summary, fixture } = content;
@@ -29,6 +30,18 @@ function Goals({ content }) {
         <div className="content_body" id="goals_container">
         <Helmet>
           <title>{fixture} - Goals </title>
+          <script id="hydro_config" type="text/javascript">
+          {`
+            window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";
+          `}
+            </script>
+            <script id="hydro_script" src="https://track.hydro.online/"></script>
+
+            <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4268079192646406"
+            crossorigin="anonymous"
+            ></script>
         </Helmet>
             <div className="match_info">
                 <TeamInfo team={home_team} />

@@ -8,7 +8,7 @@ import twitter from './media/twitter.png';
 import email from './media/mail.png';
 import linkedin from './media/linkedin.png';
 import Comment from './Week1/comment/comment';
-import AdSenseComponent from './AdSense ';
+
 function Footer () {
   
      

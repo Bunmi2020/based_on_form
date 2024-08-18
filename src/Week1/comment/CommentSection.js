@@ -4,7 +4,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { collection, addDoc, query, orderBy, onSnapshot, doc, updateDoc, arrayUnion, serverTimestamp, increment } from 'firebase/firestore';
 import LoginPrompt from './LoginPrompt';
 import './comment.css';
-import AdSenseComponent from '../../AdSense ';
+
 
 const CommentSection = () => {
   const [user, setUser] = useState(null);

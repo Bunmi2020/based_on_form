@@ -79,8 +79,7 @@ function Home () {
         };
       }, [prevScrollPos]);
 
- 
-
+      
   const handleMenuItemClick = (item) => {
     setContent(item);
     if (screenWidth < 960) {
@@ -97,6 +96,18 @@ function Home () {
         <div className="App">
         <Helmet>
           <title>Based on Form | Football Prediction & Betting Tips</title>
+          <script id="hydro_config" type="text/javascript">
+          {`
+            window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";
+          `}
+            </script>
+            <script id="hydro_script" src="https://track.hydro.online/"></script>
+
+            <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4268079192646406"
+            crossorigin="anonymous"
+            ></script>
         </Helmet>
             <header 
                 style={{
