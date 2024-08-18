@@ -27,7 +27,7 @@ function Goals({ content }) {
     const { recent_matches: away_recent, unavailable_attacking_players: away_unavailable } = away_team;
 
     return (
-        <div className="content_body" id="goals_container">
+        <div className="content_body" id={`${fixture}_goals`}>
         <Helmet>
           <title>{fixture} - Goals </title>
           <script id="hydro_config" type="text/javascript">

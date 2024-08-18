@@ -26,7 +26,7 @@ function Cards({ content }) {
     const { recent_matches: away_recent, provocative_players: away_provocative, aggressive_players: away_aggressive } = away_team;
 
     return (
-        <div className="content_body" id="cards_container">
+        <div className="content_body" id={`${fixture}_cards`}>
         <Helmet>
           <title>{fixture} - Cards </title>
           <script id="hydro_config" type="text/javascript">

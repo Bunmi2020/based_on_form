@@ -28,7 +28,7 @@ function Corners({ content }) {
     const { recent_matches: away_recent, unavailable_attacking_players: away_unavailable } = away_team;
 
     return (
-        <div className="content_body" id="corners_container">
+        <div className="content_body" id={`${fixture}_corners`}>
         <Helmet>
           <title>{fixture} - Corners </title>
           <script id="hydro_config" type="text/javascript">
