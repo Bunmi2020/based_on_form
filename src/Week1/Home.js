@@ -166,7 +166,7 @@ function Home () {
                           <li className='high_accuracy'>🇪🇸 La Liga - Goals: <strong>10/12</strong></li>
                           <li className='high_accuracy'>🇪🇸 La Liga - Cards: <strong>10/12</strong></li>
                       </ul>
-                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with the actual results!</p>
+                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with actual results!</p>
                     </div>
                 ) : (
                     <div className='content' id='main'>
