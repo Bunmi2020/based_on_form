@@ -87,10 +87,10 @@ function Home () {
     }
   };
 
-  const handleToTop = () => {
-    window.scrollTo(0, 0); // Scroll to top
-   
-  };
+  function handleReload(url) {
+    window.location.href = url;
+    window.scrollTo(0, 0);
+}
 
     return (
         <div className="App">
@@ -128,7 +128,7 @@ function Home () {
                     </div>
                 )}
                 <h1 style={{ margin: 'auto', cursor: 'pointer' }}>
-                  <NavLink to="/" className="navbar__a" onClick={handleToTop}>
+                  <NavLink to="/" className="navbar__a" onClick={() => handleReload('/')}>
                     Based on Form
                   </NavLink>
                 </h1>
@@ -147,9 +147,26 @@ function Home () {
                 )}
                 {!content ? (
                     <div className='content_default' id='default'>
-                        <h3>Welcome to Based on Form!</h3>
-                        <h5>We provide related factors' data and analysis, to help you make better football betting decisions</h5>
-                        <p className='red_p'>Select a fixture from the menu to view the data and predictions</p>
+                    <Helmet>
+                      <meta name="description" content="Explore this week's football score predictions with accurate betting tips, corner statistics, and match analysis to elevate your sports betting strategy." />
+                      <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
+
+                    </Helmet>
+                      <h3>🔍 This Week's Prediction Scorecard</h3>
+                      <dl title='70% accuracy'>🎯 Out of 155 weekend predictions, 107 hit the mark!</dl>
+                      <ul>
+                          <li className='high_accuracy'>🏹 Corners: <strong>41/54</strong></li>
+                          <li className='medium_accuracy'>⚽ Goals: <strong>31/45</strong></li>
+                          <li className='medium_accuracy'>🔴 Cards: <strong>35/56</strong></li>
+                      </ul>
+                      <dl>🌟 Top Performing Predictions</dl>
+                      <ul>
+                          <li className='high_accuracy'>🇮🇹 Serie A - Corners: <strong>11/12</strong></li>
+                          <li className='high_accuracy'>🇫🇷 Ligue 1 - Corners: <strong>11/13</strong></li>
+                          <li className='high_accuracy'>🇪🇸 La Liga - Goals: <strong>10/12</strong></li>
+                          <li className='high_accuracy'>🇪🇸 La Liga - Cards: <strong>10/12</strong></li>
+                      </ul>
+                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with the actual results!</p>
                     </div>
                 ) : (
                     <div className='content' id='main'>

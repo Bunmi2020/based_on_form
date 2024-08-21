@@ -73,7 +73,7 @@ function PrivacyPolicy() {
                 <ol className="faq_list" id='FAQ'>
                     <li>What services does Based on Form offer?</li>
                     <p className='answer'>
-                        BasedOnForm.com offers expert predictions and insights for football betting, analyzing bookings, corners, goals, fouls, and shots per match. Our predictions are based on the latest team form, player statistics, and other critical match factors to give you the most accurate betting advice.
+                        BasedOnForm.com offers expert predictions, insights, analyzed factors, and recent data for football betting, analyzing bookings, corners, goals, fouls, and shots per match. Our predictions are based on the latest team form, player statistics, and other critical match factors to give you the most accurate betting advice.
                     </p>
 
                     <li>What data are using for your analysis?</li>
@@ -118,7 +118,7 @@ function PrivacyPolicy() {
 
                     <li>What makes BasedOnForm.com different from other betting analysis websites?</li>
                     <p className='answer'>
-                        We offer a wide range of predictions using a proven formula that has been refined over time. We continually improve our methods, learning from outcomes to enhance our prediction accuracy.
+                        We offer a wide range of predictions using a proven formula that has been refined over time. We continually improve our methods, learning from outcomes to enhance our prediction accuracy. We also provide you with data, analyzed factors needed to make your prediction per the betting option.
                     </p>
                      
 
