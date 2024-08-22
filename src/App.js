@@ -4,13 +4,14 @@ import ReactGA from 'react-ga4';
 import About from './about';
 import './App.css';
 import FAQ from './faq';
-
-import Home from './Week1/Home';
+import Home from './week2/Home';
+import PreviousHome from './Week1/Home';
 import { Routes, Route } from 'react-router-dom';
 import Footer from './footer';
 import PrivacyPolicy from './privacyPolicy';
 import TermsOfUse from './termsofuse';
 import InstallBaseOnForm from './install_base_on_form';
+import TopMenu from './header';
 
 
 function App() {
@@ -18,10 +19,10 @@ function App() {
 
   return (
     <div className="App" id=' '>
-      
+      <TopMenu />
       <Routes >
-        
           <Route path="/" element={<Home />} />
+          <Route path="/previous-week" element={<PreviousHome />} />
           <Route path="/about" element={<About />} />
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/privacy_policy" element={<PrivacyPolicy/>} />

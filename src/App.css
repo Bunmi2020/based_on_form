@@ -182,3 +182,53 @@ header .comment_button {
   height: 24px;
 }
 }
+
+
+/* TopMenu Styling */
+.top_header {
+  display: flex;
+  
+  
+  padding: 10px;
+  
+}
+
+.navbar__menu {
+  text-decoration: none;
+}
+
+.top_header button {
+  background-color: white;
+  color: var(--primary-color);
+  margin: auto 10px;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 410px) {
+  .top_header button {
+    padding: 7px 10px;
+  }
+}
+.top_header button:hover {
+  background-color: var(--secondary-color);
+}
+
+.top_header button:active,
+.top_header button.active {
+  background-color: rgb(176, 223, 176);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+.PS {
+  color: rgb(71, 12, 12);
+  font-size: 17px;
+  font-style: italic;
+}

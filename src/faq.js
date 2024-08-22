@@ -81,6 +81,11 @@ function PrivacyPolicy() {
                         We use the most recent data. We presently rely on data from last season, these data would be updated as the new season progresses. The ref's card per games and fouls per tackle, team's aggressive and provocative players, would be recalculated after week 5, and continually updated as the season progresses. All data are calculated manually, but verified from various reputable platforms on the web.
                     </p>
 
+                    <li>How can I become a Top Ten Picker?</li>
+                    <p className='answer'>
+                        To become a Top Ten Picker, submit your top ten picks in this week's comments. If you're the first or the only person to make the most correct picks, you'll be featured as a Top Ten Picker for the following week.
+                    </p>
+
                     <li>How does BasedOnForm.com make predictions?</li>
                     <p className='answer'>
                         Our predictions combine advanced data analytics with expert knowledge, assessing teams' recent form, player performance, historical data, and other crucial factors to deliver reliable betting insights.

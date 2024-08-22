@@ -17,7 +17,7 @@ import chat from '../media/chat.png';
 import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-function PreviousHome () {
+function Home () {
 
   ReactGA.send({
     hitType:"pageview",
@@ -128,7 +128,7 @@ function PreviousHome () {
                     </div>
                 )}
                 <h1 style={{ margin: 'auto', cursor: 'pointer' }}>
-                  <NavLink to="/previous-week" className="navbar__a" onClick={() => handleReload('/')}>
+                  <NavLink to="/" className="navbar__a" onClick={() => handleReload('/')}>
                     Based on Form
                   </NavLink>
                 </h1>
@@ -138,8 +138,9 @@ function PreviousHome () {
                 {(isToggle || screenWidth > 959) && (
                     <div className='Side_menu'>
                         <LaligaMenu setContent={handleMenuItemClick} />
-                        <PLMenu setContent={handleMenuItemClick} />
                         <Ligue1Menu setContent={handleMenuItemClick} />
+                        <PLMenu setContent={handleMenuItemClick} />
+                                                
                         <SerieAMenu setContent={handleMenuItemClick} />
                         
                         
@@ -148,25 +149,13 @@ function PreviousHome () {
                 {!content ? (
                     <div className='content_default' id='default'>
                     <Helmet>
-                      <meta name="description" content="Explore this week's football score predictions with accurate betting tips, corner statistics, and match analysis to elevate your sports betting strategy." />
-                      <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
+                      <meta name="description" content="Explore this week's football predictions with accurate betting tips, corner statistics, and match analysis to elevate your sports betting strategy." />
+                      <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction and insights" />
 
                     </Helmet>
-                      <h3>🔍 This Week's Prediction Scorecard</h3>
-                      <dl title='70% accuracy'>🎯 Out of 155 weekend predictions, 107 hit the mark!</dl>
-                      <ul>
-                          <li className='high_accuracy'>🏹 Corners: <strong>41/54</strong></li>
-                          <li className='medium_accuracy'>⚽ Goals: <strong>31/45</strong></li>
-                          <li className='medium_accuracy'>🔴 Cards: <strong>35/56</strong></li>
-                      </ul>
-                      <dl>🌟 Top Performing Predictions</dl>
-                      <ul>
-                          <li className='high_accuracy'>🇮🇹 Serie A - Corners: <strong>11/12</strong></li>
-                          <li className='high_accuracy'>🇫🇷 Ligue 1 - Corners: <strong>11/13</strong></li>
-                          <li className='high_accuracy'>🇪🇸 La Liga - Goals: <strong>10/12</strong></li>
-                          <li className='high_accuracy'>🇪🇸 La Liga - Cards: <strong>10/12</strong></li>
-                      </ul>
-                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with actual results!</p>
+                      <h3>Welcome to Based on Form,</h3>
+                      <p>...where data meets intuition to bring you the most accurate football betting insights and predictions.🤑</p>
+                      <p className='highlight_p'>🎰 Select a fixture from the menu to view the data and predictions!</p>
                     </div>
                 ) : (
                     <div className='content' id='main'>
@@ -225,4 +214,4 @@ function PreviousHome () {
     );
 }
 
-export default PreviousHome;
+export default Home;
