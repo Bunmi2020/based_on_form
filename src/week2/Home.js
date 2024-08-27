@@ -170,7 +170,13 @@ function Home () {
                 ) : (
                     <div className='content' id='main'>
                         
-                        <ul className="content-menu">
+                        <ul className="content-menu"
+                              style={{
+                                  position: isScrollingUp ? 'sticky' : 'relative',
+                                  top: isScrollingUp ? '5%' : 'auto',
+                                  transition: 'top 0.5s ease-in',
+                              }}
+                        >
                             
                             <li
                                 className={activeComponent === 'corners' ? 'active' : ''}

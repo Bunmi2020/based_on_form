@@ -43,10 +43,7 @@ header .navbar__a {
   width: 230px;
 }
 
-header {
-  position:sticky ;
-  top: 0%;
-}
+
 
 .League_menu:hover {
   background-color: var(--secondary-color);
@@ -171,7 +168,11 @@ header {
       width: 20px;
       height: 10px;
   }
-
+  header {
+    position:sticky ;
+    top: 0.5%;
+  }
+  
 header .comment_button {
   width: 35px;
   height: 35px;
