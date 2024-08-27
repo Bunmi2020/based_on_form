@@ -110,13 +110,7 @@ function Home () {
             ></script>
             <script async="async" data-cfasync="false" src="//thubanoa.com/1?z=7947173"></script>
         </Helmet>
-            <header 
-                style={{
-                    position: isScrollingUp ? 'sticky' : 'relative',
-                    top: isScrollingUp ? '0' : 'auto',
-                    transition: 'top 0.5s ease-in',
-                }}
-            >
+            <header >
                 {screenWidth < 960 && (
                     <div
                         className="mobile-menu-button"
@@ -125,7 +119,7 @@ function Home () {
                         }}
                         style={{ width: '45px', height: '30px', background: 'none' , float: 'left'}}
                     >
-                        <img src={menu} alt="Menu" style={{ width: '30px', height: '25px' }} />
+                        <img src={menu} alt="Menu" style={{ width: '40px', height: '35px' }} />
                     </div>
                 )}
                 <h1 style={{ margin: 'auto', cursor: 'pointer' }}>
@@ -148,15 +142,30 @@ function Home () {
                     </div>
                 )}
                 {!content ? (
-                    <div className='content_default' id='default'>
+                  <div className='content_default' id='default'>
                     <Helmet>
-                      <meta name="description" content="Explore this week's football predictions with accurate betting tips, corner statistics, and match analysis to elevate your sports betting strategy." />
-                      <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction and insights" />
+                      <meta name="description" content="Explore this week's football score predictions with accurate betting tips, corner statistics, and match analysis to elevate your sports betting strategy." />
+                      <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
 
                     </Helmet>
-                      <h3>Welcome to Based on Form,</h3>
-                      <p>...where data meets intuition to bring you the most accurate football betting insights and predictions.🤑</p>
-                      <p className='highlight_p'>🎰 Select a fixture from the menu to view the data and predictions!</p>
+                      <h3>🔍 This Week's Prediction Scorecard</h3>
+                      <dl title='75% accuracy'>🎯 Out of 142 weekend predictions, 107 hit the mark!</dl>
+                      <ul>
+                          <li className='high_accuracy'>🏹 Corners: <strong>36/48</strong></li>
+                          <li className='high_accuracy'>⚽ Goals: <strong>35/44</strong></li>
+                          <li className='high_accuracy'>🔴 Cards: <strong>36/50</strong></li>
+                      </ul>
+                      <dl>🌟 Top Performing Predictions</dl>
+                      <ul>
+                          <li className='high_accuracy'>🇮🇹 Serie A - Corners: <strong>11/11</strong></li>
+                          <li className='high_accuracy'>🇮🇹 Serie A - Goals: <strong>8/8</strong></li>
+                          <li className='high_accuracy'>🇪🇸 La Liga - Corners: <strong>9/10</strong></li>
+                          <li className='high_accuracy'>🇪🇸 La Liga - Goals: <strong>12/13</strong></li>
+                          <li className='high_accuracy'>🇫🇷 Ligue 1 - Corners: <strong>11/13</strong></li>
+                          <li className='high_accuracy'>🇫🇷 Ligue 1 - Cards: <strong>10/12</strong></li>
+                          
+                      </ul>
+                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with actual results!</p>
                     </div>
                 ) : (
                     <div className='content' id='main'>

@@ -43,6 +43,11 @@ header .navbar__a {
   width: 230px;
 }
 
+header {
+  position:sticky ;
+  top: 0%;
+}
+
 .League_menu:hover {
   background-color: var(--secondary-color);
 }

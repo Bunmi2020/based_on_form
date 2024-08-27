@@ -109,13 +109,7 @@ function PreviousHome () {
             crossorigin="anonymous"
             ></script>
         </Helmet>
-            <header 
-                style={{
-                    position: isScrollingUp ? 'sticky' : 'relative',
-                    top: isScrollingUp ? '0' : 'auto',
-                    transition: 'top 0.5s ease-in',
-                }}
-            >
+            <header >
                 {screenWidth < 960 && (
                     <div
                         className="mobile-menu-button"
