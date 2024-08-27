@@ -169,7 +169,7 @@ function PreviousHome () {
                          
                               style={{
                                   position: isScrollingUp ? 'sticky' : 'relative',
-                                  top: isScrollingUp ? '5%' : 'auto',
+                                  top: isScrollingUp ? '1%' : 'auto',
                                   transition: 'top 0.5s ease-in',
                               }}
                         >

@@ -168,10 +168,6 @@ header .navbar__a {
       width: 20px;
       height: 10px;
   }
-  header {
-    position:sticky ;
-    top: 0.5%;
-  }
   
 header .comment_button {
   width: 35px;
