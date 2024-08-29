@@ -12,6 +12,7 @@ import PrivacyPolicy from './privacyPolicy';
 import TermsOfUse from './termsofuse';
 import InstallBaseOnForm from './install_base_on_form';
 import TopMenu from './header';
+import HomeNew from './week3/Home';
 
 
 function App() {
@@ -21,8 +22,9 @@ function App() {
     <div className="App" id=' '>
       <TopMenu />
       <Routes >
-          <Route path="/" element={<Home />} />
-          <Route path="/previous-week" element={<PreviousHome />} />
+          <Route path="/" element={<HomeNew />} />
+          <Route path="/week_2" element={<Home />} />
+          <Route path="/week_1" element={<PreviousHome />} />
           <Route path="/about" element={<About />} />
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/privacy_policy" element={<PrivacyPolicy/>} />

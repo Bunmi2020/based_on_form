@@ -21,8 +21,8 @@ function PreviousHome () {
 
   ReactGA.send({
     hitType:"pageview",
-    page:"/",
-    title:"Home",
+    page:"/week_1",
+    title:"Home_1",
 });
 
     const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component

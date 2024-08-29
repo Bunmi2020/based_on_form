@@ -17,12 +17,12 @@ import chat from '../media/chat.png';
 import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-function Home () {
+function HomeNew () {
 
   ReactGA.send({
     hitType:"pageview",
-    page:"/week_2",
-    title:"Home_2",
+    page:"/",
+    title:"Home",
 });
 
     const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component
@@ -148,24 +148,10 @@ function Home () {
                       <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
 
                     </Helmet>
-                      <h3>🔍 This Week's Prediction Scorecard</h3>
-                      <dl title='75% accuracy'>🎯 Out of 142 weekend predictions, 107 hit the mark!</dl>
-                      <ul>
-                          <li className='high_accuracy'>🏹 Corners: <strong>36/48</strong></li>
-                          <li className='high_accuracy'>⚽ Goals: <strong>35/44</strong></li>
-                          <li className='high_accuracy'>🔴 Cards: <strong>36/50</strong></li>
-                      </ul>
-                      <dl>🌟 Top Performing Predictions</dl>
-                      <ul>
-                          <li className='high_accuracy'>🇮🇹 Serie A - Corners: <strong>11/11</strong></li>
-                          <li className='high_accuracy'>🇮🇹 Serie A - Goals: <strong>8/8</strong></li>
-                          <li className='high_accuracy'>🇪🇸 La Liga - Corners: <strong>9/10</strong></li>
-                          <li className='high_accuracy'>🇪🇸 La Liga - Goals: <strong>12/13</strong></li>
-                          <li className='high_accuracy'>🇫🇷 Ligue 1 - Corners: <strong>11/13</strong></li>
-                          <li className='high_accuracy'>🇫🇷 Ligue 1 - Cards: <strong>10/12</strong></li>
-                          
-                      </ul>
-                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with actual results!</p>
+                      <h3>Welcome to Based on Form,</h3>
+                      <dl title=''>...where data meets intuition to bring you the most accurate football betting insights and predictions</dl>
+                     
+                      <p className='highlight_p'>Select a fixture from the menu to view the data, factors, analysis, and our predictions for the match, based on form!</p>
                     </div>
                 ) : (
                     <div className='content' id='main'>
@@ -230,4 +216,4 @@ function Home () {
     );
 }
 
-export default Home;
+export default HomeNew;

@@ -6,13 +6,30 @@ import LoginPrompt from './LoginPrompt';
 import './comment.css';
 
 
+const formatDate = (timestamp) => {
+  if (!timestamp) return '';
+
+  // Check if the timestamp is a string (e.g., ISO 8601 format)
+  if (typeof timestamp === 'string') {
+    const date = new Date(timestamp);
+    return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  }
+
+  // If it's a Firestore Timestamp object
+  if (timestamp.toDate) {
+    const date = timestamp.toDate();
+    return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  }
+
+  return 'Invalid Date';
+};
+
 const CommentSection = () => {
   const [user, setUser] = useState(null);
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
   const [showLoginPrompt, setShowLoginPrompt] = useState(false);
   const [error, setError] = useState(null);
-  
 
   useEffect(() => {
     const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
@@ -22,9 +39,8 @@ const CommentSection = () => {
     const q = query(
       collection(firestore, 'comments'),
       orderBy('replyCount', 'desc'),
-      
     );
-    
+
     const unsubscribeComments = onSnapshot(q, (snapshot) => {
       setComments(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     });
@@ -36,13 +52,11 @@ const CommentSection = () => {
   }, []);
 
   useEffect(() => {
-    if (error ) {
+    if (error) {
       const timer = setTimeout(() => {
         setError(null);
-       
       }, 5000); // Clear error after 5 seconds
 
-      // Cleanup the timer
       return () => clearTimeout(timer);
     }
   }, [error]);
@@ -76,7 +90,7 @@ const CommentSection = () => {
           },
           timestamp: serverTimestamp(),
           replies: [],
-          replyCount: 0 // Initialize reply count
+          replyCount: 0, // Initialize reply count
         });
         setNewComment('');
       } catch (error) {
@@ -90,8 +104,6 @@ const CommentSection = () => {
   const handleReplySubmit = async (e, commentId, replyText) => {
     e.preventDefault();
 
-   
-
     if (user) {
       try {
         const reply = {
@@ -101,13 +113,13 @@ const CommentSection = () => {
             displayName: getFirstName(user.displayName),
             photoURL: user.photoURL,
           },
-          timestamp: new Date().toISOString(),
+          timestamp: new Date().toISOString(), // Store as string
         };
 
         const commentRef = doc(firestore, 'comments', commentId);
         await updateDoc(commentRef, {
           replies: arrayUnion(reply),
-          replyCount: increment(1) // Increment the reply count
+          replyCount: increment(1), // Increment the reply count
         });
       } catch (error) {
         console.error('Error updating document: ', error);
@@ -126,7 +138,6 @@ const CommentSection = () => {
       {user ? (
         <div>
           <button onClick={handleLogout}>Sign Out</button>
-          <p></p>
         </div>
       ) : (
         <></>
@@ -141,15 +152,19 @@ const CommentSection = () => {
           required
           className='comment_box'
         />
-          {error && <p className='error_message'>{error}</p>}
+        {error && <p className='error_message'>{error}</p>}
         <button type="submit">Post</button>
-         
       </form>
+
       <div className='comments'>
         {comments.map((comment) => (
           <div key={comment.id} className='each_comment'>
-          <span className='id_head'><img src={comment.user.photoURL} alt={comment.user.displayName} /> <h4>{comment.user.displayName}</h4></span>
+            <span className='id_head'>
+              <img src={comment.user.photoURL} alt={comment.user.displayName} />
+              <h4>{comment.user.displayName}</h4>
+            </span>
             <p>{comment.text}</p>
+            <i className="comment_date">📅 {formatDate(comment.timestamp)}</i>
             <div>
               <form onSubmit={(e) => {
                 e.preventDefault();
@@ -164,13 +179,12 @@ const CommentSection = () => {
                   required
                   pattern=".*\S.*\S.*" title="Reply must contain at least two non-whitespace characters"
                 />
-                 <button type="submit">Reply</button>
+                <button type="submit">Reply</button>
               </form>
               {comment.replies && comment.replies.map((reply, index) => (
                 <div className='each_reply' key={index} style={{ marginLeft: '20px' }}>
-                 <h4>{reply.user.displayName}</h4>
-                  <p>{reply.text}</p>
-                </div>
+                  <p><span className="bold_comment">{reply.user.displayName}</span>: <i>{reply.text}</i></p>
+                  </div>
               ))}
             </div>
           </div>

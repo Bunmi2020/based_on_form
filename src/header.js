@@ -18,19 +18,25 @@ const [activeButton, setActiveButton] = useState(null);
     return (
         <div className="top_header">
             
-            <NavLink  to="/previous-week" 
+            <NavLink  to="/week_1" 
                 className="navbar__menu"
-                onClick={() => handleButtonClick('previous-week')} >
-                  <button className={activeButton === 'previous-week' ? 'active' : ''}>📅 15 - 19 Aug.</button>
+                onClick={() => handleButtonClick('old-week')} >
+                  <button className={activeButton === 'old-week' ? 'active' : ''}>📅15 - 19 Aug.</button>
             </NavLink>
             
 
             
+            <NavLink  to="/week_2" 
+                className="navbar__menu"
+                onClick={() => handleButtonClick('previous-week')}>
+                  <button className={activeButton === 'previous-week' ? 'active' : ''}>📅23 - 26 Aug.</button>
+            </NavLink>
             <NavLink  to="/" 
                 className="navbar__menu"
                 onClick={() => handleButtonClick('current-week')}>
-                  <button className={activeButton === 'current-week' ? 'active' : ''}>📅 23 - 26 Aug.</button>
+                  <button className={activeButton === 'current-week' ? 'active' : ''}>📅30 Aug - 1 Sept.</button>
             </NavLink>
+            
             
         </div>
     )

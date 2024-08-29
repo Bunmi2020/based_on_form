@@ -75,10 +75,12 @@ const Auth = ({ user }) => {
   return (
     <div>
       {user ? (
+        <>
         <button onClick={handleLogout}>Sign Out</button>
+        </>
       ) : (
         <>
-          <p>Please sign in to comment.</p>
+        <p className='signup_info'>Sign in to join the conversation, receive notifications when new insights and predictions are posted, and stay up-to-date on the latest updates!</p>
           <button className='google_signin_button' onClick={signInWithGoogle}><img src={google} alt="Google" /> Sign in</button>
           <button className='facebook_signin_button' onClick={signInWithFacebook}><img src={facebook} alt="facebook" /> Sign in</button>
           {error && <p className='error_message'>{error}</p>}
