@@ -132,11 +132,12 @@ function HomeNew () {
             <div className="Home">
                 {(isToggle || screenWidth > 959) && (
                     <div className='Side_menu'>
-                        <LaligaMenu setContent={handleMenuItemClick} />
+                       
                         <Ligue1Menu setContent={handleMenuItemClick} />
-                        <PLMenu setContent={handleMenuItemClick} />
-                                                
                         <SerieAMenu setContent={handleMenuItemClick} />
+                        <PLMenu setContent={handleMenuItemClick} />                   
+                        
+                        <LaligaMenu setContent={handleMenuItemClick} />
                         
                         
                     </div>
