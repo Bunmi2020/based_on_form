@@ -39,7 +39,7 @@
 
 @media (max-width: 960px) {
     .Side_menu {
-        position:fixed;
+        position: absolute;
         margin: 0px;
         z-index: 9;
     }
