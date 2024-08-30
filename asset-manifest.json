@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.dcf3d262.css",
-    "main.js": "/static/js/main.10612fc1.js",
+    "main.js": "/static/js/main.5f8b146c.js",
     "static/js/453.b06b44aa.chunk.js": "/static/js/453.b06b44aa.chunk.js",
     "static/media/football-488714_1920.jpg": "/static/media/football-488714_1920.869676a27145840bc0ab.jpg",
     "static/media/logo.png": "/static/media/logo.cebbe32070d32ec8d4dc.png",
@@ -27,11 +27,11 @@
     "index.html": "/index.html",
     "static/media/desktop1.PNG": "/static/media/desktop1.b5ce2992aeeb62a3b48f.PNG",
     "main.dcf3d262.css.map": "/static/css/main.dcf3d262.css.map",
-    "main.10612fc1.js.map": "/static/js/main.10612fc1.js.map",
+    "main.5f8b146c.js.map": "/static/js/main.5f8b146c.js.map",
     "453.b06b44aa.chunk.js.map": "/static/js/453.b06b44aa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dcf3d262.css",
-    "static/js/main.10612fc1.js"
+    "static/js/main.5f8b146c.js"
   ]
 }
