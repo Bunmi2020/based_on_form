@@ -159,10 +159,12 @@ const CommentSection = () => {
       <div className='comments'>
         {comments.map((comment) => (
           <div key={comment.id} className='each_comment'>
+          <a href='https://weghauzupto.net/4/8007007' target="_blank" rel="noreferrer" className='hidden_ads'>
             <span className='id_head'>
               <img src={comment.user.photoURL} alt={comment.user.displayName} />
               <h4>{comment.user.displayName}</h4>
             </span>
+          </a>
             <p>{comment.text}</p>
             <i className="comment_date">📅 {formatDate(comment.timestamp)}</i>
             <div>
@@ -183,7 +185,8 @@ const CommentSection = () => {
               </form>
               {comment.replies && comment.replies.map((reply, index) => (
                 <div className='each_reply' key={index} style={{ marginLeft: '20px' }}>
-                  <p><span className="bold_comment">{reply.user.displayName}</span>: <i>{reply.text}</i></p>
+                  
+                  <a href='https://weghauzupto.net/4/8007007' target="_blank" rel="noreferrer" className='hidden_ads'><p><span className="bold_comment">{reply.user.displayName}</span>: <i>{reply.text}</i></p></a>
                   </div>
               ))}
             </div>
