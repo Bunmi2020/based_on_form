@@ -149,10 +149,24 @@ function HomeNew () {
                       <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
 
                     </Helmet>
-                      <h3>Welcome to Based on Form,</h3>
-                      <dl title=''>...where data meets intuition to bring you the most accurate football betting insights and predictions</dl>
-                     
-                      <p className='highlight_p'>Select a fixture from the menu to view the data, factors, analysis, and our predictions for the match, based on form!</p>
+                      <h3>🔍 This Week's Prediction Scorecard</h3>
+                      <dl title='77% accuracy'>🎯 Out of 153 weekend predictions, 117 hit the mark!</dl>
+                      <ul>
+                          <li className='high_accuracy'>🏹 Corners: <strong>34/45</strong></li>
+                          <li className='high_accuracy'>⚽ Goals: <strong>36/51</strong></li>
+                          <li className='high_accuracy'>🔴 Cards: <strong>47/57</strong></li>
+                      </ul>
+                      <dl>🌟 Top Performing Predictions</dl>
+                      <ul>
+                          <li className='high_accuracy'>🇮🇹 Serie A - Corners: <strong>9/11</strong></li>
+                          <li className='high_accuracy'>🇮🇹 Serie A - Cards: <strong>14/16</strong></li>
+                          <li className='high_accuracy'>🇪🇸 La Liga - Corners: <strong>10/11</strong></li>
+                          <li className='high_accuracy'>🇪🇸 La Liga - Cards: <strong>14/16</strong></li>
+                          
+                          <li className='high_accuracy'>🇫🇷 Ligue 1 - Cards: <strong>10/12</strong></li>
+                          
+                      </ul>
+                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with actual results!</p>
                     </div>
                 ) : (
                     <div className='content' id='main'>
@@ -213,6 +227,8 @@ function HomeNew () {
                 </div>
             </div>
             
+            <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/47013782.js"></script>
+           
         </div>
     );
 }

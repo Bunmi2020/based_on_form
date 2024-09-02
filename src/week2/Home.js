@@ -225,6 +225,8 @@ function Home () {
                     <Sidebar />
                 </div>
             </div>
+           
+            <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/47013782.js"></script>
             
         </div>
     );
