@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.d36f52c4.css",
-    "main.js": "/static/js/main.8c0832f8.js",
+    "main.js": "/static/js/main.961f0a6d.js",
     "static/js/453.b06b44aa.chunk.js": "/static/js/453.b06b44aa.chunk.js",
     "static/media/football-488714_1920.jpg": "/static/media/football-488714_1920.869676a27145840bc0ab.jpg",
-    "static/media/logo.png": "/static/media/logo.cebbe32070d32ec8d4dc.png",
+    "static/media/logo.png": "/static/media/logo.0cfbdfd0f2c5d4e232b3.png",
     "static/media/iph_2.jpg": "/static/media/iph_2.889b4fd5477ebe989a5b.jpg",
     "static/media/iph_6.jpg": "/static/media/iph_6.5b86075b27e558d71d6c.jpg",
     "static/media/whistle.png": "/static/media/whistle.042ab5edab7ac7027853.png",
@@ -27,11 +27,11 @@
     "index.html": "/index.html",
     "static/media/desktop1.PNG": "/static/media/desktop1.b5ce2992aeeb62a3b48f.PNG",
     "main.d36f52c4.css.map": "/static/css/main.d36f52c4.css.map",
-    "main.8c0832f8.js.map": "/static/js/main.8c0832f8.js.map",
+    "main.961f0a6d.js.map": "/static/js/main.961f0a6d.js.map",
     "453.b06b44aa.chunk.js.map": "/static/js/453.b06b44aa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d36f52c4.css",
-    "static/js/main.8c0832f8.js"
+    "static/js/main.961f0a6d.js"
   ]
 }
