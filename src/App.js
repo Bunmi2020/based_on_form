@@ -23,8 +23,8 @@ function App() {
       <TopMenu />
       <Routes >
           <Route path="/" element={<HomeNew />} />
-          <Route path="/23 - 26 Aug" element={<Home />} />
-          <Route path="/15 - 19 Aug" element={<PreviousHome />} />
+          <Route path="/23-26_Aug" element={<Home />} />
+          <Route path="/15-19_Aug" element={<PreviousHome />} />
           <Route path="/about" element={<About />} />
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/privacy_policy" element={<PrivacyPolicy/>} />

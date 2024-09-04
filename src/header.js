@@ -18,7 +18,7 @@ const [activeButton, setActiveButton] = useState(null);
     return (
         <div className="top_header">
             
-            <NavLink  to="/15 - 19 Aug" 
+            <NavLink  to="/15-19_Aug" 
                 className="navbar__menu"
                 onClick={() => handleButtonClick('old-week')} >
                   <button className={activeButton === 'old-week' ? 'active' : ''}>📅15 - 19 Aug.</button>
@@ -26,7 +26,7 @@ const [activeButton, setActiveButton] = useState(null);
             
 
             
-            <NavLink  to="/23 - 26 Aug" 
+            <NavLink  to="/23-26_Aug" 
                 className="navbar__menu"
                 onClick={() => handleButtonClick('previous-week')}>
                   <button className={activeButton === 'previous-week' ? 'active' : ''}>📅23 - 26 Aug.</button>
