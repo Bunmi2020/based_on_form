@@ -41,6 +41,7 @@ function Comment() {
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4268079192646406"
             crossorigin="anonymous"
             ></script>
+            <meta name="google-adsense-account" content="ca-pub-4268079192646406"></meta>
         </Helmet>
       {user ? (
         <div>
