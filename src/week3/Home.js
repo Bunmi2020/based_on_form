@@ -108,7 +108,7 @@ function HomeNew () {
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4268079192646406"
             crossorigin="anonymous"
             ></script>
-            <script async="async" data-cfasync="false" src="//thubanoa.com/1?z=7947173"></script>
+            
         </Helmet>
             <header >
                 {screenWidth < 960 && (

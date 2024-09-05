@@ -13,6 +13,8 @@ import TermsOfUse from './termsofuse';
 import InstallBaseOnForm from './install_base_on_form';
 import TopMenu from './header';
 import HomeNew from './week3/Home';
+import ConsentPopup from './consent';
+import { Helmet } from 'react-helmet';
 
 
 function App() {
@@ -20,6 +22,13 @@ function App() {
 
   return (
     <div className="App" id=' '>
+    <Helmet>
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4268079192646406"
+            crossorigin="anonymous"
+            ></script>
+    </Helmet>
       <TopMenu />
       <Routes >
           <Route path="/" element={<HomeNew />} />
@@ -33,6 +42,7 @@ function App() {
       </Routes>
 
       <Footer />
+      <ConsentPopup />
      
     </div>
   );
