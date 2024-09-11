@@ -95,7 +95,10 @@ function HomeNew () {
     return (
         <div className="App">
         <Helmet>
-          <title>Based on Form | Football Prediction & Betting Tips</title>
+          <title>Based on Form | Free 200+ Football Predictions & Betting Tips</title>
+          <meta name="description" content="Explore this week's football score predictions with accurate betting tips, corner statistics, and match analysis to elevate your sports betting strategy." />
+          <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
+
           <script id="hydro_config" type="text/javascript">
           {`
             window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";

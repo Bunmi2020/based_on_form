@@ -5,7 +5,7 @@ import About from './about';
 import './App.css';
 import FAQ from './faq';
 import Home from './week2/Home';
-import PreviousHome from './Week1/Home';
+
 import { Routes, Route } from 'react-router-dom';
 import Footer from './footer';
 import PrivacyPolicy from './privacyPolicy';
@@ -15,6 +15,7 @@ import TopMenu from './header';
 import HomeNew from './week3/Home';
 import ConsentPopup from './consent';
 import { Helmet } from 'react-helmet';
+import SeptOne from './week4/Home';
 
 
 function App() {
@@ -32,9 +33,10 @@ function App() {
     </Helmet>
       <TopMenu />
       <Routes >
-          <Route path="/" element={<HomeNew />} />
+          <Route path="/30-1_sept" element={<HomeNew />} />
+          <Route path="/13-16_Sept" element={<SeptOne />} />
           <Route path="/23-26_Aug" element={<Home />} />
-          <Route path="/15-19_Aug" element={<PreviousHome />} />
+          <Route path="/" element={<SeptOne />} />
           <Route path="/about" element={<About />} />
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/privacy_policy" element={<PrivacyPolicy/>} />

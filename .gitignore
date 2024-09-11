@@ -2,6 +2,7 @@
 
 .env
 
+ads.txt
 # dependencies
 /node_modules
 /.pnp
