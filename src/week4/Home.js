@@ -124,7 +124,7 @@ function SeptOne() {
     <div className="App">
       <Helmet>
       <title>Based on Form | Free 200+ Football Predictions & Betting Tips</title>
-          <meta name="description" content="Explore this week's football score predictions with accurate betting tips, corner statistics, and match analysis to elevate your sports betting strategy." />
+          <meta name="description" content="Explore this week's free 200+ football predictions with accurate betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your sports betting strategy." />
           <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
 
           <script id="hydro_config" type="text/javascript">
@@ -177,7 +177,7 @@ function SeptOne() {
             
           <div className='content_default' id='default'>
             <h3>Welcome to Based on Form!</h3>
-            <h5>We provide football match' related factors, data, analysis and predictions, to help you make better football betting decisions</h5>
+            <h5>We provide weekly football match' related factors, data, analysis for 55+ matches in Ligue 1, Serie A, Premier League, La Liga, Bundesliga, and Eredivisie, and 200+ free predictions, to help you make better football betting decisions</h5>
             <p className='highlight_p'>Search or select a fixture from the menu to view the match's betting insights and predictions</p>
           </div>
           </div>
