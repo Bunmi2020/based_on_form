@@ -137,6 +137,8 @@ header {
     background-color: #36332bc9;
     height: fit-content;
     border-radius: 10px;
+    font-family:'Times New Roman', Times, serif;
+    text-align: left;
     padding: 20px;
     margin-top: 5%;
     max-width: 600px;
@@ -149,6 +151,13 @@ header {
 .content_default h2,.content_default h3 {
     color: #a3b4e4;
     font-style: Helvetica;
+    
+}
+
+.content_default h5, .content_default h6, .content_default p {
+    padding: 3px;
+    margin: 3px 3px;
+    
 }
 
 
@@ -166,9 +175,11 @@ header {
 }
 
 .content_default li {
-    color: #1E3A8A;
-    font-style: Sans-serif;
-    font-weight: 200;
+    list-style:disc;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 20px;
+    color: #fff;
 }
 
 .content_default .high_accuracy {
@@ -193,8 +204,9 @@ header {
     position: absolute;
     background-color: rgba(46, 204, 113,0.6);
     z-index: 100;
-    max-width: 560px;
+    max-width: 600px;
     border-radius: 10px;
+    margin: auto;
 }
 
 .search-results li {

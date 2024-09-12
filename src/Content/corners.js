@@ -30,7 +30,7 @@ function Corners({ content }) {
     return (
         <div className="content_body" id={`${fixture}_corners`}>
         <Helmet>
-          <title>{fixture} - Corners </title>
+          <title>{fixture} - Corners: free prediction and insights</title>
           <script id="hydro_config" type="text/javascript">
           {`
             window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";
