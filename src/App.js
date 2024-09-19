@@ -4,7 +4,6 @@ import ReactGA from 'react-ga4';
 import About from './about';
 import './App.css';
 import FAQ from './faq';
-import Home from './week2/Home';
 
 import { Routes, Route } from 'react-router-dom';
 import Footer from './footer';
@@ -16,6 +15,7 @@ import HomeNew from './week3/Home';
 import ConsentPopup from './consent';
 import { Helmet } from 'react-helmet';
 import SeptOne from './week4/Home';
+import SeptTwo from './week5/Home';
 
 
 function App() {
@@ -34,9 +34,10 @@ function App() {
       <TopMenu />
       <Routes >
           <Route path="/30-1_sept" element={<HomeNew />} />
-          <Route path="/13-16_Sept" element={<SeptOne />} />
-          <Route path="/23-26_Aug" element={<Home />} />
-          <Route path="/" element={<SeptOne />} />
+          <Route path="/13-16_sept" element={<SeptOne />} />
+          
+          <Route path="/" element={<SeptTwo />} />
+          <Route path="/20-23_sept" element={<SeptTwo />} />
           <Route path="/about" element={<About />} />
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/privacy_policy" element={<PrivacyPolicy/>} />

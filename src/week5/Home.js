@@ -20,7 +20,7 @@ import SearchBar from './search';
 import EredivisieMenu from './league_menu/eredivisie';
 import BundesligaMenu from './league_menu/bundesliga';
 
-function SeptOne() {
+function SeptTwo () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
@@ -38,12 +38,12 @@ function SeptOne() {
 
   // Fetch data from multiple URLs
   const urls = [
-    'https://bunmi2020.github.io/bnf_data/week_four/serie_a.json',
-    'https://bunmi2020.github.io/bnf_data/week_four/pl.json',
-    'https://bunmi2020.github.io/bnf_data/week_four/ligue_1.json',
-    'https://bunmi2020.github.io/bnf_data/week_four/eredivisie.json',
-    'https://bunmi2020.github.io/bnf_data/week_four/la_liga.json',
-    'https://bunmi2020.github.io/bnf_data/week_four/bundesliga.json'
+    'https://bunmi2020.github.io/bnf_data/week_five/serie_a.json',
+    'https://bunmi2020.github.io/bnf_data/week_five/pl.json',
+    'https://bunmi2020.github.io/bnf_data/week_five/ligue_1.json',
+    'https://bunmi2020.github.io/bnf_data/week_five/eredivisie.json',
+    'https://bunmi2020.github.io/bnf_data/week_five/la_liga.json',
+    'https://bunmi2020.github.io/bnf_data/week_five/bundesliga.json'
   ];
 
   useEffect(() => {
@@ -163,12 +163,15 @@ function SeptOne() {
       <div className="Home">
         {(isToggle || screenWidth > 959) && (
           <div className='Side_menu'>
-            <Ligue1Menu setContent={handleMenuItemClick} />
-            <SerieAMenu setContent={handleMenuItemClick} />
+            <BundesligaMenu setContent={handleMenuItemClick} />
             <PLMenu setContent={handleMenuItemClick} />
+            <SerieAMenu setContent={handleMenuItemClick} />
+            
             <LaligaMenu setContent={handleMenuItemClick} />
             <EredivisieMenu setContent={handleMenuItemClick} />
-            <BundesligaMenu setContent={handleMenuItemClick} />
+            <Ligue1Menu setContent={handleMenuItemClick} />
+            
+            
           </div>
         )}
         {!content ? (
@@ -232,4 +235,4 @@ function SeptOne() {
   );
 }
 
-export default SeptOne;
+export default SeptTwo;

@@ -11,7 +11,7 @@ function BundesligaMenu({ setContent }) {
     
     useEffect(() => {
         
-        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_four/bundesliga.json';
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_five/bundesliga.json';
 
         fetch(apiUrl, {
             method: 'GET',

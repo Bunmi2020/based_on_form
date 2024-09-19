@@ -7,7 +7,7 @@ import facebook from './media/facebook.png';
 import twitter from './media/twitter.png';
 import email from './media/mail.png';
 import linkedin from './media/linkedin.png';
-import Comment from './Week1/comment/comment';
+import Comment from './week5/comment/comment';
 
 function Footer () {
   
