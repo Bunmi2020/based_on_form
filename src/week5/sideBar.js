@@ -6,7 +6,7 @@ function Sidebar() {
   const [name, setName] = useState(''); // State for the name
 
   useEffect(() => {
-    const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_four/side_bar.json';
+    const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_five/side_bar.json';
 
     fetch(apiUrl, {
       method: 'GET',
