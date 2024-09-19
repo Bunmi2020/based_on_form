@@ -46,7 +46,7 @@ function Comment() {
       {user ? (
         <div>
           <i>Welcome, {user.displayName}</i>
-          <i class="green"> ...be nice, and keep calm! All weekend predictions are in! Click on the menu, league and select the respective game.</i>
+          <i class="green"> ...be nice, and keep calm! May the odds be in your favor!!</i>
         </div>
       ) : (
         

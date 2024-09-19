@@ -210,8 +210,8 @@ function SeptTwo () {
             </ul>
             <div className='content_body'>
               {activeComponent === 'corners' && <Corners content={content} />}
-              {activeComponent === 'goals' && <Goals content={content} />}
               {activeComponent === 'cards' && <Cards content={content} />}
+              {activeComponent === 'goals' && <Goals content={content} />}
             </div>
             <HashLink smooth to="/#prediction"><span style={{ width: '4.5em', display: isVisible ? 'none' : 'flex', position: 'fixed',flexDirection: 'column',justifyContent: 'center', zIndex: 9, boxShadow: '3px, 2px, gray',
                             bottom: '0%',
