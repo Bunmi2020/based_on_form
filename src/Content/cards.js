@@ -69,6 +69,7 @@ function TeamInfo({ team }) {
             <ul className='style_of_play'>
                 <li title='Playing style'>{team.playing_style}</li>
                 <li title='Pressing style'>{team.pressing_style}</li>
+                <li title='Defensive style'>{team.defensive_style}</li>
             </ul>
             
         </div>
