@@ -223,7 +223,7 @@ function SeptTwo () {
                             cursor: 'pointer',
                             color: 'white',
                             margin: '1em 0.5em',
-                            padding: '0.5em 1em'}}>{activeComponent}'s prediction</span></HashLink>
+                            padding: '0.5em 1em'}}>{activeComponent}' prediction</span></HashLink>
 
             </div>
         )}
