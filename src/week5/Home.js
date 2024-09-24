@@ -179,7 +179,7 @@ function SeptTwo () {
           <SearchBar fixtures={fixtures} setContent={setContent} />
             
           <div className='content_default' id='default'>
-          <h3>🔍 This Week's Prediction Scorecard</h3>
+          <h3>🔍 Weekend's Prediction Scorecard</h3>
                       <dl title='77% accuracy'>🎯 Out of 225 weekend predictions, 173 hit the mark!</dl>
                       <ul>
                           <li title='71% accuracy' className='medium_accuracy'>🏹 Corners: <strong>53/75</strong></li>
