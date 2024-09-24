@@ -49,13 +49,14 @@ function Corners({ content }) {
                 <MatchDetails stadium={stadium} weather={weather} pitch_condition={pitch_condition} type_of_match={type_of_match} />
                 <TeamInfo team={away_team} />
             </div>
-            <UnavailablePlayers home_unavailable={home_unavailable} away_unavailable={away_unavailable} />
+             <Summary summary={summary.corners} id ="prediction"/>
+             <UnavailablePlayers home_unavailable={home_unavailable} away_unavailable={away_unavailable} />
              
             <HeadToHeadCorners home_team={home_team} away_team={away_team} corners={corners} teams={teams}/>
             <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams}/>
             <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams}/>
              
-            <Summary summary={summary.corners} id ="prediction"/>
+           
             
         </div>
     );
@@ -181,7 +182,7 @@ function Summary ({ fixture, summary }) {
         <h4>{fixture} Corners' Prediction</h4>
             <p>{summary.discuss}</p>
             <ul className='prediction_list'>
-                <li>Full-Time Total Corners:<span className='bold'> {summary.ht}</span></li>
+                <li>FT Total Corners:<span className='bold'> {summary.ht}</span></li>
                 <li>Team with the Most Corners:<span className='bold'> {summary.ft}</span></li>
             </ul>
         </div>

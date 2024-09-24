@@ -47,6 +47,7 @@ function Cards({ content }) {
                 <MatchDetails stadium={stadium} weather={Weather} pitch_condition={pitch_condition} referee={referee} type_of_match={type_of_match} />
                 <TeamInfo team={away_team} />
             </div>
+            <Summary summary={summary.cards} id ="prediction"/>
             <ProvocativePlayers home_provocative={home_provocative} away_provocative={away_provocative} />
              
             <AggressivePlayers home_aggressive={home_aggressive} away_aggressive={away_aggressive} />
@@ -54,7 +55,7 @@ function Cards({ content }) {
             <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams}/>
             <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams}/>
              
-            <Summary summary={summary.cards} id ="prediction"/>
+            
             
         </div>
     );
@@ -225,8 +226,8 @@ function Summary ({ fixture, summary }) {
         <h4>{fixture} Cards' Prediction</h4>
             <p>{summary.discuss}</p>
             <ul className='prediction_list'>
-                <li>Halftime: <span className='bold'>{summary.ht}</span> </li>
-                <li>Fulltime: <span className='bold'>{summary.ft}</span></li>
+                <li>Halftime - total-cards/Booking: <span className='bold'>{summary.ht}</span> </li>
+                <li>Fulltime - total-cards/Bookings: <span className='bold'>{summary.ft}</span></li>
             </ul>
         </div>
     );
