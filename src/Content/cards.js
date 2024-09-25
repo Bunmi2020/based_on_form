@@ -47,15 +47,14 @@ function Cards({ content }) {
                 <MatchDetails stadium={stadium} weather={Weather} pitch_condition={pitch_condition} referee={referee} type_of_match={type_of_match} />
                 <TeamInfo team={away_team} />
             </div>
-            <Summary summary={summary.cards} id ="prediction"/>
+            
             <ProvocativePlayers home_provocative={home_provocative} away_provocative={away_provocative} />
              
             <AggressivePlayers home_aggressive={home_aggressive} away_aggressive={away_aggressive} />
             <HeadToHeadFouls home_team={home_team} away_team={away_team} fouls={fouls} HT_cards={HT_cards} FT_cards={FT_cards} teams={teams}/>
             <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams}/>
             <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams}/>
-             
-            
+            <Summary summary={summary.cards} id ="prediction"/>
             
         </div>
     );

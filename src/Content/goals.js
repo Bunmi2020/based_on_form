@@ -48,12 +48,12 @@ function Goals({ content }) {
                 <MatchDetails stadium={stadium} weather={weather} pitch_condition={pitch_condition} type_of_match={type_of_match} />
                 <TeamInfo team={away_team} />
             </div>
-            <Summary summary={summary.goals} id ="prediction"/>
-            <UnavailablePlayers home_unavailable={home_unavailable} away_unavailable={away_unavailable} />
+           <UnavailablePlayers home_unavailable={home_unavailable} away_unavailable={away_unavailable} />
              
             <HeadToHeadGoals home_team={home_team} away_team={away_team} goals={goals} x_goals={x_goals} teams={teams}/>
             <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams}/>
             <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams}/>
+             <Summary summary={summary.goals} id ="prediction"/>
              
             
             
