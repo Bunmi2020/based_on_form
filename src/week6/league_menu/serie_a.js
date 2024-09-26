@@ -10,7 +10,7 @@ function SerieAMenu({ setContent }) {
     const [arrow, setArrow] = useState(down);
     
     useEffect(() => {
-        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_five/serie_a.json';
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_six/serie_a.json';
 
         fetch(apiUrl, {
             method: 'GET',

@@ -16,6 +16,7 @@ import ConsentPopup from './consent';
 import { Helmet } from 'react-helmet';
 import SeptOne from './week4/Home';
 import SeptTwo from './week5/Home';
+import SeptThree from './week6/Home';
 
 
 function App() {
@@ -31,12 +32,12 @@ function App() {
             ></script>
             <meta name="google-adsense-account" content="ca-pub-4268079192646406"></meta>
     </Helmet>
-      <TopMenu />
+      <TopMenu className='top_menu'/>
       <Routes >
           <Route path="/30-1_sept" element={<HomeNew />} />
           <Route path="/13-16_sept" element={<SeptOne />} />
-          
-          <Route path="/" element={<SeptTwo />} />
+          <Route path="/27-30_sept" element={<SeptThree />} />
+          <Route path="/" element={<SeptThree />} />
           <Route path="/20-23_sept" element={<SeptTwo />} />
           <Route path="/about" element={<About />} />
           <Route path="/FAQ" element={<FAQ />} />

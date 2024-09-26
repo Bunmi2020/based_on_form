@@ -66,7 +66,7 @@ function SeptTwo () {
 
   useEffect(() => {
     const handleScroll = () => {
-      const shouldShowButton = window.pageYOffset < 50 || window.pageYOffset > 900; // change this number as needed
+      const shouldShowButton = window.pageYOffset < 20 || window.pageYOffset > 900; // change this number as needed
       setIsVisible(shouldShowButton);
     };
 

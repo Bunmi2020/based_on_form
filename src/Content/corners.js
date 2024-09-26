@@ -22,7 +22,7 @@ function Corners({ content }) {
 
     if (!content) return null;
 
-    const { home_team, away_team, stadium, weather, pitch_condition, type_of_match, head_to_head, summary, fixture } = content;
+    const { home_team, away_team, stadium, weather, league, pitch_condition, type_of_match, head_to_head, summary, fixture } = content;
     const { corners, teams } = head_to_head;
     const { recent_matches: home_recent, unavailable_attacking_players: home_unavailable } = home_team;
     const { recent_matches: away_recent, unavailable_attacking_players: away_unavailable } = away_team;
@@ -46,7 +46,7 @@ function Corners({ content }) {
         </Helmet>
             <div className="match_info">
                 <TeamInfo team={home_team} />
-                <MatchDetails stadium={stadium} weather={weather} pitch_condition={pitch_condition} type_of_match={type_of_match} />
+                <MatchDetails stadium={stadium} league={league} weather={weather} pitch_condition={pitch_condition} type_of_match={type_of_match} />
                 <TeamInfo team={away_team} />
             </div>
              
@@ -77,10 +77,14 @@ function TeamInfo({ team }) {
     );
 }
 
-function MatchDetails({ stadium, weather, pitch_condition, type_of_match }) {
+function MatchDetails({ stadium, weather, league, pitch_condition, type_of_match }) {
     return (
         <table className="match_info_table">
             <tbody>
+                <tr>
+                    <td id="icon" title='stadium'> </td>
+                    <td id="stadium">{league}</td>
+                </tr>
                 <tr>
                     <td id="icon" title='stadium'><img src={StadiumIcon} alt="stadium" /> </td>
                     <td id="stadium">{stadium}</td>

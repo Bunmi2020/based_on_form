@@ -20,7 +20,7 @@ import SearchBar from './search';
 import EredivisieMenu from './league_menu/eredivisie';
 import BundesligaMenu from './league_menu/bundesliga';
 
-function SeptTwo () {
+function SeptThree () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
@@ -38,12 +38,12 @@ function SeptTwo () {
 
   // Fetch data from multiple URLs
   const urls = [
-    'https://bunmi2020.github.io/bnf_data/week_five/serie_a.json',
-    'https://bunmi2020.github.io/bnf_data/week_five/pl.json',
-    'https://bunmi2020.github.io/bnf_data/week_five/ligue_1.json',
-    'https://bunmi2020.github.io/bnf_data/week_five/eredivisie.json',
-    'https://bunmi2020.github.io/bnf_data/week_five/la_liga.json',
-    'https://bunmi2020.github.io/bnf_data/week_five/bundesliga.json'
+    'https://bunmi2020.github.io/bnf_data/week_six/serie_a.json',
+    'https://bunmi2020.github.io/bnf_data/week_six/pl.json',
+    'https://bunmi2020.github.io/bnf_data/week_six/ligue_1.json',
+    'https://bunmi2020.github.io/bnf_data/week_six/eredivisie.json',
+    'https://bunmi2020.github.io/bnf_data/week_six/la_liga.json',
+    'https://bunmi2020.github.io/bnf_data/week_six/bundesliga.json'
   ];
 
   useEffect(() => {
@@ -66,7 +66,7 @@ function SeptTwo () {
 
   useEffect(() => {
     const handleScroll = () => {
-      const shouldShowButton = window.pageYOffset < 50 || window.pageYOffset > 900; // change this number as needed
+      const shouldShowButton = window.pageYOffset < 20 || window.pageYOffset > 900; // change this number as needed
       setIsVisible(shouldShowButton);
     };
 
@@ -235,4 +235,4 @@ function SeptTwo () {
   );
 }
 
-export default SeptTwo;
+export default SeptThree;

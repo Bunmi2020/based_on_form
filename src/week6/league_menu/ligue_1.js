@@ -10,7 +10,7 @@ function Ligue1Menu({ setContent }) {
     const [arrow, setArrow] = useState(down);
     
     useEffect(() => {
-        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_five/ligue_1.json';
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_six/ligue_1.json';
 
         fetch(apiUrl, {
             method: 'GET',

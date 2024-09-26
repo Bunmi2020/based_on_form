@@ -185,18 +185,43 @@ header .comment_button {
 }
 }
 
+.top_menu {
+  width: 100%;
+}
+
 
 /* TopMenu Styling */
 .top_header {
   display: flex;
-  
-  
+  flex-direction: row; /* Reverse the direction to display "current-week" first */
   padding: 10px;
-  
+  min-width: 360px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of content */
+  position: relative; /* For shadow positioning */
+  scroll-behavior: smooth; /* Smooth scroll on load */
 }
+
+.top_header::-webkit-scrollbar {
+  height: 2px; /* Set a small height for the scrollbar */
+  background: rgba(0, 0, 0, 0.1); /* Light background for the scrollbar track */
+}
+
+.top_header::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color); /* Customize the scrollbar thumb */
+  border-radius: 10px;
+}
+
+
 
 .navbar__menu {
   text-decoration: none;
+  display: inline-block;
+}
+
+.history_nav {
+  color: white;
+  margin: auto;
 }
 
 .top_header button {
@@ -206,18 +231,34 @@ header .comment_button {
   border: none;
   border-radius: 7px;
   padding: 10px 20px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 @media (max-width: 410px) {
   .top_header button {
     padding: 7px 10px;
   }
+
+  /* Shadow effect on the left side */
+.top_header::before {
+  content: "<<<";
+  padding: 15px 10px;
+  z-index: 14;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px; /* Adjust shadow width */
+  
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent); /* Dark shadow gradient */
+  pointer-events: none; /* Prevent interaction with the shadow */
 }
+}
+
 .top_header button:hover {
   background-color: var(--secondary-color);
 }
@@ -227,10 +268,4 @@ header .comment_button {
   background-color: rgb(176, 223, 176);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(2px);
-}
-
-.PS {
-  color: rgb(71, 12, 12);
-  font-size: 17px;
-  font-style: italic;
 }
