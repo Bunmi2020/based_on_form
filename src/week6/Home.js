@@ -19,6 +19,11 @@ import { Helmet } from 'react-helmet';
 import SearchBar from './search';
 import EredivisieMenu from './league_menu/eredivisie';
 import BundesligaMenu from './league_menu/bundesliga';
+ 
+import Friday from './day_fixture/friday';
+import Saturday from './day_fixture/saturday';
+import Sunday from './day_fixture/sunday';
+import Monday from './day_fixture/monday';
 
 function SeptThree () {
   ReactGA.send({
@@ -175,25 +180,20 @@ function SeptThree () {
           </div>
         )}
         {!content ? (
-          <div className='default'>
-          <SearchBar fixtures={fixtures} setContent={setContent} />
-            
+                     
           <div className='content_default' id='default'>
             <h3>Welcome to Based on Form!</h3>
             <h5>Your Ultimate Football Betting Companion</h5>
-            <h6>We offer:</h6>
-            <ul>
-              <li>Comprehensive analysis of 55+ weekly matches across Europe's top leagues</li>
-              <li>200+ free predictions to enhance your betting strategy</li>
-              <li>In-depth coverage of Ligue 1, Serie A, Premier League, La Liga, Bundesliga, and Eredivisie</li>
-              <li>Key factors and data insights to inform your decisions</li>
-             
-            </ul>
-            <p>Make smarter bets with our expert insights!</p>
-            <p className='highlight_p'>Ready to elevate your betting game? Simply search or select a fixture from the menu to access match-specific betting insights and predictions.</p>
-            <p>Maximize your chances of winnings with Based on Form!</p>
+            
+            <p className='highlight_p'>Ready to elevate your football betting game? Simply search or select a fixture to access match-specific betting insights and predictions.</p>
+            
+            <Friday fixtures={fixtures} setContent={setContent} />
+            <Saturday fixtures={fixtures} setContent={setContent} />
+            <Sunday fixtures={fixtures} setContent={setContent} />
+            <Monday fixtures={fixtures} setContent={setContent} />
+           
           </div>
-          </div>
+          
         ) : (
           <div className='content' id='main'>
             <SearchBar fixtures={fixtures} setContent={setContent} />
