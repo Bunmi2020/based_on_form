@@ -182,11 +182,28 @@ function SeptThree () {
         {!content ? (
                      
           <div className='content_default' id='default'>
-            <h3>Welcome to Based on Form!</h3>
-            <h5>Your Ultimate Football Betting Companion</h5>
-            
-            <p className='highlight_p'>Ready to elevate your football betting game? Simply search or select a fixture to access match-specific betting insights and predictions.</p>
-            
+          <h3>🔍 Weekend's Prediction Scorecard</h3>
+                      <dl title='75% accuracy'>🎯 Out of 208 weekend predictions, 155 hit the mark!</dl>
+                      <ul>
+                          <li title='70% accuracy' className='medium_accuracy'>🏹 Corners: <strong>45/65</strong></li>
+                          <li title='74% accuracy' className='medium_accuracy'>⚽ Goals: <strong>53/72</strong></li>
+                          <li title='80% accuracy' className='high_accuracy'>🔴 Cards: <strong>57/71</strong></li>
+                      </ul>
+                      <dl>🌟 Top Performing Predictions</dl>
+                      <ul>
+                          
+                      <li className='high_accuracy'>🇬🇧 Premier League - Corners: <strong>9/11</strong></li>
+                      <li className='high_accuracy'>🇬🇧 Premier League - Cards: <strong>13/14</strong></li>
+                    
+                      <li className='high_accuracy'>🇪🇸 La Liga - Goals: <strong>14/14</strong></li>
+                      
+                      <li className='high_accuracy'>🇫🇷 Ligue 1 - Cards: <strong>9/11</strong></li>
+                      <li className='high_accuracy'>🇩🇪 Bundesliga - Cards: <strong>8/9</strong></li>
+                      <li className='high_accuracy'>🇳🇱 Eredivisie - Cards: <strong>8/9</strong></li>
+                      <li className='high_accuracy'>🇳🇱 Eredivisie - Corners: <strong>10/12</strong></li>
+
+                      </ul>
+                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with actual results!</p>
             <Friday fixtures={fixtures} setContent={setContent} />
             <Saturday fixtures={fixtures} setContent={setContent} />
             <Sunday fixtures={fixtures} setContent={setContent} />

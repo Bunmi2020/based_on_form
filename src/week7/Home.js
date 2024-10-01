@@ -19,8 +19,13 @@ import { Helmet } from 'react-helmet';
 import SearchBar from './search';
 import EredivisieMenu from './league_menu/eredivisie';
 import BundesligaMenu from './league_menu/bundesliga';
+ 
+import Friday from './day_fixture/friday';
+import Saturday from './day_fixture/saturday';
+import Sunday from './day_fixture/sunday';
+import Monday from './day_fixture/monday';
 
-function SeptTwo () {
+function SeptThree () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
@@ -38,12 +43,12 @@ function SeptTwo () {
 
   // Fetch data from multiple URLs
   const urls = [
-    'https://bunmi2020.github.io/bnf_data/week_five/serie_a.json',
-    'https://bunmi2020.github.io/bnf_data/week_five/pl.json',
-    'https://bunmi2020.github.io/bnf_data/week_five/ligue_1.json',
-    'https://bunmi2020.github.io/bnf_data/week_five/eredivisie.json',
-    'https://bunmi2020.github.io/bnf_data/week_five/la_liga.json',
-    'https://bunmi2020.github.io/bnf_data/week_five/bundesliga.json'
+    'https://bunmi2020.github.io/bnf_data/week_six/serie_a.json',
+    'https://bunmi2020.github.io/bnf_data/week_six/pl.json',
+    'https://bunmi2020.github.io/bnf_data/week_six/ligue_1.json',
+    'https://bunmi2020.github.io/bnf_data/week_six/eredivisie.json',
+    'https://bunmi2020.github.io/bnf_data/week_six/la_liga.json',
+    'https://bunmi2020.github.io/bnf_data/week_six/bundesliga.json'
   ];
 
   useEffect(() => {
@@ -175,35 +180,20 @@ function SeptTwo () {
           </div>
         )}
         {!content ? (
-          <div className='default'>
-          <SearchBar fixtures={fixtures} setContent={setContent} />
-            
+                     
           <div className='content_default' id='default'>
-                    <h3>🔍 Weekend's Prediction Scorecard</h3>
-                      <dl title='77% accuracy'>🎯 Out of 225 weekend predictions, 173 hit the mark!</dl>
-                      <ul>
-                          <li title='71% accuracy' className='medium_accuracy'>🏹 Corners: <strong>53/75</strong></li>
-                          <li title='75% accuracy' className='high_accuracy'>⚽ Goals: <strong>57/76</strong></li>
-                          <li title='85% accuracy' className='high_accuracy'>🔴 Cards: <strong>63/74</strong></li>
-                      </ul>
-                      <dl>🌟 Top Performing Predictions</dl>
-                      <ul>
-                          
-                      <li className='high_accuracy'>🇮🇹 Serie A - Cards: <strong>13/15</strong></li>
-                      <li className='high_accuracy'>🇮🇹 Serie A - Corners: <strong>11/14</strong></li>
-                      <li className='high_accuracy'>🇮🇹 Serie A - Goals: <strong>10/13</strong></li>
-                      <li className='high_accuracy'>🇬🇧 Premier League - Goals: <strong>12/14</strong></li>
-                      <li className='high_accuracy'>🇬🇧 Premier League - Cards: <strong>12/14</strong></li>
-                      <li className='high_accuracy'>🇪🇸 La Liga - Cards: <strong>10/13</strong></li>
-                      <li className='high_accuracy'>🇪🇸 La Liga - Goals: <strong>11/12</strong></li>
-                      <li className='high_accuracy'>🇫🇷 Ligue 1 - Corners: <strong>9/11</strong></li>
-                      <li className='high_accuracy'>🇫🇷 Ligue 1 - Cards: <strong>9/10</strong></li>
-                      <li className='high_accuracy'>🇩🇪 Bundesliga - Cards: <strong>10/11</strong></li>
-                      <li className='high_accuracy'>🇳🇱 Eredivisie - Cards: <strong>9/11</strong></li>
-                      </ul>
-                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with actual results!</p>
+            <h3>Welcome to Based on Form!</h3>
+            <h5>Your Ultimate Football Betting Companion</h5>
+            
+            <p className='highlight_p'>Ready to elevate your football betting game? Simply search or select a fixture to access match-specific betting insights and predictions.</p>
+            
+            <Friday fixtures={fixtures} setContent={setContent} />
+            <Saturday fixtures={fixtures} setContent={setContent} />
+            <Sunday fixtures={fixtures} setContent={setContent} />
+            <Monday fixtures={fixtures} setContent={setContent} />
+           
           </div>
-          </div>
+          
         ) : (
           <div className='content' id='main'>
             <SearchBar fixtures={fixtures} setContent={setContent} />
@@ -245,4 +235,4 @@ function SeptTwo () {
   );
 }
 
-export default SeptTwo;
+export default SeptThree;
