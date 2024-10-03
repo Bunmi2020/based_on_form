@@ -19,6 +19,7 @@ import { Helmet } from 'react-helmet';
 import SearchBar from './search';
 import EredivisieMenu from './league_menu/eredivisie';
 import BundesligaMenu from './league_menu/bundesliga';
+import Friday from './day_fixture/friday';
  
 
 function OctOne () {
@@ -182,7 +183,7 @@ function OctOne () {
             <h5>Your Ultimate Football Betting Companion</h5>
             
             <p className='highlight_p'>Ready to elevate your football betting game? Simply search or select a fixture to access match-specific betting insights and predictions.</p>
-            
+            <Friday fixtures={fixtures} setContent={setContent} />
            
            
           </div>
