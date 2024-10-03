@@ -37,7 +37,7 @@ function Sunday ({ setContent }) {
     return (
         <div id="days_menu" className="days_menu">
             <h5 id='Sunday'>
-                29/09 - Sunday
+                07/10 - Sunday
             </h5>
             <ul className="all_fixtures">
                         {menuItems.map((match, index) => (
