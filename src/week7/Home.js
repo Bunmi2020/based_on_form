@@ -20,12 +20,8 @@ import SearchBar from './search';
 import EredivisieMenu from './league_menu/eredivisie';
 import BundesligaMenu from './league_menu/bundesliga';
  
-import Friday from './day_fixture/friday';
-import Saturday from './day_fixture/saturday';
-import Sunday from './day_fixture/sunday';
-import Monday from './day_fixture/monday';
 
-function SeptThree () {
+function OctOne () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
@@ -43,12 +39,12 @@ function SeptThree () {
 
   // Fetch data from multiple URLs
   const urls = [
-    'https://bunmi2020.github.io/bnf_data/week_six/serie_a.json',
-    'https://bunmi2020.github.io/bnf_data/week_six/pl.json',
-    'https://bunmi2020.github.io/bnf_data/week_six/ligue_1.json',
-    'https://bunmi2020.github.io/bnf_data/week_six/eredivisie.json',
-    'https://bunmi2020.github.io/bnf_data/week_six/la_liga.json',
-    'https://bunmi2020.github.io/bnf_data/week_six/bundesliga.json'
+    'https://bunmi2020.github.io/bnf_data/week_seven/serie_a.json',
+    'https://bunmi2020.github.io/bnf_data/week_seven/pl.json',
+    'https://bunmi2020.github.io/bnf_data/week_seven/ligue_1.json',
+    'https://bunmi2020.github.io/bnf_data/week_seven/eredivisie.json',
+    'https://bunmi2020.github.io/bnf_data/week_seven/la_liga.json',
+    'https://bunmi2020.github.io/bnf_data/week_seven/bundesliga.json'
   ];
 
   useEffect(() => {
@@ -187,10 +183,7 @@ function SeptThree () {
             
             <p className='highlight_p'>Ready to elevate your football betting game? Simply search or select a fixture to access match-specific betting insights and predictions.</p>
             
-            <Friday fixtures={fixtures} setContent={setContent} />
-            <Saturday fixtures={fixtures} setContent={setContent} />
-            <Sunday fixtures={fixtures} setContent={setContent} />
-            <Monday fixtures={fixtures} setContent={setContent} />
+           
            
           </div>
           
@@ -235,4 +228,4 @@ function SeptThree () {
   );
 }
 
-export default SeptThree;
+export default OctOne;

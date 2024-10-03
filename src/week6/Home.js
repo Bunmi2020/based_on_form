@@ -28,8 +28,8 @@ import Monday from './day_fixture/monday';
 function SeptThree () {
   ReactGA.send({
     hitType: "pageview",
-    page: "/",
-    title: "Home",
+    page: "/27-30_sept",
+    title: "SeptThree Home",
   });
 
   const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component

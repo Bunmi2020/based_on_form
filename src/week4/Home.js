@@ -23,8 +23,8 @@ import BundesligaMenu from './league_menu/bundesliga';
 function SeptOne() {
   ReactGA.send({
     hitType: "pageview",
-    page: "/",
-    title: "Home",
+    page: "/13-16_sept",
+    title: "SeptOne Home",
   });
 
   const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component
