@@ -21,6 +21,7 @@ import EredivisieMenu from './league_menu/eredivisie';
 import BundesligaMenu from './league_menu/bundesliga';
 import Friday from './day_fixture/friday';
 import Saturday from './day_fixture/saturday';
+import Sunday from './day_fixture/sunday';
  
 
 function OctOne () {
@@ -186,7 +187,7 @@ function OctOne () {
             <p className='highlight_p'>Ready to elevate your football betting game? Simply search or select a fixture to access match-specific betting insights and predictions.</p>
             <Friday fixtures={fixtures} setContent={setContent} />
             <Saturday fixtures={fixtures} setContent={setContent} />
-           
+            <Sunday fixtures={fixtures} setContent={setContent} />
           </div>
           
         ) : (
