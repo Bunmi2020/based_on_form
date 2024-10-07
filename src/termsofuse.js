@@ -45,6 +45,7 @@ function TermsOfUse () {
             window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";
           `}
             </script>
+            <script type="text/javascript" async src="https://platform.foremedia.net/code/55519/analytics"></script>
             <script id="hydro_script" src="https://track.hydro.online/"></script>
           </Helmet>
         

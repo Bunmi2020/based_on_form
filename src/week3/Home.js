@@ -99,6 +99,8 @@ function HomeNew () {
           <meta name="description" content="Explore this week's football score predictions with accurate betting tips, corner statistics, and match analysis to elevate your sports betting strategy." />
           <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
 
+          <script type="text/javascript" async src="https://platform.foremedia.net/code/55519/analytics"></script>
+          
           <script id="hydro_config" type="text/javascript">
           {`
             window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";

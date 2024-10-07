@@ -127,6 +127,8 @@ function SeptTwo () {
           <meta name="description" content="Explore this week's free 200+ football predictions with accurate betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your sports betting strategy." />
           <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
 
+          <script type="text/javascript" async src="https://platform.foremedia.net/code/55519/analytics"></script>
+          
           <script id="hydro_config" type="text/javascript">
           {`
             window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";

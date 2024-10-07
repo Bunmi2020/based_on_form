@@ -131,6 +131,8 @@ function OctOne () {
           <meta name="description" content="Explore this week's free 200+ football predictions with accurate betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your sports betting strategy." />
           <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
 
+          <script type="text/javascript" async src="https://platform.foremedia.net/code/55519/analytics"></script>
+          
           <script id="hydro_config" type="text/javascript">
           {`
             window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";
@@ -181,10 +183,23 @@ function OctOne () {
         {!content ? (
                      
           <div className='content_default' id='default'>
-            <h3>Welcome to Based on Form!</h3>
-            <h5>Your Ultimate Football Betting Companion</h5>
-            
-            <p className='highlight_p'>Ready to elevate your football betting game? Simply search or select a fixture to access match-specific betting insights and predictions.</p>
+          <h3>🔍 Weekend's Prediction Scorecard</h3>
+                      <dl title='72% accuracy'>🎯 Out of 204 weekend predictions, 146 hit the mark!</dl>
+                      <dl>🌟 Top Performing Predictions</dl>
+                      <ul>
+                          
+                      <li className='high_accuracy'>🇬🇧 Premier League - Corners: <strong>11/11</strong></li>
+                      
+                      <li className='high_accuracy'>🇮🇹 Serie A - Goals: <strong>9/11</strong></li>
+                      <li className='high_accuracy'>🇫🇷 Ligue 1 - Goals: <strong>9/11</strong></li>
+                      <li className='high_accuracy'>🇫🇷 Ligue 1 - Cards: <strong>10/11</strong></li>
+                      <li className='high_accuracy'>🇩🇪 Bundesliga - Goals: <strong>11/13</strong></li>
+                      <li className='high_accuracy'>🇩🇪 Bundesliga - Corners: <strong>8/10</strong></li>
+                      <li className='high_accuracy'>🇳🇱 Eredivisie - Cards: <strong>10/11</strong></li>
+                      <li className='high_accuracy'>🇳🇱 Eredivisie - Goals: <strong>9/11</strong></li>
+
+                      </ul>
+                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with actual results!</p>
             <Friday fixtures={fixtures} setContent={setContent} />
             <Saturday fixtures={fixtures} setContent={setContent} />
             <Sunday fixtures={fixtures} setContent={setContent} />
