@@ -27,7 +27,7 @@ import Sunday from './day_fixture/sunday';
 function OctOne () {
   ReactGA.send({
     hitType: "pageview",
-    page: "/",
+    page: "/4-7_Oct",
     title: "Home",
   });
 
