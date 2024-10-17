@@ -24,7 +24,7 @@ import Saturday from './day_fixture/saturday';
 import Sunday from './day_fixture/sunday';
  
 
-function OctOne () {
+function OctTwo () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
@@ -42,12 +42,12 @@ function OctOne () {
 
   // Fetch data from multiple URLs
   const urls = [
-    'https://bunmi2020.github.io/bnf_data/week_seven/serie_a.json',
-    'https://bunmi2020.github.io/bnf_data/week_seven/pl.json',
-    'https://bunmi2020.github.io/bnf_data/week_seven/ligue_1.json',
-    'https://bunmi2020.github.io/bnf_data/week_seven/eredivisie.json',
-    'https://bunmi2020.github.io/bnf_data/week_seven/la_liga.json',
-    'https://bunmi2020.github.io/bnf_data/week_seven/bundesliga.json'
+    'https://bunmi2020.github.io/bnf_data/week_eight/serie_a.json',
+    'https://bunmi2020.github.io/bnf_data/week_eight/pl.json',
+    'https://bunmi2020.github.io/bnf_data/week_eight/ligue_1.json',
+    'https://bunmi2020.github.io/bnf_data/week_eight/eredivisie.json',
+    'https://bunmi2020.github.io/bnf_data/week_eight/la_liga.json',
+    'https://bunmi2020.github.io/bnf_data/week_eight/bundesliga.json'
   ];
 
   useEffect(() => {
@@ -233,4 +233,4 @@ function OctOne () {
   );
 }
 
-export default OctOne;
+export default OctTwo;

@@ -28,7 +28,7 @@ function OctOne () {
   ReactGA.send({
     hitType: "pageview",
     page: "/4-7_Oct",
-    title: "Home",
+    title: "OctOne Home",
   });
 
   const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component

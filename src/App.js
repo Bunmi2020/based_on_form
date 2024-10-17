@@ -18,6 +18,7 @@ import SeptOne from './week4/Home';
 import SeptTwo from './week5/Home';
 import SeptThree from './week6/Home';
 import OctOne from './week7/Home';
+import OctTwo from './week8/Home';
 
 
 function App() {
@@ -39,8 +40,9 @@ function App() {
           <Route path="/13-16_sept" element={<SeptOne />} />
           <Route path="/27-30_sept" element={<SeptThree />} />
           <Route path="/20-23_sept" element={<SeptTwo />} />
-          <Route path="/" element={<OctOne />} />
           <Route path="/4-7_Oct" element={<OctOne />} />
+          <Route path="/18-21_Oct" element={<OctTwo />} />
+          <Route path="/" element={<OctTwo />} />     
           
           <Route path="/about" element={<About />} />
           <Route path="/FAQ" element={<FAQ />} />
