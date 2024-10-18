@@ -22,6 +22,7 @@ import BundesligaMenu from './league_menu/bundesliga';
 import Friday from './day_fixture/friday';
 import Saturday from './day_fixture/saturday';
 import Sunday from './day_fixture/sunday';
+import Monday from './day_fixture/monday';
  
 
 function OctTwo () {
@@ -190,6 +191,9 @@ function OctTwo () {
             <Friday fixtures={fixtures} setContent={setContent} />
             <Saturday fixtures={fixtures} setContent={setContent} />
             <Sunday fixtures={fixtures} setContent={setContent} />
+            <Monday fixtures={fixtures} setContent={setContent} />
+
+
           </div>
           
         ) : (
