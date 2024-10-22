@@ -11,6 +11,7 @@
 .green {
   color: #023602;
 }
+
 .login-prompt-content {
   background: rgb(202, 116, 66);
   padding: 20px;
@@ -152,6 +153,7 @@ font-size: medium;
   font-size: small;
   
 }
+
 
 .signup_info {
   font-size: medium;

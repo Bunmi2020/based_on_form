@@ -11,7 +11,6 @@ import PrivacyPolicy from './privacyPolicy';
 import TermsOfUse from './termsofuse';
 import InstallBaseOnForm from './install_base_on_form';
 import TopMenu from './header';
-import HomeNew from './week3/Home';
 import ConsentPopup from './consent';
 import { Helmet } from 'react-helmet';
 import SeptOne from './week4/Home';
@@ -36,7 +35,7 @@ function App() {
     </Helmet>
       <TopMenu className='top_menu'/>
       <Routes >
-          <Route path="/30-1_sept" element={<HomeNew />} />
+          
           <Route path="/13-16_sept" element={<SeptOne />} />
           <Route path="/27-30_sept" element={<SeptThree />} />
           <Route path="/20-23_sept" element={<SeptTwo />} />

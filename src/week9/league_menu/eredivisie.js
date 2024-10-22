@@ -3,14 +3,15 @@ import './../../App.css';
 import up from './../../media/drop-up.png';
 import down from './../../media/drop-down.png';
 
-function PLMenu({ setContent }) {
+function EredivisieMenu({ setContent }) {
     const [menuItems, setMenuItems] = useState([]);
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [activeItem, setActiveItem] = useState(null);
     const [arrow, setArrow] = useState(down);
     
     useEffect(() => {
-        const apiUrl = process.env.REACT_APP_API_URL_PL_3;
+        
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_eight/eredivisie.json';
 
         fetch(apiUrl, {
             method: 'GET',
@@ -43,7 +44,7 @@ function PLMenu({ setContent }) {
     return (
         <div id="League_menu" className="League_menu">
             <li id='league' className='League_menu' onClick={toggleDropdown}>
-                Premier League <img src={arrow} alt="Menu" style={{ width: '20px', margin: 'auto 10px', padding: '5px', float: 'right'}} />
+            Eredivisie <img src={arrow} alt="Menu" style={{ width: '20px', margin: 'auto 10px', padding: '5px', float: 'right'}} />
             </li>
             {isDropdownVisible && (
                 <ul className="dropdown_menu">
@@ -63,4 +64,4 @@ function PLMenu({ setContent }) {
     );
 }
 
-export default PLMenu;
+export default EredivisieMenu;
