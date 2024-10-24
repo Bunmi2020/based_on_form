@@ -8,7 +8,7 @@ function Sidebar() {
   const [cardPicks, setCardPicks] = useState([]);
 
   useEffect(() => {
-    const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_eight/side_bar.json';
+    const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_nine/side_bar.json';
 
     fetch(apiUrl, {
       method: 'GET',

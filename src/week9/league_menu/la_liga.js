@@ -11,7 +11,7 @@ function LaligaMenu({ setContent }) {
     
 
     useEffect(() => {
-             const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_eight/la_liga.json';
+             const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_nine/la_liga.json';
 
         fetch(apiUrl, {
             method: 'GET',

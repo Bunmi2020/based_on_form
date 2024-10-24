@@ -25,7 +25,7 @@ import Sunday from './day_fixture/sunday';
 import Monday from './day_fixture/monday';
  
 
-function OctTwo () {
+function OctThree () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
@@ -43,12 +43,12 @@ function OctTwo () {
 
   // Fetch data from multiple URLs
   const urls = [
-    'https://bunmi2020.github.io/bnf_data/week_eight/serie_a.json',
-    'https://bunmi2020.github.io/bnf_data/week_eight/pl.json',
-    'https://bunmi2020.github.io/bnf_data/week_eight/ligue_1.json',
-    'https://bunmi2020.github.io/bnf_data/week_eight/eredivisie.json',
-    'https://bunmi2020.github.io/bnf_data/week_eight/la_liga.json',
-    'https://bunmi2020.github.io/bnf_data/week_eight/bundesliga.json'
+    'https://bunmi2020.github.io/bnf_data/week_nine/serie_a.json',
+    'https://bunmi2020.github.io/bnf_data/week_nine/pl.json',
+    'https://bunmi2020.github.io/bnf_data/week_nine/ligue_1.json',
+    'https://bunmi2020.github.io/bnf_data/week_nine/eredivisie.json',
+    'https://bunmi2020.github.io/bnf_data/week_nine/la_liga.json',
+    'https://bunmi2020.github.io/bnf_data/week_nine/bundesliga.json'
   ];
 
   useEffect(() => {
@@ -170,14 +170,14 @@ function OctTwo () {
       <div className="Home">
         {(isToggle || screenWidth > 959) && (
           <div className='Side_menu'>
-            <BundesligaMenu setContent={handleMenuItemClick} />
-            <PLMenu setContent={handleMenuItemClick} />
-            <SerieAMenu setContent={handleMenuItemClick} />
             
-            <LaligaMenu setContent={handleMenuItemClick} />
             <EredivisieMenu setContent={handleMenuItemClick} />
             <Ligue1Menu setContent={handleMenuItemClick} />
+            <PLMenu setContent={handleMenuItemClick} />
+            <SerieAMenu setContent={handleMenuItemClick} />
+            <BundesligaMenu setContent={handleMenuItemClick} />
             
+            <LaligaMenu setContent={handleMenuItemClick} />
             
           </div>
         )}
@@ -237,4 +237,4 @@ function OctTwo () {
   );
 }
 
-export default OctTwo;
+export default OctThree;

@@ -10,7 +10,7 @@ function PLMenu({ setContent }) {
     const [arrow, setArrow] = useState(down);
     
     useEffect(() => {
-        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_eight/pl.json';
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_nine/pl.json';
 
         fetch(apiUrl, {
             method: 'GET',

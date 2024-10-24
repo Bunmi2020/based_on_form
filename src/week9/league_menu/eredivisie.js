@@ -11,7 +11,7 @@ function EredivisieMenu({ setContent }) {
     
     useEffect(() => {
         
-        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_eight/eredivisie.json';
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_nine/eredivisie.json';
 
         fetch(apiUrl, {
             method: 'GET',
