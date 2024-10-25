@@ -76,7 +76,7 @@ function Sidebar() {
       <h3>Our Top Picks</h3>
 
       <ul className="top_picks">
-        <p>Corners top picks</p>
+        <p>Cards top picks (1) </p>
         {cornerPicks.map((match, index) => (
           <li key={index}>
             {match.matchLabel}:
@@ -98,7 +98,7 @@ function Sidebar() {
       </ul>
 
       <ul className="top_picks">
-        <p>Cards top picks</p>
+        <p>Cards top picks (2)</p>
         {cardPicks.map((match, index) => (
           <li key={index}>
             {match.matchLabel}:
