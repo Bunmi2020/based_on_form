@@ -75,38 +75,7 @@ function Sidebar() {
       </Helmet>
       <h3>Our Top Picks</h3>
 
-      <ul className="top_picks">
-        <p>Cards top picks (1) </p>
-        {cornerPicks.map((match, index) => (
-          <li key={index}>
-            {match.matchLabel}:
-            <br />
-            <i className="bold">{match.matchDetail}</i>
-          </li>
-        ))}
-      </ul>
-
-      <ul className="top_picks">
-        <p>Goals top picks</p>
-        {goalPicks.map((match, index) => (
-          <li key={index}>
-            {match.matchLabel}:
-            <br />
-            <i className="bold">{match.matchDetail}</i>
-          </li>
-        ))}
-      </ul>
-
-      <ul className="top_picks">
-        <p>Cards top picks (2)</p>
-        {cardPicks.map((match, index) => (
-          <li key={index}>
-            {match.matchLabel}:
-            <br />
-            <i className="bold">{match.matchDetail}</i>
-          </li>
-        ))}
-      </ul>
+     
     </div>
   );
 }
