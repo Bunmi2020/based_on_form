@@ -184,22 +184,10 @@ function OctThree () {
         {!content ? (
                      
           <div className='content_default' id='default'>
-          <h3>🔍 Weekend's Prediction Scorecard</h3>
-                      <dl title='72% accuracy'>🎯 Out of 231 weekend predictions, 167 hit the mark!</dl>
-                      <dl>🌟 Top Performing Predictions</dl>
-                      <ul>                                            
-                      
-                      <li className='high_accuracy'>🇫🇷 Ligue 1 - Goals: <strong>12/13</strong></li>
-                      <li className='high_accuracy'>🇫🇷 Ligue 1 - Cards: <strong>12/16</strong></li>
-                      <li className='high_accuracy'>🇪🇸 La Liga - Cards: <strong>11/15</strong></li>
-                      <li className='high_accuracy'>🇪🇸 La Liga - Corners: <strong>9/12</strong></li>
-                      <li className='high_accuracy'>🇳🇱 Eredivisie - Corners: <strong>11/14</strong></li>
-                      <li className='high_accuracy'>🇩🇪 Bundesliga - Goals: <strong>10/13</strong></li>
-                      <li className='high_accuracy'>🇩🇪 Bundesliga - Corners: <strong>9/11</strong></li>
-                      <li className='high_accuracy'>🇬🇧 Premier League - Cards: <strong>11/13</strong></li>
-                      <li className='high_accuracy'>🇬🇧 Premier League - Goals: <strong>14/17</strong></li>
-                      </ul>
-                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with actual results!</p>
+            <h3>Welcome to Based on Form!</h3>
+            <h5>Your Ultimate Football Betting Companion</h5>
+            
+            <p className='highlight_p'>Ready to elevate your football betting game? Simply search or select a fixture to access match-specific betting insights and predictions.</p>
             <Friday fixtures={fixtures} setContent={setContent} />
             <Saturday fixtures={fixtures} setContent={setContent} />
             <Sunday fixtures={fixtures} setContent={setContent} />
