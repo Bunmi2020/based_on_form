@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a767fffb.css",
-    "main.js": "/static/js/main.9bd6023b.js",
+    "main.css": "/static/css/main.c0501aaa.css",
+    "main.js": "/static/js/main.3a036c74.js",
     "static/js/453.b06b44aa.chunk.js": "/static/js/453.b06b44aa.chunk.js",
     "static/media/football-488714_1920.jpg": "/static/media/football-488714_1920.869676a27145840bc0ab.jpg",
     "static/media/logo.png": "/static/media/logo.0cfbdfd0f2c5d4e232b3.png",
@@ -9,7 +9,6 @@
     "static/media/iph_6.jpg": "/static/media/iph_6.5b86075b27e558d71d6c.jpg",
     "static/media/whistle.png": "/static/media/whistle.042ab5edab7ac7027853.png",
     "static/media/and_6.jpg": "/static/media/and_6.d1e75969732f62845687.jpg",
-    "static/media/stadium.png": "/static/media/stadium.cc3854dc896787f16acf.png",
     "static/media/and_3.jpg": "/static/media/and_3.403a165f61af9e36fd24.jpg",
     "static/media/and_1.jpg": "/static/media/and_1.36db2be2b8b5241bb8e0.jpg",
     "static/media/iph_3.jpg": "/static/media/iph_3.722444e3d6a1ef32a16c.jpg",
@@ -21,17 +20,16 @@
     "static/media/and_4.jpg": "/static/media/and_4.1a708a4032d7df888a3b.jpg",
     "static/media/google.png": "/static/media/google.cadee8cdb0c0afb1a713.png",
     "static/media/twitter.png": "/static/media/twitter.e58e4997ef85cbd7054c.png",
-    "static/media/cloudy_sunny.png": "/static/media/cloudy_sunny.a6d0b7d87d2022baaf47.png",
-    "static/media/football-field.png": "/static/media/football-field.259c758479d90c7ff0cc.png",
+    "static/media/searching-bar.png": "/static/media/searching-bar.e21534c50161a2f513a7.png",
     "static/media/linkedin.png": "/static/media/linkedin.f249b38224ca41a0b909.png",
     "index.html": "/index.html",
     "static/media/desktop1.PNG": "/static/media/desktop1.b5ce2992aeeb62a3b48f.PNG",
-    "main.a767fffb.css.map": "/static/css/main.a767fffb.css.map",
-    "main.9bd6023b.js.map": "/static/js/main.9bd6023b.js.map",
+    "main.c0501aaa.css.map": "/static/css/main.c0501aaa.css.map",
+    "main.3a036c74.js.map": "/static/js/main.3a036c74.js.map",
     "453.b06b44aa.chunk.js.map": "/static/js/453.b06b44aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a767fffb.css",
-    "static/js/main.9bd6023b.js"
+    "static/css/main.c0501aaa.css",
+    "static/js/main.3a036c74.js"
   ]
 }
