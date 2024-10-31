@@ -14,7 +14,7 @@ import LaligaMenu from './league_menu/la_liga';
 import Sidebar from './sideBar';
 import menu from '../media/menu-bar.png';
 import chat from '../media/chat.png';
-import search from '../media/searching-bar.png';
+
 import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import SearchBar from './search';
@@ -190,6 +190,10 @@ function NovOne () {
             
             <p className='highlight_p'>Ready to elevate your football betting game? Simply search or select a fixture to access match-specific betting insights and predictions.</p>
             
+            <Friday fixtures={fixtures} setContent={setContent} />
+            <Saturday fixtures={fixtures} setContent={setContent} />
+            <Sunday fixtures={fixtures} setContent={setContent} />
+            <Monday fixtures={fixtures} setContent={setContent} />
           </div>
           
         ) : (
