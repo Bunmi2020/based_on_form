@@ -64,8 +64,7 @@ function TeamInfo({ team }) {
     return (
         <div className="team_info">
             <img src={team.team_logo} alt={team.name} />
-            
-            <h5 title='Coach'> <span>{team.coach}</span></h5>
+            <h5>{team.name}</h5>
             <ul className='style_of_play'>
                 <li title='Playing style'>{team.playing_style}</li>
                 <li title='Attacking style'>{team.attacking_style}</li>
