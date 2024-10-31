@@ -4,9 +4,6 @@ import ReactGA from 'react-ga4';
 import './../App.css';
 import './content.css';
 
-import StadiumIcon from './../media/stadium.png';
-import WeatherIcon from './../media/cloudy_sunny.png';
-import PitchIcon from './../media/football-field.png';
 import RefIcon from './../media/whistle.png';
 import { Helmet } from 'react-helmet';
 
@@ -20,7 +17,7 @@ function Cards({ content }) {
 
     if (!content) return null;
 
-    const { home_team, away_team, stadium, league, weather, pitch_condition, referee, type_of_match, head_to_head, summary, fixture } = content;
+    const { home_team, away_team, league, referee, type_of_match, head_to_head, summary, fixture } = content;
     const { fouls, HT_cards, FT_cards, teams } = head_to_head;
     const { recent_matches: home_recent, provocative_players: home_provocative, aggressive_players: home_aggressive } = home_team;
     const { recent_matches: away_recent, provocative_players: away_provocative, aggressive_players: away_aggressive } = away_team;
@@ -44,7 +41,7 @@ function Cards({ content }) {
         </Helmet>
             <div className="match_info">
                 <TeamInfo team={home_team} />
-                <MatchDetails stadium={stadium} league={league} weather={weather} pitch_condition={pitch_condition} referee={referee} type_of_match={type_of_match} />
+                <MatchDetails league={league} referee={referee} type_of_match={type_of_match} />
                 <TeamInfo team={away_team} />
             </div>
             
@@ -65,8 +62,7 @@ function TeamInfo({ team }) {
         <div className="team_info">
             <img src={team.team_logo} alt={team.name} />
             <h5>{team.name}</h5>
-            <h5 title='Coach'> <span>{team.coach}</span></h5>
-            <ul className='style_of_play'>
+           <ul className='style_of_play'>
                 <li title='Playing style'>{team.playing_style}</li>
                 <li title='Pressing style'>{team.pressing_style}</li>
                 <li title='Defensive style'>{team.defensive_style}</li>
@@ -76,40 +72,28 @@ function TeamInfo({ team }) {
     );
 }
 
-function MatchDetails({ stadium, weather, league, pitch_condition, referee, type_of_match }) {
+function MatchDetails({ league, referee, type_of_match }) {
     return (
         <table className="match_info_table">
             <tbody>
                 <tr>
-                    <td id="icon" title='stadium'> </td>
+                    
                     <td id="stadium">{league}</td>
                 </tr>
+                
                 <tr>
-                    <td id="icon" title='stadium'><img src={StadiumIcon} alt="stadium" /> </td>
-                    <td id="stadium">{stadium}</td>
+                    <td id="type_of_match"><span className='type_of_match' title='Type of Match'>ToM: </span>{type_of_match}</td>
                 </tr>
                 <tr>
-                    <td id="icon" title='weather'><img src={WeatherIcon} alt="weather" /> </td>
-                    <td id="weather">{weather}</td>
+                    <td id="referee"><span id="icon" title='Referee'><img src={RefIcon} alt="referee" /></span>
+                    {referee.name}</td>
                 </tr>
                 <tr>
-                    <td id="icon" title='Pitch Condition'><img src={PitchIcon} alt="pitch" /> </td>
-                    <td id="pitch">{pitch_condition}</td>
-                </tr>
-                <tr>
-                    <td className='type_of_match' title='Type of Match'>ToM: </td>
-                    <td id="type_of_match">{type_of_match}</td>
-                </tr>
-                <tr>
-                    <td id="icon" title='Referee'><img src={RefIcon} alt="referee" /></td>
-                    <td id="referee">{referee.name}</td>
-                </tr>
-                <tr>
-                    <td> </td>
+                    
                     <td id="referee" title='fouls per tackle'>f/tkl: {referee.fouls_per_tackle}</td>
                 </tr>
                 <tr>
-                    <td> </td>
+                    
                     <td id="referee" title='yellow per game'>y/gm: {referee.yellow_per_game}</td>
                 </tr>
             </tbody>

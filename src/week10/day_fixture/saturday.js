@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './../../App.css';
 
-function Sunday ({ setContent }) {
+function Saturday ({ setContent }) {
     const [menuItems, setMenuItems] = useState([]);
     const [activeItem, setActiveItem] = useState(null);
     
     
     useEffect(() => {
         
-        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_nine/days/sunday.json';
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_ten/days/saturday.json';
 
         fetch(apiUrl, {
             method: 'GET',
@@ -36,8 +36,8 @@ function Sunday ({ setContent }) {
 
     return (
         <div id="days_menu" className="days_menu">
-            <h5 id='Sunday'>
-                27/10 - Sunday
+            <h5 id='Saturday'>
+                26/10 - Saturday
             </h5>
             <ul className="all_fixtures">
                         {menuItems.map((match, index) => (
@@ -55,4 +55,4 @@ function Sunday ({ setContent }) {
     );
 }
 
-export default Sunday;
+export default Saturday;

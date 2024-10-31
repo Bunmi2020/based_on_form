@@ -8,7 +8,7 @@ function Sidebar() {
   const [cardPicks, setCardPicks] = useState([]);
 
   useEffect(() => {
-    const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_nine/side_bar.json';
+    const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_ten/side_bar.json';
 
     fetch(apiUrl, {
       method: 'GET',
@@ -75,7 +75,38 @@ function Sidebar() {
       </Helmet>
       <h3>Our Top Picks</h3>
 
-     
+      <ul className="top_picks">
+        <p>Corners top picks</p>
+        {cornerPicks.map((match, index) => (
+          <li key={index}>
+            {match.matchLabel}:
+            <br />
+            <i className="bold">{match.matchDetail}</i>
+          </li>
+        ))}
+      </ul>
+
+      <ul className="top_picks">
+        <p>Goals top picks</p>
+        {goalPicks.map((match, index) => (
+          <li key={index}>
+            {match.matchLabel}:
+            <br />
+            <i className="bold">{match.matchDetail}</i>
+          </li>
+        ))}
+      </ul>
+
+      <ul className="top_picks">
+        <p>Cards top picks</p>
+        {cardPicks.map((match, index) => (
+          <li key={index}>
+            {match.matchLabel}:
+            <br />
+            <i className="bold">{match.matchDetail}</i>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

@@ -25,31 +25,31 @@ function TopMenu () {
   return (
     <div className="top_header" ref={topMenuRef}>
        
-       
-     <NavLink  to="/20-23_sept" 
-          className="navbar__menu"
-          onClick={() => handleButtonClick('oldest-week')}>
-            <button className={activeButton === 'oldest-week' ? 'active' : ''}>20-23 Sept.</button>
-      </NavLink>
+    
       <NavLink  to="/27-30_sept" 
           className="navbar__menu"
-          onClick={() => handleButtonClick('old-week')}>
-            <button className={activeButton === 'old-week' ? 'active' : ''}>27-30 Sept.</button>
+          onClick={() => handleButtonClick('oldest-week')}>
+            <button className={activeButton === 'oldest-week' ? 'active' : ''}>27-30 Sept.</button>
       </NavLink>
       <NavLink  to="/4-7_Oct" 
           className="navbar__menu"
-          onClick={() => handleButtonClick('previous-week')}>
-            <button className={activeButton === 'previous-week' ? 'active' : ''}>4-7 Oct.</button>
+          onClick={() => handleButtonClick('old-week')}>
+            <button className={activeButton === 'old-week' ? 'active' : ''}>4-7 Oct.</button>
       </NavLink>
       <NavLink  to="/18-21_Oct" 
           className="navbar__menu"
-          onClick={() => handleButtonClick('last-week')}>
-            <button className={activeButton === 'last-week' ? 'active' : ''}>18-21 Oct.</button>
+          onClick={() => handleButtonClick('previous-week')}>
+            <button className={activeButton === 'previous-week' ? 'active' : ''}>18-21 Oct.</button>
       </NavLink>
       <NavLink  to="/25-28_Oct" 
           className="navbar__menu"
+          onClick={() => handleButtonClick('last-week')}>
+            <button className={activeButton === 'last-week' ? 'active' : ''}>25-28 Oct.</button>
+      </NavLink>
+      <NavLink  to="/01-04_Nov" 
+          className="navbar__menu"
           onClick={() => handleButtonClick('current-week')}>
-            <button className={activeButton === 'current-week' ? 'active' : ''}>25-28 Oct.</button>
+            <button className={activeButton === 'current-week' ? 'active' : ''}>01-04 Nov.</button>
       </NavLink>
       
     </div>

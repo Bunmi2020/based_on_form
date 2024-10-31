@@ -3,15 +3,14 @@ import './../../App.css';
 import up from './../../media/drop-up.png';
 import down from './../../media/drop-down.png';
 
-function LaligaMenu({ setContent }) {
+function Ligue1Menu({ setContent }) {
     const [menuItems, setMenuItems] = useState([]);
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [activeItem, setActiveItem] = useState(null);
     const [arrow, setArrow] = useState(down);
     
-
     useEffect(() => {
-             const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_nine/la_liga.json';
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_ten/ligue_1.json';
 
         fetch(apiUrl, {
             method: 'GET',
@@ -41,10 +40,11 @@ function LaligaMenu({ setContent }) {
         setActiveItem(item.fixture);
     };
 
+
     return (
         <div id="League_menu" className="League_menu">
             <li id='league' className='League_menu' onClick={toggleDropdown}>
-                La Liga <img src={arrow} alt="Menu" style={{ width: '20px', margin: 'auto 10px', padding: '5px', float: 'right'}} />
+                Ligue 1 <img src={arrow} alt="Menu" style={{ width: '20px', margin: 'auto 10px', padding: '5px', float: 'right'}} />
             </li>
             {isDropdownVisible && (
                 <ul className="dropdown_menu">
@@ -64,4 +64,4 @@ function LaligaMenu({ setContent }) {
     );
 }
 
-export default LaligaMenu;
+export default Ligue1Menu;

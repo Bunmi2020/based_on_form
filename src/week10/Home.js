@@ -14,17 +14,23 @@ import LaligaMenu from './league_menu/la_liga';
 import Sidebar from './sideBar';
 import menu from '../media/menu-bar.png';
 import chat from '../media/chat.png';
+import search from '../media/searching-bar.png';
 import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import SearchBar from './search';
 import EredivisieMenu from './league_menu/eredivisie';
 import BundesligaMenu from './league_menu/bundesliga';
+import Friday from './day_fixture/friday';
+import Saturday from './day_fixture/saturday';
+import Sunday from './day_fixture/sunday';
+import Monday from './day_fixture/monday';
+ 
 
-function SeptOne() {
+function NovOne () {
   ReactGA.send({
     hitType: "pageview",
-    page: "/13-16_sept",
-    title: "SeptOne Home",
+    page: "/",
+    title: "Home",
   });
 
   const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component
@@ -38,12 +44,12 @@ function SeptOne() {
 
   // Fetch data from multiple URLs
   const urls = [
-    'https://bunmi2020.github.io/bnf_data/week_four/serie_a.json',
-    'https://bunmi2020.github.io/bnf_data/week_four/pl.json',
-    'https://bunmi2020.github.io/bnf_data/week_four/ligue_1.json',
-    'https://bunmi2020.github.io/bnf_data/week_four/eredivisie.json',
-    'https://bunmi2020.github.io/bnf_data/week_four/la_liga.json',
-    'https://bunmi2020.github.io/bnf_data/week_four/bundesliga.json'
+    'https://bunmi2020.github.io/bnf_data/week_ten/serie_a.json',
+    'https://bunmi2020.github.io/bnf_data/week_ten/pl.json',
+    'https://bunmi2020.github.io/bnf_data/week_ten/ligue_1.json',
+    'https://bunmi2020.github.io/bnf_data/week_ten/eredivisie.json',
+    'https://bunmi2020.github.io/bnf_data/week_ten/la_liga.json',
+    'https://bunmi2020.github.io/bnf_data/week_ten/bundesliga.json'
   ];
 
   useEffect(() => {
@@ -66,7 +72,7 @@ function SeptOne() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const shouldShowButton = window.pageYOffset < 50 || window.pageYOffset > 900; // change this number as needed
+      const shouldShowButton = window.pageYOffset < 20 || window.pageYOffset > 900; // change this number as needed
       setIsVisible(shouldShowButton);
     };
 
@@ -165,44 +171,30 @@ function SeptOne() {
       <div className="Home">
         {(isToggle || screenWidth > 959) && (
           <div className='Side_menu'>
-            <Ligue1Menu setContent={handleMenuItemClick} />
-            <SerieAMenu setContent={handleMenuItemClick} />
-            <PLMenu setContent={handleMenuItemClick} />
-            <LaligaMenu setContent={handleMenuItemClick} />
+            
             <EredivisieMenu setContent={handleMenuItemClick} />
+            <Ligue1Menu setContent={handleMenuItemClick} />
+            <PLMenu setContent={handleMenuItemClick} />
+            <SerieAMenu setContent={handleMenuItemClick} />
             <BundesligaMenu setContent={handleMenuItemClick} />
+            
+            <LaligaMenu setContent={handleMenuItemClick} />
+            
           </div>
         )}
         {!content ? (
-          <div className='default'>
-          <SearchBar fixtures={fixtures} setContent={setContent} />
-            
+                     
           <div className='content_default' id='default'>
-          <h3>🔍 This Week's Prediction Scorecard</h3>
-                      <dl title='75% accuracy'>🎯 Out of 223 weekend predictions, 167 hit the mark!</dl>
-                      <ul>
-                          <li className='high_accuracy'>🏹 Corners: <strong>61/73</strong></li>
-                          <li className='medium_accuracy'>⚽ Goals: <strong>48/75</strong></li>
-                          <li className='high_accuracy'>🔴 Cards: <strong>58/75</strong></li>
-                      </ul>
-                      <dl>🌟 Top Performing Predictions</dl>
-                      <ul>
-                          
-                      <li className='high_accuracy'>🇮🇹 Serie A - Cards: <strong>12/13</strong></li>
-                      <li className='high_accuracy'>🇪🇸 La Liga - Cards: <strong>13/15</strong></li>
-                      <li className='high_accuracy'>🇫🇷 Ligue 1 - Corners: <strong>9/10</strong></li>
-                      <li className='high_accuracy'>🇬🇧 Premier League - Corners: <strong>11/14</strong></li>
-                      <li className='high_accuracy'>🇬🇧 Premier League - Cards: <strong>11/14</strong></li>
-                      <li className='high_accuracy'>🇩🇪 Bundesliga - Corners: <strong>10/11</strong></li>
-                      <li className='high_accuracy'>🇩🇪 Bundesliga - Goals: <strong>11/14</strong></li>
-                      <li className='high_accuracy'>🇳🇱 Eredivisie - Corners: <strong>11/11</strong></li>
-                      </ul>
-                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with actual results!</p>
+            <h3>Welcome to Based on Form!</h3>
+            <h5>Your Ultimate Football Betting Companion</h5>
+            
+            <p className='highlight_p'>Ready to elevate your football betting game? Simply search or select a fixture to access match-specific betting insights and predictions.</p>
+            
           </div>
-          </div>
+          
         ) : (
           <div className='content' id='main'>
-            <SearchBar fixtures={fixtures} setContent={setContent} />
+            <SearchBar fixtures={fixtures} setContent={setContent} id='search'/>
             <ul className="content-menu"
              style={{
                       position: isScrollingUp ? 'sticky' : 'relative',
@@ -216,8 +208,8 @@ function SeptOne() {
             </ul>
             <div className='content_body'>
               {activeComponent === 'corners' && <Corners content={content} />}
-              {activeComponent === 'goals' && <Goals content={content} />}
               {activeComponent === 'cards' && <Cards content={content} />}
+              {activeComponent === 'goals' && <Goals content={content} />}
             </div>
             <HashLink smooth to="/#prediction"><span style={{ width: '4.5em', display: isVisible ? 'none' : 'flex', position: 'fixed',flexDirection: 'column',justifyContent: 'center', zIndex: 9, boxShadow: '3px, 2px, gray',
                             bottom: '0%',
@@ -229,7 +221,7 @@ function SeptOne() {
                             cursor: 'pointer',
                             color: 'white',
                             margin: '1em 0.5em',
-                            padding: '0.5em 1em'}}>{activeComponent}'s prediction</span></HashLink>
+                            padding: '0.5em 1em'}}>{activeComponent}' prediction</span></HashLink>
 
             </div>
         )}
@@ -241,4 +233,4 @@ function SeptOne() {
   );
 }
 
-export default SeptOne;
+export default NovOne;

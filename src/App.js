@@ -13,12 +13,13 @@ import InstallBaseOnForm from './install_base_on_form';
 import TopMenu from './header';
 import ConsentPopup from './consent';
 import { Helmet } from 'react-helmet';
-import SeptOne from './week4/Home';
+
 import SeptTwo from './week5/Home';
 import SeptThree from './week6/Home';
 import OctOne from './week7/Home';
 import OctTwo from './week8/Home';
 import OctThree from './week9/Home';
+import NovOne from './week10/Home';
 
 
 function App() {
@@ -37,12 +38,13 @@ function App() {
       <TopMenu className='top_menu'/>
       <Routes >
           
-          <Route path="/13-16_sept" element={<SeptOne />} />
           <Route path="/27-30_sept" element={<SeptThree />} />
           <Route path="/20-23_sept" element={<SeptTwo />} />
           <Route path="/4-7_Oct" element={<OctOne />} />
           <Route path="/18-21_Oct" element={<OctTwo />} />
-          <Route path="/" element={<OctThree />} />     
+          <Route path="/" element={<NovOne />} />
+          <Route path="/01-04_Nov" element={<NovOne />} />  
+
           <Route path="/25-28_Oct" element={<OctThree />} />
           <Route path="/about" element={<About />} />
           <Route path="/FAQ" element={<FAQ />} />
