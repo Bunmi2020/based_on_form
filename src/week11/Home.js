@@ -26,7 +26,7 @@ import Sunday from './day_fixture/sunday';
 import Monday from './day_fixture/monday';
  
 
-function NovOne () {
+function NovTwo () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
@@ -44,12 +44,12 @@ function NovOne () {
 
   // Fetch data from multiple URLs
   const urls = [
-    'https://bunmi2020.github.io/bnf_data/week_ten/serie_a.json',
-    'https://bunmi2020.github.io/bnf_data/week_ten/pl.json',
-    'https://bunmi2020.github.io/bnf_data/week_ten/ligue_1.json',
-    'https://bunmi2020.github.io/bnf_data/week_ten/eredivisie.json',
-    'https://bunmi2020.github.io/bnf_data/week_ten/la_liga.json',
-    'https://bunmi2020.github.io/bnf_data/week_ten/bundesliga.json'
+    'https://bunmi2020.github.io/bnf_data/week_eleven/serie_a.json',
+    'https://bunmi2020.github.io/bnf_data/week_eleven/pl.json',
+    'https://bunmi2020.github.io/bnf_data/week_eleven/ligue_1.json',
+    'https://bunmi2020.github.io/bnf_data/week_eleven/eredivisie.json',
+    'https://bunmi2020.github.io/bnf_data/week_eleven/la_liga.json',
+    'https://bunmi2020.github.io/bnf_data/week_eleven/bundesliga.json'
   ];
 
   useEffect(() => {
@@ -193,7 +193,7 @@ function NovOne () {
             <Friday fixtures={fixtures} setContent={setContent} />
             <Saturday fixtures={fixtures} setContent={setContent} />
             <Sunday fixtures={fixtures} setContent={setContent} />
-            <Monday fixtures={fixtures} setContent={setContent} />
+            
           </div>
           
         ) : (
@@ -237,4 +237,4 @@ function NovOne () {
   );
 }
 
-export default NovOne;
+export default NovTwo;

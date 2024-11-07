@@ -8,7 +8,7 @@ function Sunday ({ setContent }) {
     
     useEffect(() => {
         
-        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_ten/days/sunday.json';
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_eleven/days/sunday.json';
 
         fetch(apiUrl, {
             method: 'GET',
@@ -37,7 +37,7 @@ function Sunday ({ setContent }) {
     return (
         <div id="days_menu" className="days_menu">
             <h5 id='Sunday'>
-                03/11 - Sunday
+                10/11 - Sunday
             </h5>
             <ul className="all_fixtures">
                         {menuItems.map((match, index) => (
