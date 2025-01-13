@@ -1,6 +1,6 @@
 .match_info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: #f0f0f0; /* Light grey background */
     padding: 5px;
     border-radius: 8px;
@@ -10,6 +10,29 @@
     justify-content: space-between;
     
 }
+
+.form_h2h {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+
+.match_info_head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+.match_info_style {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 
 
 .team_info img {

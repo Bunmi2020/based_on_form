@@ -131,7 +131,7 @@ header {
 
 
 .content_default {
-    background-color: #36332bc9;
+    background-color: #fff;
     height: fit-content;
     border-radius: 10px;
     font-family:'Times New Roman', Times, serif;
@@ -142,7 +142,7 @@ header {
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
-    color: #fff;
+    color: #26702c;
    
 }
 

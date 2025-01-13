@@ -17,7 +17,7 @@ function Cards({ content }) {
 
     if (!content) return null;
 
-    const { home_team, away_team, league, referee, type_of_match, head_to_head, summary, fixture } = content;
+    const { home_team, away_team, league, referee, type_of_match, head_to_head, prediction, fixture } = content;
     const { fouls, HT_cards, FT_cards, teams } = head_to_head;
     const { recent_matches: home_recent, provocative_players: home_provocative, aggressive_players: home_aggressive } = home_team;
     const { recent_matches: away_recent, provocative_players: away_provocative, aggressive_players: away_aggressive } = away_team;
@@ -40,9 +40,17 @@ function Cards({ content }) {
             ></script>
         </Helmet>
             <div className="match_info">
-                <TeamInfo team={home_team} />
-                <MatchDetails league={league} referee={referee} type_of_match={type_of_match} />
-                <TeamInfo team={away_team} />
+                <div className="match_info_head">
+                    <TeamInfo team={home_team} />
+                    <MatchDetails league={league} referee={referee} type_of_match={type_of_match} />
+                    <TeamInfo team={away_team} />
+                </div>
+                <div className="match_info_style">
+                    <TeamStyle team={home_team} />
+                    
+                    <TeamStyle team={away_team} />
+                </div>
+                
             </div>
             
             <ProvocativePlayers home_provocative={home_provocative} away_provocative={away_provocative} />
@@ -51,7 +59,7 @@ function Cards({ content }) {
             <HeadToHeadFouls home_team={home_team} away_team={away_team} fouls={fouls} HT_cards={HT_cards} FT_cards={FT_cards} teams={teams}/>
             <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams}/>
             <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams}/>
-            <Summary summary={summary.cards} id ="prediction"/>
+            <Summary prediction={prediction.cards} id ="prediction"/>
             
         </div>
     );
@@ -62,13 +70,20 @@ function TeamInfo({ team }) {
         <div className="team_info">
             <img src={team.team_logo} alt={team.name} />
             <h5>{team.name}</h5>
+           
+        </div>
+    );
+}
+
+function TeamStyle({ team }) {
+    return (
+                    
            <ul className='style_of_play'>
                 <li title='Playing style'>{team.playing_style}</li>
                 <li title='Pressing style'>{team.pressing_style}</li>
                 <li title='Defensive style'>{team.defensive_style}</li>
             </ul>
-            
-        </div>
+        
     );
 }
 
@@ -207,14 +222,14 @@ function RecentMatches({ title, recent }) {
 }
 
 
-function Summary ({ fixture, summary }) {
+function Summary ({ fixture, prediction }) {
     return (
         <div className="prediction"  id ="prediction">
         <h4>{fixture} Cards' Prediction</h4>
-            <p>{summary.discuss}</p>
+            <p>{prediction.discuss}</p>
             <ul className='prediction_list'>
-                <li>Halftime - total-cards/Booking: <span className='bold'>{summary.ht}</span> </li>
-                <li>Fulltime - total-cards/Bookings: <span className='bold'>{summary.ft}</span></li>
+                <li>Halftime - total-cards/Booking: <span className='bold'>{prediction.ht}</span> </li>
+                <li>Fulltime - total-cards/Bookings: <span className='bold'>{prediction.ft}</span></li>
             </ul>
         </div>
     );

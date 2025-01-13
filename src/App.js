@@ -14,13 +14,13 @@ import TopMenu from './header';
 import ConsentPopup from './consent';
 import { Helmet } from 'react-helmet';
 
-import SeptTwo from './week5/Home';
-import SeptThree from './week6/Home';
+
 import OctOne from './week7/Home';
 import OctTwo from './week8/Home';
 import OctThree from './week9/Home';
 import NovOne from './week10/Home';
 import NovTwo from './week11/Home';
+import JanTwo from './week13/Home';
 
 
 function App() {
@@ -39,15 +39,16 @@ function App() {
       <TopMenu className='top_menu'/>
       <Routes >
           
-          <Route path="/27-30_sept" element={<SeptThree />} />
-          <Route path="/20-23_sept" element={<SeptTwo />} />
+          
           <Route path="/4-7_Oct" element={<OctOne />} />
           <Route path="/18-21_Oct" element={<OctTwo />} />
-          <Route path="/" element={<NovTwo />} />
+          <Route path="/" element={<JanTwo />} />
           <Route path="/08-10_Nov" element={<NovTwo />} />  
           <Route path="/01-04_Nov" element={<NovOne />} />  
 
           <Route path="/25-28_Oct" element={<OctThree />} />
+          <Route path="/14-15_Jan" element={<JanTwo />} />
+
           <Route path="/about" element={<About />} />
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/privacy_policy" element={<PrivacyPolicy/>} />

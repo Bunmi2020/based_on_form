@@ -3,8 +3,21 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--accent-color);
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
+  
   font-size: larger;
+}
+
+.W {
+  color: green;
+}
+
+.L {
+  color: red;
+}
+
+.D {
+  color: blue;
 }
 
 
@@ -88,13 +101,19 @@ header .navbar__a {
 
 
 .Side_bar {
-  background-color: var(--secondary-color);
+  background-color: snow;
   border-radius: 16px;
-  width: 250px;
+  max-width: 300px;
   
   margin: 30px auto;
   padding: 10px;
   list-style-type: none;
+}
+
+.side_picks {
+  color: black;
+  text-align: left;
+  padding: 10px;
 }
 
 .Side_bar li {
@@ -102,6 +121,7 @@ header .navbar__a {
   font-size: small;
   padding: 10px auto;
   margin-bottom: 5px;
+  font-size: large;
 }
 
 .Side_bar .bold {
@@ -261,4 +281,14 @@ header  {
   background-color: rgb(176, 223, 176);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(2px);
+}
+
+.side_socials img {
+  margin: 10px;
+  width: 34px;
+  height: 34px;
+}
+
+.content-menu li {
+  font-size: large;
 }

@@ -8,19 +8,19 @@ import { Helmet } from 'react-helmet';
 
 
 
-function Goals({ content }) {
+function WinOrDraw({ content }) {
 
     ReactGA.send({
         hitType:"pageview",
         page:"/",
-        title:"Goals",
+        title:"Win or Draw",
     });
 
    
     if (!content) return null;
 
     const { home_team, away_team, league, type_of_match, head_to_head, prediction, fixture } = content;
-    const { goals, x_goals, teams } = head_to_head;
+    const { goals, x_goals, teams, win_form } = head_to_head;
     const { recent_matches: home_recent } = home_team;
     const { recent_matches: away_recent } = away_team;
 
@@ -47,18 +47,20 @@ function Goals({ content }) {
                     <MatchDetails league={league} type_of_match={type_of_match} />
                     <TeamInfo team={away_team} />
                 </div>
-                <div className="match_info_style">
-                    <TeamStyle team={home_team} />
-                    
-                    <TeamStyle team={away_team} />
+                <div className="form_h2h">
+                    <H2HHomeForm form={win_form}/>
+                    <h5> </h5>
+                    <H2HAwayForm form={win_form}/>
                 </div>
+                
                 
             </div>
 
-            <HeadToHeadGoals home_team={home_team} away_team={away_team} goals={goals} x_goals={x_goals} teams={teams}/>
-            <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams}/>
-            <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams}/>
-             <Summary prediction={prediction.goals} id ="prediction"/>
+             
+            <HeadToHeadGoals home_team={home_team} away_team={away_team} goals={goals} x_goals={x_goals} teams={teams} form={win_form}/>
+            <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams} form={home_team.win_form}/>
+            <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams} form={away_team.win_form}/>
+             <Summary prediction={prediction.win_draw} id ="prediction"/>
              
             
             
@@ -76,19 +78,31 @@ function TeamInfo({ team }) {
     );
 }
 
-function TeamStyle({ team }) {
+function H2HHomeForm({ form }) {
     return (
-                    
-           <ul className='style_of_play'>
-                <li title='Playing style'>{team.playing_style}</li>
-                <li title='Pressing style'>{team.pressing_style}</li>
-                <li title='Defensive style'>{team.defensive_style}</li>
-            </ul>
-        
+        <div className="form">
+            {form[0].map((letter, index) => (
+                <i key={index} className={`${letter}`}>
+                    {letter}
+                </i>
+            ))}
+        </div>
+    );
+}
+function H2HAwayForm({ form }) {
+    return (
+        <div className="form">
+            {form[1].map((letter, index) => (
+                <i key={index} className={`${letter}`}>
+                    {letter}
+                </i>
+            ))}
+        </div>
     );
 }
 
-function MatchDetails({ league, type_of_match }) {
+
+function MatchDetails({ stadium, weather, league, pitch_condition, type_of_match }) {
     return (
         <table className="match_info_table">
             <tbody>
@@ -107,7 +121,7 @@ function MatchDetails({ league, type_of_match }) {
     );
 }
 
-function HeadToHeadGoals({ goals, x_goals, teams }) {
+function HeadToHeadGoals({ goals, form, teams }) {
     return (
         <div className="head_to_head">
         <h3>Head to Head</h3>
@@ -115,9 +129,9 @@ function HeadToHeadGoals({ goals, x_goals, teams }) {
                 <thead>
                     <tr>
                         <th id="Small_icon"> </th>
-                        <th>X-goals</th>
+                        
                         <th id="stadium">Goals</th>
-                        <th>X-goals</th>
+                        
                         <th id="Small_icon"> </th>
                     </tr>
                 </thead>
@@ -125,9 +139,9 @@ function HeadToHeadGoals({ goals, x_goals, teams }) {
                     {Object.keys(goals).map((match, index) => (
                         <tr key={index}>
                             <td id="team_name">{teams[match][0]}</td>
-                            <td>{x_goals[match][0]}</td>
+                            
                             <td>{goals[match][0]} : {goals[match][1]}</td>
-                            <td>{x_goals[match][1]}</td>
+                            
                             <td id="team_name">{teams[match][1]}</td>
                         </tr>
                     ))}
@@ -137,8 +151,7 @@ function HeadToHeadGoals({ goals, x_goals, teams }) {
     );
 }
 
-
-function RecentMatches({ title, recent }) {
+function RecentMatches({ title, form, recent }) {
     return (
         <div className="recent_matches">
         <h3>Recent {title} Matches</h3>
@@ -146,9 +159,9 @@ function RecentMatches({ title, recent }) {
                 <thead>
                     <tr>
                         <th id="Small_icon"> </th>
-                        <th>X-goals</th>
-                        <th id="stadium">Goals</th>
-                        <th>X-goals</th>
+                        <th>Goals</th>
+                        <th id="stadium">Form</th>
+                        <th>Goals</th>
                         <th id="Small_icon"> </th>
                     </tr>
                 </thead>
@@ -156,9 +169,9 @@ function RecentMatches({ title, recent }) {
                     {Object.keys(recent.goals).map((match, index) => (
                         <tr key={index}>
                             <td id="team_name">{recent.teams[match][0]} </td>
-                            <td>{recent.x_goals[match][0]}</td>
-                            <td>{recent.goals[match][0]} : {recent.goals[match][1]}</td>
-                            <td>{recent.x_goals[match][1]}</td>
+                            <td>{recent.goals[match][0]} </td>
+                            <td className={form[index]}>{form[index]}</td>
+                            <td>{recent.goals[match][1]}</td>
                             <td id="team_name">{recent.teams[match][1]}</td>
                         </tr>
                     ))}
@@ -171,14 +184,14 @@ function RecentMatches({ title, recent }) {
 function Summary ({ fixture, prediction }) {
     return (
         <div className="prediction"  id ="prediction">
-        <h4>{fixture} Goal's Prediction</h4>
+        <h4>{fixture} Win or Draw Prediction</h4>
             <p>{prediction.discuss}</p>
             <ul className='prediction_list'>
-                <li>BTS/GG: <span className='bold'>{prediction.ht || prediction.Both_teams_to_score}</span></li>
-                <li>FT total goals: <span className='bold'>{prediction.ft || prediction.fulltime_total_goals}</span></li>
+                <li><span className='bold'>{prediction.win_or_draw}</span></li>
+                
             </ul>
         </div>
     );
 }
 
-export default Goals;
+export default WinOrDraw;
