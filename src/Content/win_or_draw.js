@@ -19,7 +19,7 @@ function WinOrDraw({ content }) {
    
     if (!content) return null;
 
-    const { home_team, away_team, league, type_of_match, head_to_head, prediction, fixture } = content;
+    const { home_team, away_team, league, type_of_match, head_to_head, prediction, fixture, position } = content;
     const { goals, x_goals, teams, win_form } = head_to_head;
     const { recent_matches: home_recent } = home_team;
     const { recent_matches: away_recent } = away_team;
@@ -47,17 +47,22 @@ function WinOrDraw({ content }) {
                     <MatchDetails league={league} type_of_match={type_of_match} />
                     <TeamInfo team={away_team} />
                 </div>
+                
                 <div className="form_h2h">
                     <H2HHomeForm form={win_form}/>
-                    <h5> </h5>
+                    <i>H2H form</i>
                     <H2HAwayForm form={win_form}/>
                 </div>
-                
+                <span id='position' className="form_h2h">
+                    <button>{position[0]}</button>
+                    <i>League Position</i>
+                    <button>{position[1]}</button>
+                </span>
                 
             </div>
 
              
-            <HeadToHeadGoals home_team={home_team} away_team={away_team} goals={goals} x_goals={x_goals} teams={teams} form={win_form}/>
+            <HeadToHeadGoals home_team={home_team} away_team={away_team} goals={goals} x_goals={x_goals} teams={teams} form={win_form} position={position}/>
             <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams} form={home_team.win_form}/>
             <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams} form={away_team.win_form}/>
              <Summary prediction={prediction.win_draw} id ="prediction"/>
