@@ -193,6 +193,9 @@ function JanTwo () {
                     <img src={facebook} alt="facebook" />
                 </a>
             </div>
+            <Friday fixtures={fixtures} setContent={setContent} />
+            <Saturday fixtures={fixtures} setContent={setContent} />
+            <Sunday fixtures={fixtures} setContent={setContent} />
             
             
           </div>

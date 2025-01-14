@@ -8,7 +8,7 @@ function Sunday ({ setContent }) {
     
     useEffect(() => {
         
-        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_eleven/days/sunday.json';
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_thirteen/days/sunday.json';
 
         fetch(apiUrl, {
             method: 'GET',

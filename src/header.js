@@ -48,7 +48,7 @@ function TopMenu () {
       <NavLink  to="/14-15_Jan" 
           className="navbar__menu"
           onClick={() => handleButtonClick('current-week')}>
-            <button className={activeButton === 'current-week' ? 'active' : ''}>14-15 Jan.</button>
+            <button className={activeButton === 'current-week' ? 'active' : ''}>14-16 Jan.</button>
       </NavLink>
       
     </div>
