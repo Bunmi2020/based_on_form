@@ -57,7 +57,6 @@ function App() {
       </Routes>
 
       <Footer />
-      <ConsentPopup />
      
     </div>
   );
