@@ -81,9 +81,9 @@ header .navbar__a {
 
 .dropdown_menu li {
   padding: 10px;
-  color: black;
+  color: white;
   margin: 5px 3px;
-  
+  background-color: rgb(6, 95, 6);
   border-radius: 10px;
   font-size: large;
   border: 1px solid var(--accent-color);
