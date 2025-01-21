@@ -78,7 +78,7 @@ function WinOrDraw({ content }) {
             <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams} form={home_team.win_form}/>
             <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams} form={away_team.win_form}/>
             <div className="prediction"  id ="prediction">
-                <h4>{fixture} Win or Draw Prediction</h4>
+                <h5>{fixture} Win or Draw Prediction</h5>
                 {user ? (
                     <Summary fixture={fixture} prediction={prediction.win_draw} id ="prediction"/>
                     ) : (

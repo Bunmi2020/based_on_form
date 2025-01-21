@@ -70,7 +70,7 @@ function Goals({ content }) {
             <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams}/>
             <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams}/>
             <div className="prediction"  id ="prediction">
-                <h4>{fixture} Goal's Prediction</h4>
+                <h5>{fixture} Goal's Prediction</h5>
                 {user ? (
                     <Summary fixture={fixture} prediction={prediction.goals} id ="prediction"/>
                     ) : (

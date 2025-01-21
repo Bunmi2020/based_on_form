@@ -39,7 +39,8 @@
 
 @media (max-width: 960px) {
     .Side_menu {
-        position: absolute;
+        position: fixed;
+        top: 10%;
         margin: 0px;
         z-index: 9;
     }
@@ -100,9 +101,10 @@
     box-shadow: 1px 2px 10px rgba(248, 248, 248, 0.4);
 }
 
-@media (max-width: 370px) {
+@media (max-width: 470px) {
     .content-menu li {
-        padding: 10px;
+        margin: 3px;
+        padding: 5px 10px;
     }
 }
 
