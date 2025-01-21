@@ -87,12 +87,15 @@ function Sidebar() {
           </a>
       </div>
       <div className='side_picks'>
-        <h3>How to check predictions</h3>
-            <h5>Ensure to signup below</h5>
+        <h4>How to check predictions</h4>
+        <a href="https://poawooptugroo.com/4/7950188" target="_blank" rel="noreferrer">
+          <h5>Ensure to signup below</h5>
+          </a>
+          
             <ul>
-              <li>Click on each fixture and see up to 7 predictions per match,</li>
-              <li>Use the menu to check the fixture per their respective league,</li>
-              <li>Or use the search bar when on an of the fixture page to search for a particular fixture</li>
+              <li><a href="https://poawooptugroo.com/4/7950188" target="_blank" rel="noreferrer">Click on each fixture and see up to 7 predictions per match,</a></li>
+              <li><a href="https://poawooptugroo.com/4/7950188" target="_blank" rel="noreferrer">Use the menu to check the fixture per their respective league,</a></li>
+              <li><a href="https://poawooptugroo.com/4/7950188" target="_blank" rel="noreferrer">Or use the search bar when on an of the fixture page to search for a particular fixture</a></li>
             </ul>
               
       </div>

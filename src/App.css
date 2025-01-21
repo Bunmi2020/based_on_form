@@ -113,6 +113,12 @@ header .navbar__a {
   list-style-type: none;
 }
 
+.side_picks a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
 .side_picks {
   color: black;
   text-align: left;

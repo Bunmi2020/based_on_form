@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactGA from 'react-ga4';
 
 import './../App.css';
 import './content.css';
 
+import { auth } from '../week14/comment/firebaseConfig';
 import { Helmet } from 'react-helmet';
+import AuthPre from '../week14/comment/Authpre';
+
 
 
 
@@ -17,6 +20,16 @@ function Corners({ content }) {
         title:"Corners",
     });
 
+    const [user, setUser] = useState(null);
+        
+          useEffect(() => {
+            const unsubscribe = auth.onAuthStateChanged((user) => {
+              setUser(user);
+            });
+        
+            return () => unsubscribe();
+          }, []);
+    
 
     if (!content) return null;
 
@@ -28,7 +41,7 @@ function Corners({ content }) {
     return (
         <div className="content_body" id={`${fixture}_corners`}>
         <Helmet>
-          <title>{fixture} - Corners: free prediction and insights</title>
+          <title>{fixture} - Corners: free betting prediction and insights</title>
           <script id="hydro_config" type="text/javascript">
           {`
             window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";
@@ -59,7 +72,15 @@ function Corners({ content }) {
             <HeadToHeadCorners home_team={home_team} away_team={away_team} corners={corners} teams={teams}/>
             <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams}/>
             <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams}/>
-             <Summary prediction={prediction.corners} id ="prediction"/>
+            <div className="prediction"  id ="prediction">
+                <h4>{fixture} Corners' Prediction</h4>
+                {user ? (
+                    <Summary fixture={fixture} prediction={prediction.corners} id ="prediction"/>
+                    ) : (
+                        
+                        <AuthPre />
+                    )}
+            </div>
            
             
         </div>
@@ -161,8 +182,8 @@ function RecentMatches({ title, recent }) {
 
 function Summary ({ fixture, prediction }) {
     return (
-        <div className="prediction"  id ="prediction">
-        <h4>{fixture} Corners' Prediction</h4>
+        <div >
+        
             <p>{prediction.discuss}</p>
             <ul className='prediction_list'>
                 <li>FT Total Corners:<span className='bold'>{prediction.ht || prediction.full_time_total_corners}</span></li>

@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactGA from 'react-ga4';
 
 import './../App.css';
 import './content.css';
 
 import RefIcon from './../media/whistle.png';
+
+import { auth } from '../week14/comment/firebaseConfig';
 import { Helmet } from 'react-helmet';
+import AuthPre from '../week14/comment/Authpre';
+
 
 function Cards({ content }) {
 
@@ -14,6 +18,16 @@ function Cards({ content }) {
         page:"/",
         title:"Cards",
     });
+
+      const [user, setUser] = useState(null);
+    
+      useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+          setUser(user);
+        });
+    
+        return () => unsubscribe();
+      }, []);
 
     if (!content) return null;
 
@@ -25,7 +39,7 @@ function Cards({ content }) {
     return (
         <div className="content_body" id={`${fixture}_cards`}>
         <Helmet>
-          <title>{fixture} - Cards: free prediction and insights </title>
+          <title>{fixture} - Cards: free betting prediction and insights </title>
           <script id="hydro_config" type="text/javascript">
           {`
             window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";
@@ -59,7 +73,16 @@ function Cards({ content }) {
             <HeadToHeadFouls home_team={home_team} away_team={away_team} fouls={fouls} HT_cards={HT_cards} FT_cards={FT_cards} teams={teams}/>
             <RecentMatches title={home_team.name} logo={home_team.team_logo} recent={home_recent} teams={home_team.teams}/>
             <RecentMatches title={away_team.name} logo={away_team.team_logo} recent={away_recent} teams={away_team.teams}/>
-            <Summary prediction={prediction.cards} id ="prediction"/>
+            <div className="prediction"  id ="prediction">
+                <h4>{fixture} Cards' Prediction</h4>
+                {user ? (
+                    <Summary fixture={fixture} prediction={prediction.cards} id ="prediction"/>
+                    ) : (
+                        
+                        <AuthPre />
+                    )}
+            </div>
+           
             
         </div>
     );
@@ -221,11 +244,10 @@ function RecentMatches({ title, recent }) {
     );
 }
 
-
 function Summary ({ fixture, prediction }) {
     return (
-        <div className="prediction"  id ="prediction">
-        <h4>{fixture} Cards' Prediction</h4>
+        <div >
+        
             <p>{prediction.discuss}</p>
             <ul className='prediction_list'>
                 <li>Halftime - total-cards/Booking: <span className='bold'>{prediction.ht}</span> </li>

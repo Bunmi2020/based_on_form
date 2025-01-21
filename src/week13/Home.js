@@ -131,8 +131,8 @@ function JanTwo () {
     <div className="App">
       <Helmet>
       <title>Based on Form | Free 200+ Football Predictions & Betting Tips</title>
-          <meta name="description" content="Explore this week's free 200+ football predictions with accurate betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your sports betting strategy." />
-          <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
+          <meta name="description" content="Explore this week's free 200+ football predictions with accurate football betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your football betting strategy." />
+          <meta name="keywords" content="football predictions, free betting prediction and insights, free football predictions, free football betting tips, free football betting predictions, football match analysis, sports betting insights, best football prediction site, accurate football betting tips, free football predictions, football betting form, football betting predictions today, Premier League predictions, La Liga predictions, UEFA Champions League predictions, Europa League predictions, Europa conference League predictions, Serie A predictions, Ligue one, Ligue 1 predictions, based on form, base on form, Eredivisie predictions, basedonform.com" />
 
           <script type="text/javascript" async src="https://platform.foremedia.net/code/55519/analytics"></script>
           
