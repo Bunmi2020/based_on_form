@@ -25,7 +25,7 @@ const ConsentPopup = () => {
 
   const handleReject = () => {
     alert("You must accept cookies and age verification to proceed.");
-    window.location.href = 'https://www.google.com'; // Redirect or block access
+    window.location.href = 'https://basedonform.com/#/terms_of_use'; // Redirect or block access
   };
 
   if (!showPopup) return null;
@@ -44,7 +44,7 @@ const ConsentPopup = () => {
             Accept All
           </button>
           <button onClick={handleReject} style={rejectButtonStyle}>
-            Reject
+            Read More
           </button>
         </div>
       </div>
@@ -93,7 +93,7 @@ const acceptButtonStyle = {
 
 const rejectButtonStyle = {
   padding: '10px 20px',
-  backgroundColor: 'red',
+  backgroundColor: 'brown',
   color: 'white',
   border: 'none',
   borderRadius: '5px',

@@ -32,7 +32,7 @@ function JanThree () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
-    title: "Home",
+    title: "Third Jan Home",
   });
 
   const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component

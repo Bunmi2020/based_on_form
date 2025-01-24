@@ -4,32 +4,35 @@ import { HashLink } from 'react-router-hash-link';
 
 import './Home.css';
 
+import facebook from '../media/facebook.png';
+import twitter from '../media/twitter.png';
+
 import Cards from '../Content/cards';
 import Corners from '../Content/corners';
 import Goals from '../Content/goals';
+import WinOrDraw from '../Content/win_or_draw';
 import PLMenu from './league_menu/pl';
 import SerieAMenu from './league_menu/serie_a';
-import Ligue1Menu from './league_menu/ligue_1';
-import LaligaMenu from './league_menu/la_liga';
+
 import Sidebar from './sideBar';
 import menu from '../media/menu-bar.png';
 import chat from '../media/chat.png';
+
 import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import SearchBar from './search';
-import EredivisieMenu from './league_menu/eredivisie';
 import BundesligaMenu from './league_menu/bundesliga';
- 
-import Friday from './day_fixture/friday';
-import Saturday from './day_fixture/saturday';
-import Sunday from './day_fixture/sunday';
-import Monday from './day_fixture/monday';
+import LaligaMenu from './league_menu/la_liga';
+import WeekendFixtures from './day_fixture/weekend';
 
-function SeptThree () {
+
+ 
+
+function JanFour () {
   ReactGA.send({
     hitType: "pageview",
-    page: "/27-30_sept",
-    title: "SeptThree Home",
+    page: "/",
+    title: "Fourth Jan Home",
   });
 
   const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component
@@ -43,12 +46,10 @@ function SeptThree () {
 
   // Fetch data from multiple URLs
   const urls = [
-    'https://bunmi2020.github.io/bnf_data/week_six/serie_a.json',
-    'https://bunmi2020.github.io/bnf_data/week_six/pl.json',
-    'https://bunmi2020.github.io/bnf_data/week_six/ligue_1.json',
-    'https://bunmi2020.github.io/bnf_data/week_six/eredivisie.json',
-    'https://bunmi2020.github.io/bnf_data/week_six/la_liga.json',
-    'https://bunmi2020.github.io/bnf_data/week_six/bundesliga.json'
+      'https://bunmi2020.github.io/bnf_data/week_fifteen/serie_a.json',
+        'https://bunmi2020.github.io/bnf_data/week_fifteen/pl.json',
+        'https://bunmi2020.github.io/bnf_data/week_fifteen/bundesliga.json',
+        'https://bunmi2020.github.io/bnf_data/week_fifteen/la_liga.json'
   ];
 
   useEffect(() => {
@@ -129,8 +130,8 @@ function SeptThree () {
     <div className="App">
       <Helmet>
       <title>Based on Form | Free 200+ Football Predictions & Betting Tips</title>
-          <meta name="description" content="Explore this week's free 200+ football predictions with accurate betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your sports betting strategy." />
-          <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
+        <meta name="description" content="Explore this week's free 200+ football predictions with accurate football betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your football betting strategy." />
+          <meta name="keywords" content="football predictions, free betting prediction and insights, free football predictions, free football betting tips, free football betting predictions, football match analysis, sports betting insights, best football prediction site, accurate football betting tips, free football predictions, football betting form, football betting predictions today, Premier League predictions, La Liga predictions, UEFA Champions League predictions, Europa League predictions, Europa conference League predictions, Serie A predictions, Ligue one, Ligue 1 predictions, based on form, base on form, Eredivisie predictions, basedonform.com" />
 
           <script type="text/javascript" async src="https://platform.foremedia.net/code/55519/analytics"></script>
           
@@ -170,52 +171,36 @@ function SeptThree () {
       <div className="Home">
         {(isToggle || screenWidth > 959) && (
           <div className='Side_menu'>
-            <BundesligaMenu setContent={handleMenuItemClick} />
+            
             <PLMenu setContent={handleMenuItemClick} />
             <SerieAMenu setContent={handleMenuItemClick} />
-            
+            <BundesligaMenu setContent={handleMenuItemClick} />
             <LaligaMenu setContent={handleMenuItemClick} />
-            <EredivisieMenu setContent={handleMenuItemClick} />
-            <Ligue1Menu setContent={handleMenuItemClick} />
-            
             
           </div>
         )}
         {!content ? (
                      
           <div className='content_default' id='default'>
-          <h3>🔍 Weekend's Prediction Scorecard</h3>
-                      <dl title='75% accuracy'>🎯 Out of 208 weekend predictions, 155 hit the mark!</dl>
-                      <ul>
-                          <li title='70% accuracy' className='medium_accuracy'>🏹 Corners: <strong>45/65</strong></li>
-                          <li title='74% accuracy' className='medium_accuracy'>⚽ Goals: <strong>53/72</strong></li>
-                          <li title='80% accuracy' className='high_accuracy'>🔴 Cards: <strong>57/71</strong></li>
-                      </ul>
-                      <dl>🌟 Top Performing Predictions</dl>
-                      <ul>
-                          
-                      <li className='high_accuracy'>🇬🇧 Premier League - Corners: <strong>9/11</strong></li>
-                      <li className='high_accuracy'>🇬🇧 Premier League - Cards: <strong>13/14</strong></li>
-                    
-                      <li className='high_accuracy'>🇪🇸 La Liga - Goals: <strong>14/14</strong></li>
+            <h3>Welcome to Based on Form!</h3>
+            <h5>Check our social media pages for the top picks</h5>
+            <div className='side_socials'>
+                
+                <a href="https://www.x.com/basedonform" target="_blank" rel="noreferrer">
+                    <img src={twitter} alt="twitter" />
+                </a>
+                <a href="https://www.facebook.com/basedonform" target="_blank" rel="noreferrer">
+                    <img src={facebook} alt="facebook" />
+                </a>
+            </div>
+            <WeekendFixtures fixtures={fixtures} setContent={setContent} />
                       
-                      <li className='high_accuracy'>🇫🇷 Ligue 1 - Cards: <strong>9/11</strong></li>
-                      <li className='high_accuracy'>🇩🇪 Bundesliga - Cards: <strong>8/9</strong></li>
-                      <li className='high_accuracy'>🇳🇱 Eredivisie - Cards: <strong>8/9</strong></li>
-                      <li className='high_accuracy'>🇳🇱 Eredivisie - Corners: <strong>10/12</strong></li>
-
-                      </ul>
-                      <p className='highlight_p'>📊 Select a fixture from the menu to compare our predictions with actual results!</p>
-            <Friday fixtures={fixtures} setContent={setContent} />
-            <Saturday fixtures={fixtures} setContent={setContent} />
-            <Sunday fixtures={fixtures} setContent={setContent} />
-            <Monday fixtures={fixtures} setContent={setContent} />
-           
+            
           </div>
           
         ) : (
           <div className='content' id='main'>
-            <SearchBar fixtures={fixtures} setContent={setContent} />
+            <SearchBar fixtures={fixtures} setContent={setContent} id='search'/>
             <ul className="content-menu"
              style={{
                       position: isScrollingUp ? 'sticky' : 'relative',
@@ -226,11 +211,13 @@ function SeptThree () {
               <li className={activeComponent === 'corners' ? 'active' : ''} onClick={() => setActiveComponent('corners')}>Corners</li>
               <li className={activeComponent === 'goals' ? 'active' : ''} onClick={() => setActiveComponent('goals')}>Goals</li>
               <li className={activeComponent === 'cards' ? 'active' : ''} onClick={() => setActiveComponent('cards')}>Cards</li>
+              <li className={activeComponent === 'win_or_draw' ? 'active' : ''} onClick={() => setActiveComponent('win_or_draw')}>Win/Draw</li>
             </ul>
             <div className='content_body'>
               {activeComponent === 'corners' && <Corners content={content} />}
               {activeComponent === 'cards' && <Cards content={content} />}
               {activeComponent === 'goals' && <Goals content={content} />}
+              {activeComponent === 'win_or_draw' && <WinOrDraw content={content} />}
             </div>
             <HashLink smooth to="/#prediction"><span style={{ width: '4.5em', display: isVisible ? 'none' : 'flex', position: 'fixed',flexDirection: 'column',justifyContent: 'center', zIndex: 9, boxShadow: '3px, 2px, gray',
                             bottom: '0%',
@@ -238,11 +225,11 @@ function SeptThree () {
                             borderRadius: '10px',
                             className:'prediction_button',
                             right: '0%',
-                            fontSize: '20px',
+                            fontSize: '17px',
                             cursor: 'pointer',
                             color: 'white',
                             margin: '1em 0.5em',
-                            padding: '0.5em 1em'}}>{activeComponent}' prediction</span></HashLink>
+                            padding: '0.5em 1em'}}>Check Prediction</span></HashLink>
 
             </div>
         )}
@@ -254,4 +241,4 @@ function SeptThree () {
   );
 }
 
-export default SeptThree;
+export default JanFour;

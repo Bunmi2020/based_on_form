@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 import { Helmet } from 'react-helmet';
-
+import facebook from '../media/facebook.png';
+import twitter from '../media/twitter.png';
 function Sidebar() {
   const [cornerPicks, setCornerPicks] = useState([]);
   const [goalPicks, setGoalPicks] = useState([]);
   const [cardPicks, setCardPicks] = useState([]);
 
   useEffect(() => {
-    const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_six/side_bar.json';
+    const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_eleven/side_bar.json';
 
     fetch(apiUrl, {
       method: 'GET',
@@ -73,40 +74,32 @@ function Sidebar() {
           crossorigin="anonymous"
         ></script>
       </Helmet>
-      <h3>Our Top Picks</h3>
 
-      <ul className="top_picks">
-        <p>Corners top picks</p>
-        {cornerPicks.map((match, index) => (
-          <li key={index}>
-            {match.matchLabel}:
-            <br />
-            <i className="bold">{match.matchDetail}</i>
-          </li>
-        ))}
-      </ul>
+      <div className='side_socials'>
+        <h3>Our Top Picks</h3>
 
-      <ul className="top_picks">
-        <p>Goals top picks</p>
-        {goalPicks.map((match, index) => (
-          <li key={index}>
-            {match.matchLabel}:
-            <br />
-            <i className="bold">{match.matchDetail}</i>
-          </li>
-        ))}
-      </ul>
-
-      <ul className="top_picks">
-        <p>Cards top picks</p>
-        {cardPicks.map((match, index) => (
-          <li key={index}>
-            {match.matchLabel}:
-            <br />
-            <i className="bold">{match.matchDetail}</i>
-          </li>
-        ))}
-      </ul>
+          <p>Check our social media pages for the top picks</p>
+          <a href="https://www.x.com/basedonform" target="_blank" rel="noreferrer">
+              <img src={twitter} alt="twitter" />
+          </a>
+          <a href="https://www.facebook.com/basedonform" target="_blank" rel="noreferrer">
+              <img src={facebook} alt="facebook" />
+          </a>
+      </div>
+      <div className='side_picks'>
+      <h4>How to check predictions</h4>
+        <a href="https://poawooptugroo.com/4/7950188" target="_blank" rel="noreferrer">
+          <h5>Ensure to signup below</h5>
+          </a>
+          
+            <ul>
+              <li><a href="https://poawooptugroo.com/4/7950188" target="_blank" rel="noreferrer">Click on each fixture and see up to 7 predictions per match,</a></li>
+              <li><a href="https://poawooptugroo.com/4/7950188" target="_blank" rel="noreferrer">Use the menu to check the fixture per their respective league,</a></li>
+              <li><a href="https://poawooptugroo.com/4/7950188" target="_blank" rel="noreferrer">Or use the search bar when on an of the fixture page to search for a particular fixture</a></li>
+            </ul>
+              
+      </div>
+      
     </div>
   );
 }
