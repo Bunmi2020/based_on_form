@@ -16,10 +16,10 @@ import { Helmet } from 'react-helmet';
 
 import OctThree from './week9/Home';
 import NovOne from './week10/Home';
-import NovTwo from './week11/Home';
 import JanTwo from './week13/Home';
 import JanThree from './week14/Home';
 import JanFour from './week15/Home';
+import JanFive from './week16/Home';
 
 
 function App() {
@@ -39,14 +39,14 @@ function App() {
       <Routes >
           
           
-          <Route path="/" element={<JanFour />} />
-          <Route path="/08-10_Nov" element={<NovTwo />} />  
+          <Route path="/" element={<JanFive />} /> 
           <Route path="/01-04_Nov" element={<NovOne />} />  
 
           <Route path="/25-28_Oct" element={<OctThree />} />
           <Route path="/14-15_Jan" element={<JanTwo />} />
           <Route path="/17-20_Jan" element={<JanThree />} />
           <Route path="/24-27_Jan" element={<JanFour />} />
+          <Route path="/31-3_Feb" element={<JanFive />} />
 
           <Route path="/about" element={<About />} />
           <Route path="/FAQ" element={<FAQ />} />

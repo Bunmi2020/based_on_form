@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './../../App.css';
+import up from './../../media/drop-up.png';
+import down from './../../media/drop-down.png';
 
-function Saturday ({ setContent }) {
+function BundesligaMenu({ setContent }) {
     const [menuItems, setMenuItems] = useState([]);
+    const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [activeItem, setActiveItem] = useState(null);
-    
+    const [arrow, setArrow] = useState(down);
     
     useEffect(() => {
         
-        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_seven/days/saturday.json';
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_sixteen/bundesliga.json';
 
         fetch(apiUrl, {
             method: 'GET',
@@ -28,20 +31,25 @@ function Saturday ({ setContent }) {
         });
     }, []);
 
+    const toggleDropdown = () => {
+        setDropdownVisible(!isDropdownVisible);
+        setArrow(isDropdownVisible ? down : up); // Toggle arrow direction
+    };
+
     const handleItemClick = (item) => {
         setContent(item);
         setActiveItem(item.fixture);
-        window.scrollTo(0, 0); 
     };
 
     return (
-        <div id="days_menu" className="days_menu">
-            <h5 id='Saturday'>
-                05/10 - Saturday
-            </h5>
-            <ul className="all_fixtures">
-                        {menuItems.map((match, index) => (
-                            <li
+        <div id="League_menu" className="League_menu">
+            <li id='league' className='League_menu' onClick={toggleDropdown}>
+                Bundesliga <img src={arrow} alt="Menu" style={{ width: '20px', margin: 'auto 10px', padding: '5px', float: 'right'}} />
+            </li>
+            {isDropdownVisible && (
+                <ul className="dropdown_menu">
+                    {menuItems.map((match, index) => (
+                        <li
                             key={index}
                             onClick={() => handleItemClick(match)}
                             id={`${index}_name`}
@@ -49,10 +57,11 @@ function Saturday ({ setContent }) {
                         >
                             {match.fixture}
                         </li>
-                        ))}
-                    </ul>
+                    ))}
+                </ul>
+            )}
         </div>
     );
 }
 
-export default Saturday;
+export default BundesligaMenu;

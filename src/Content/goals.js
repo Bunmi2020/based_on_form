@@ -98,9 +98,9 @@ function TeamStyle({ team }) {
     return (
                     
            <ul className='style_of_play'>
-                <li title='Playing style'>{team.playing_style}</li>
-                <li title='Pressing style'>{team.pressing_style}</li>
-                <li title='Defensive style'>{team.defensive_style}</li>
+                <li title='Goal scored per game'>GS pg: {team.goal_scored_pg}</li>
+                <li title='Goal conceded per game'>GC pg: {team.goals_concede_pg}</li>
+                
             </ul>
         
     );

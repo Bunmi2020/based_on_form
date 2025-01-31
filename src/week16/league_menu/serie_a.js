@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './../../App.css';
+import up from './../../media/drop-up.png';
+import down from './../../media/drop-down.png';
 
-function Sunday ({ setContent }) {
+function SerieAMenu({ setContent }) {
     const [menuItems, setMenuItems] = useState([]);
+    const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [activeItem, setActiveItem] = useState(null);
-    
+    const [arrow, setArrow] = useState(down);
     
     useEffect(() => {
-        
-        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_seven/days/sunday.json';
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_sixteen/serie_a.json';
 
         fetch(apiUrl, {
             method: 'GET',
@@ -28,20 +30,25 @@ function Sunday ({ setContent }) {
         });
     }, []);
 
+    const toggleDropdown = () => {
+        setDropdownVisible(!isDropdownVisible);
+        setArrow(isDropdownVisible ? down : up); // Toggle arrow direction
+    };
+
     const handleItemClick = (item) => {
         setContent(item);
         setActiveItem(item.fixture);
-        window.scrollTo(0, 0); 
     };
 
     return (
-        <div id="days_menu" className="days_menu">
-            <h5 id='Sunday'>
-                06/10 - Sunday
-            </h5>
-            <ul className="all_fixtures">
-                        {menuItems.map((match, index) => (
-                            <li
+        <div id="League_menu" className="League_menu">
+            <li id='league' className='League_menu' onClick={toggleDropdown}>
+                Serie A <img src={arrow} alt="Menu" style={{ width: '20px', margin: 'auto 10px', padding: '5px', float: 'right'}} />
+            </li>
+            {isDropdownVisible && (
+                <ul className="dropdown_menu">
+                    {menuItems.map((match, index) => (
+                        <li
                             key={index}
                             onClick={() => handleItemClick(match)}
                             id={`${index}_name`}
@@ -49,10 +56,11 @@ function Sunday ({ setContent }) {
                         >
                             {match.fixture}
                         </li>
-                        ))}
-                    </ul>
+                    ))}
+                </ul>
+            )}
         </div>
     );
 }
 
-export default Sunday;
+export default SerieAMenu;

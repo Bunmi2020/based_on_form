@@ -39,7 +39,8 @@
 
 @media (max-width: 960px) {
     .Side_menu {
-        position: absolute;
+        position: fixed;
+        top: 10%;
         margin: 0px;
         z-index: 9;
     }
@@ -100,16 +101,17 @@
     box-shadow: 1px 2px 10px rgba(248, 248, 248, 0.4);
 }
 
-@media (max-width: 370px) {
+@media (max-width: 470px) {
     .content-menu li {
-        padding: 10px;
+        margin: 3px;
+        padding: 5px 10px;
     }
 }
 
 .comment_button {
     width: 35px;
     height: 35px;
-     margin: auto 5px;
+     margin: auto 10px;
       
       float: right;
       cursor: pointer;
@@ -131,8 +133,9 @@ header {
 
 
 .content_default {
-    background-color: #36332bc9;
+    background-color: #f0f0f0;
     height: fit-content;
+    box-shadow: -5px -10px 10px rgba(36, 35, 35, 0.4);
     border-radius: 10px;
     font-family:'Times New Roman', Times, serif;
     text-align: left;
@@ -142,13 +145,14 @@ header {
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
-    color: #fff;
+    color: #044b0a;
    
 }
 
 .content_default h2,.content_default h3 {
-    color: #a3b4e4;
-    font-style: Helvetica;
+    color: black;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
     
 }
 
@@ -189,7 +193,7 @@ header {
 
 
 .highlight_p {
-    color: #f09bac;
+    color: #d60832;
     font-size: Sans-serif;
     
 }

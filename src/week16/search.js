@@ -17,7 +17,7 @@ function SearchBar({ fixtures, setContent }) {
     };
 
     return (
-        <div className="search-bar">
+        <div className="search-bar" id='search'>
             <input
                 type="text"
                 placeholder="Search fixtures..."

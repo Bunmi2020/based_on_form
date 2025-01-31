@@ -61,11 +61,6 @@ function Corners({ content }) {
                     <MatchDetails league={league} type_of_match={type_of_match} />
                     <TeamInfo team={away_team} />
                 </div>
-                <div className="match_info_style">
-                    <TeamStyle team={home_team} />
-                    
-                    <TeamStyle team={away_team} />
-                </div>
                 
             </div>
              
@@ -94,18 +89,6 @@ function TeamInfo({ team }) {
             <h5>{team.name}</h5>
            
         </div>
-    );
-}
-
-function TeamStyle({ team }) {
-    return (
-                    
-           <ul className='style_of_play'>
-                <li title='Playing style'>{team.playing_style}</li>
-                <li title='Pressing style'>{team.pressing_style}</li>
-                <li title='Defensive style'>{team.defensive_style}</li>
-            </ul>
-        
     );
 }
 
