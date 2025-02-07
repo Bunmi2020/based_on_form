@@ -2,24 +2,32 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import './Home.css';
-
+import '../Content/content.css';
+import ReactGA from 'react-ga4';
+import { NavLink } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import Cards from '../Content/cards';
 import Corners from '../Content/corners';
 import Goals from '../Content/goals';
 import WinOrDraw from '../Content/win_or_draw';
+import { auth } from '../week14/comment/firebaseConfig';
+import AuthPre from '../week14/comment/Authpre';
 import { HashLink } from 'react-router-hash-link';
-
 function BundesligaPredictions() {
+
+    ReactGA.send({
+        hitType:"pageview",
+        page:"/bundesliga_predictions",
+        title:"Bundelsiga Predictions",
+    });
+
     const [fixtures, setFixtures] = useState({
         friday: [],
         saturday: [],
         sunday: [],
         monday: []
     });
-    const [activeItem, setActiveItem] = useState(null);
-    const [selectedContent, setSelectedContent] = useState(null); // State for popup content
-    const [isPopupOpen, setIsPopupOpen] = useState(false); // State for popup visibility
-    const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component
+    
     const [isScrollingUp, setIsScrollingUp] = useState(true);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [content, setContent] = useState(null);
@@ -98,97 +106,106 @@ function BundesligaPredictions() {
           };
         }, []);
 
-    const handleItemClick = (item) => {
-        setContent(item);
-        setActiveItem(item.id);
-        setActiveItem(item.fixture);
-        setIsPopupOpen(true); // Open the popup
-        navigate(`/fixtures/${item.id}`); // Generate URL dynamically
+   
+    const handleToTop = () => {
+        window.scrollTo(0, 0); // Scroll to top
     };
 
-    const closePopup = () => {
-        setIsPopupOpen(false);
-        setSelectedContent(null);
-        navigate('/'); // Reset URL when popup closes
-    };
+    const [user, setUser] = useState(null);
+        
+          useEffect(() => {
+            const unsubscribe = auth.onAuthStateChanged((user) => {
+              setUser(user);
+            });
+        
+            return () => unsubscribe();
+          }, []);
+    
+        if (!content) return null;
 
     return (
         <div>
+        <Helmet>
+            <title>Based on Form - FAQ | Football Prediction & Betting Tips</title>
+            <meta name="description" content="Find answers to your questions about Based on Form's football prediction services, betting tips, and match analysis." />
+            <meta name="keywords" content="football predictions, betting tips, football match analysis, sports betting FAQ, football betting insights" />
+            <script id="hydro_config" type="text/javascript">
+      {`
+        window.Hydro_tagId = "829d3b89-0fc4-424c-8477-ee88eb2ed1aa";
+      `}
+        </script>
+        <script type="text/javascript" async src="https://platform.foremedia.net/code/55519/analytics"></script>
+        <script id="hydro_script" src="https://track.hydro.online/"></script>
+        </Helmet>
+
+        <header 
+            style={{
+                position: isScrollingUp ? 'sticky' : 'relative',
+                top: isScrollingUp ? '0' : 'auto',
+                transition: 'top 0.5s ease-in',
+            }}
+        >
+            <h1 style={{ margin: 'auto', cursor: 'pointer' }}>
+                <NavLink to="/" className="navbar__a" onClick={handleToTop}>
+                    Based on Form
+                </NavLink>
+            </h1>
+        </header>
+        <div>
             {Object.keys(fixtures).map(day => (
-                <div key={day} id={`${day}_menu`} className="days_menu">
+                <div key={day} id={`${day}_menu`} className="content">
                     
-                    <div className="all_fixtures">
+                    <div className="content_body">
                         {fixtures[day].map((match, index) => (
-                            <div>
+                        <div>
                             <li
                                 key={index}
-                                onClick={() => handleItemClick(match)}
                                 id={`${match.fixture}`}
-                                className={activeItem === match.fixture ? 'active' : ''}
+                                className='active'
                             >
                                 {match.fixture}
                                 
                                
                             </li>
-                            <div className='card'>
-                                    <p>Halftime Cards: {match.prediction?.cards?.ht || 'N/A'}</p>
-                                    <p>Fulltime Cards: {match.prediction?.cards?.ft || 'N/A'}</p>
+                            {user ? (
+                                <div className="prediction"  id ="prediction">
+                                
+                                    <div className='prediction_list'>
+                                        <pre><b>Halftime Cards:</b> {match.prediction?.cards?.ht || 'N/A'}</pre>
+                                        <hr/>
+                                        <pre><b>Fulltime Cards:</b> {match.prediction?.cards?.ft || 'N/A'}</pre>
+                                        <hr/>
+                                    </div>
+                                    <div className='prediction_list'>
+                                        <pre><b>FT Total Corners:</b> {match.prediction?.corners.full_time_total_corners || 'N/A'}</pre>
+                                        <hr/>
+                                        <pre><b>Most Corners:</b> {match.prediction?.corners.win_corners || 'N/A'}</pre>
+                                        <hr/>
+                                    </div>
+                                    <div className='prediction_list'>
+                                        <pre><b>BTS/GG:</b> {match.prediction?.goals.Both_teams_to_score || 'N/A'}</pre>
+                                        <hr/>
+                                        <pre><b>FT Total Goals:</b> {match.prediction?.goals.fulltime_total_goals || 'N/A'}</pre>
+                                        <hr/>
+                                    </div>
+                                    <div className='prediction_list'>
+                                        <pre>{match.prediction?.win_draw.win_or_draw || 'N/A'}</pre>
+                                        <hr/>
+                                    </div>
                                 </div>
-                                <div className='corner'>
-                                    <p>FT Total Corners: {match.prediction?.corners.full_time_total_corners || 'N/A'}</p>
-                                    <p>Most Corners: {match.prediction?.corners.win_corners || 'N/A'}</p>
-                                </div>
-                                <div className='goal'>
-                                    <p>BTS/GG: {match.prediction?.goals.Both_teams_to_score || 'N/A'}</p>
-                                    <p>FT Total Goals: {match.prediction?.goals.fulltime_total_goals || 'N/A'}</p>
-                                </div>
-                                <div className='win_draw'>
-                                    <p>{match.prediction?.win_draw.win_or_draw || 'N/A'}</p>
-                                </div>
+                                ) : (
+                                
+                                <AuthPre />
+                            )}
 
-                            </div>
+                        </div>
                         ))}
 
-                        {isPopupOpen && selectedContent && (
-                            <div className='content' id='main'>
-                            <button className="close-btn" onClick={closePopup}>X</button>
-            
-                                <ul className="content-menu"
-                                style={{
-                                        position: isScrollingUp ? 'sticky' : 'relative',
-                                        top: isScrollingUp ? '5%' : 'auto',
-                                        transition: 'top 0.5s ease-in',
-                                    }}
-                                >
-                                <li className={activeComponent === 'corners' ? 'active' : ''} onClick={() => setActiveComponent('corners')}>Corners</li>
-                                <li className={activeComponent === 'goals' ? 'active' : ''} onClick={() => setActiveComponent('goals')}>Goals</li>
-                                <li className={activeComponent === 'cards' ? 'active' : ''} onClick={() => setActiveComponent('cards')}>Cards</li>
-                                <li className={activeComponent === 'win_or_draw' ? 'active' : ''} onClick={() => setActiveComponent('win_or_draw')}>Win/Draw</li>
-                                </ul>
-                                <div className='content_body'>
-                                {activeComponent === 'corners' && <Corners content={content} />}
-                                {activeComponent === 'cards' && <Cards content={content} />}
-                                {activeComponent === 'goals' && <Goals content={content} />}
-                                {activeComponent === 'win_or_draw' && <WinOrDraw content={content} />}
-                                </div>
-                                <HashLink smooth to="/#prediction"><span style={{ width: '4.5em', display: isVisible ? 'none' : 'flex', position: 'fixed',flexDirection: 'column',justifyContent: 'center', zIndex: 9, boxShadow: '3px, 2px, gray',
-                                                bottom: '0%',
-                                                background: 'linear-gradient(90deg, var(--highlight-color), red)',
-                                                borderRadius: '10px',
-                                                className:'prediction_button',
-                                                right: '0%',
-                                                fontSize: '17px',
-                                                cursor: 'pointer',
-                                                color: 'white',
-                                                margin: '1em 0.5em',
-                                                padding: '0.5em 1em'}}>Check Prediction</span></HashLink>
-
-                            </div>
-                        )}
                     </div>
                 </div>
             ))}
         </div>
+    </div>
     );
 }
 

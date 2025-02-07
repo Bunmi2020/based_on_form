@@ -18,8 +18,8 @@ import JanTwo from './week13/Home';
 import JanThree from './week14/Home';
 import JanFour from './week15/Home';
 import JanFive from './week16/Home';
-import BLHome from './week16/BL_Home';
 import FebOne from './week17/Home';
+import BundesligaPredictions from './week17/bundelsiga_pre';
 
 
 function App() {
@@ -52,7 +52,7 @@ function App() {
           <Route path="/privacy_policy" element={<PrivacyPolicy/>} />
           <Route path="/terms_of_use" element={<TermsOfUse/>} />
           <Route path="/install_app" element={<InstallBaseOnForm/>} />
-          <Route path="/bundesliga_predictions" element={<BLHome/>} />
+          <Route path="/bundesliga_predictions" element={<BundesligaPredictions/>} />
       </Routes>
       <ConsentPopup />
       <Footer />

@@ -1,53 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
+import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import facebook from '../media/facebook.png';
 import twitter from '../media/twitter.png';
 function Sidebar() {
-  const [cornerPicks, setCornerPicks] = useState([]);
-  const [goalPicks, setGoalPicks] = useState([]);
-  const [cardPicks, setCardPicks] = useState([]);
-
-  useEffect(() => {
-    const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_eleven/side_bar.json';
-
-    fetch(apiUrl, {
-      method: 'GET',
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        const topData = data[0]; // Accessing the top pick data
-
-        // Format the picks for each category
-        const formattedCornerPicks = Object.values(topData.corners_top_picks).map(match => ({
-          matchLabel: match[0],
-          matchDetail: match[1],
-        }));
-
-        const formattedGoalPicks = Object.values(topData.goals_top_picks).map(match => ({
-          matchLabel: match[0],
-          matchDetail: match[1],
-        }));
-
-        const formattedCardPicks = Object.values(topData.cards_top_picks).map(match => ({
-          matchLabel: match[0],
-          matchDetail: match[1],
-        }));
-
-        // Set the state with the formatted picks
-        setCornerPicks(formattedCornerPicks);
-        setGoalPicks(formattedGoalPicks);
-        setCardPicks(formattedCardPicks);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
 
   return (
     <div id="Side_bar">
@@ -76,8 +33,7 @@ function Sidebar() {
       </Helmet>
 
       <div className='side_socials'>
-        <h3>Our Top Picks</h3>
-
+        
           <p>Check our social media pages for the top picks</p>
           <a href="https://www.x.com/basedonform" target="_blank" rel="noreferrer">
               <img src={twitter} alt="twitter" />
@@ -88,14 +44,12 @@ function Sidebar() {
       </div>
       <div className='side_picks'>
       <h4>How to check predictions</h4>
-        <a href="https://poawooptugroo.com/4/7950188" target="_blank" rel="noreferrer">
-          <h5>Ensure to signup below</h5>
-          </a>
+          <h5>Ensure to signup</h5>
           
             <ul>
-              <li><a href="https://poawooptugroo.com/4/7950188" target="_blank" rel="noreferrer">Click on each fixture and see up to 7 predictions per match,</a></li>
-              <li><a href="https://poawooptugroo.com/4/7950188" target="_blank" rel="noreferrer">Use the menu to check the fixture per their respective league,</a></li>
-              <li><a href="https://poawooptugroo.com/4/7950188" target="_blank" rel="noreferrer">Or use the search bar when on an of the fixture page to search for a particular fixture</a></li>
+              <li>Click on each fixture and see up to 7 predictions per match,</li>
+              <li>Use the menu to check the fixture per their respective league,</li>
+              <li>Or use the search bar when on an of the fixture page to search for a particular fixture</li>
             </ul>
               
       </div>

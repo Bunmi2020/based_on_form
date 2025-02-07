@@ -13,7 +13,7 @@ function WeekendFixtures({ setContent }) {
 
     const urls = [
         'https://bunmi2020.github.io/bnf_data/week_seventeen/serie_a.json',
-        
+        'https://bunmi2020.github.io/bnf_data/week_seventeen/ligue_1.json',
         'https://bunmi2020.github.io/bnf_data/week_seventeen/bundesliga.json',
         'https://bunmi2020.github.io/bnf_data/week_seventeen/la_liga.json'
     ];

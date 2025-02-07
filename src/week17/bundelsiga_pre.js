@@ -130,20 +130,30 @@ function BundesligaPredictions() {
                                 
                                
                             </li>
-                            <div className='card'>
-                                    <p>Halftime Cards: {match.prediction?.cards?.ht || 'N/A'}</p>
-                                    <p>Fulltime Cards: {match.prediction?.cards?.ft || 'N/A'}</p>
-                                </div>
-                                <div className='corner'>
-                                    <p>FT Total Corners: {match.prediction?.corners.full_time_total_corners || 'N/A'}</p>
-                                    <p>Most Corners: {match.prediction?.corners.win_corners || 'N/A'}</p>
-                                </div>
-                                <div className='goal'>
-                                    <p>BTS/GG: {match.prediction?.goals.Both_teams_to_score || 'N/A'}</p>
-                                    <p>FT Total Goals: {match.prediction?.goals.fulltime_total_goals || 'N/A'}</p>
-                                </div>
-                                <div className='win_draw'>
-                                    <p>{match.prediction?.win_draw.win_or_draw || 'N/A'}</p>
+                            <div className="prediction"  id ="prediction">
+                                
+                                    <div className='prediction_list'>
+                                        <pre><b>Halftime Cards:</b> {match.prediction?.cards?.ht || 'N/A'}</pre>
+                                        <hr/>
+                                        <pre><b>Fulltime Cards:</b> {match.prediction?.cards?.ft || 'N/A'}</pre>
+                                        <hr/>
+                                    </div>
+                                    <div className='prediction_list'>
+                                        <pre><b>FT Total Corners:</b> {match.prediction?.corners.full_time_total_corners || 'N/A'}</pre>
+                                        <hr/>
+                                        <pre><b>Most Corners:</b> {match.prediction?.corners.win_corners || 'N/A'}</pre>
+                                        <hr/>
+                                    </div>
+                                    <div className='prediction_list'>
+                                        <pre><b>BTS/GG:</b> {match.prediction?.goals.Both_teams_to_score || 'N/A'}</pre>
+                                        <hr/>
+                                        <pre><b>FT Total Goals:</b> {match.prediction?.goals.fulltime_total_goals || 'N/A'}</pre>
+                                        <hr/>
+                                    </div>
+                                    <div className='prediction_list'>
+                                        <pre>{match.prediction?.win_draw.win_or_draw || 'N/A'}</pre>
+                                        <hr/>
+                                    </div>
                                 </div>
 
                             </div>

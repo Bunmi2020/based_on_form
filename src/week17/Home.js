@@ -185,7 +185,7 @@ function FebOne () {
             <SerieAMenu setContent={handleMenuItemClick} />
             <BundesligaMenu setContent={handleMenuItemClick} />
             <LaligaMenu setContent={handleMenuItemClick} />
-            
+            <Ligue1Menu setContent={handleMenuItemClick} />
           </div>
         )}
         {!content && !isPopupOpen && !selectedContent ? (
