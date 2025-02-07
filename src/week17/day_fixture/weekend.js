@@ -12,10 +12,10 @@ function WeekendFixtures({ setContent }) {
     const [isPopupOpen, setIsPopupOpen] = useState(false); // State for popup visibility
 
     const urls = [
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/serie_a.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/pl.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/bundesliga.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/la_liga.json'
+        'https://bunmi2020.github.io/bnf_data/week_seventeen/serie_a.json',
+        
+        'https://bunmi2020.github.io/bnf_data/week_seventeen/bundesliga.json',
+        'https://bunmi2020.github.io/bnf_data/week_seventeen/la_liga.json'
     ];
 
     useEffect(() => {

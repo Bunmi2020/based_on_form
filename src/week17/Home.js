@@ -13,7 +13,7 @@ import Goals from '../Content/goals';
 import WinOrDraw from '../Content/win_or_draw';
 import PLMenu from './league_menu/pl';
 import SerieAMenu from './league_menu/serie_a';
-
+import Ligue1Menu from './league_menu/ligue_1';
 import Sidebar from './sideBar';
 import menu from '../media/menu-bar.png';
 import chat from '../media/chat.png';
@@ -28,11 +28,11 @@ import WeekendFixtures from './day_fixture/weekend';
 
  
 
-function JanFive () {
+function FebOne () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
-    title: "Fifth Jan Home",
+    title: "First Feb Home",
   });
 
   const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component
@@ -48,10 +48,10 @@ function JanFive () {
 
   // Fetch data from multiple URLs
   const urls = [
-      'https://bunmi2020.github.io/bnf_data/week_sixteen/serie_a.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/pl.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/bundesliga.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/la_liga.json'
+      'https://bunmi2020.github.io/bnf_data/week_seventeen/serie_a.json',
+        'https://bunmi2020.github.io/bnf_data/week_seventeen/ligue_1.json',
+        'https://bunmi2020.github.io/bnf_data/week_seventeen/bundesliga.json',
+        'https://bunmi2020.github.io/bnf_data/week_seventeen/la_liga.json'
   ];
 
   useEffect(() => {
@@ -182,7 +182,6 @@ function JanFive () {
         {(isToggle || screenWidth > 959) && (
           <div className='Side_menu'>
             
-            <PLMenu setContent={handleMenuItemClick} />
             <SerieAMenu setContent={handleMenuItemClick} />
             <BundesligaMenu setContent={handleMenuItemClick} />
             <LaligaMenu setContent={handleMenuItemClick} />
@@ -255,4 +254,4 @@ function JanFive () {
   );
 }
 
-export default JanFive;
+export default FebOne;

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './../../App.css';
+import { useNavigate } from 'react-router-dom';
+
 
 function WeekendFixtures({ setContent }) {
     const [fixtures, setFixtures] = useState({
@@ -10,10 +12,11 @@ function WeekendFixtures({ setContent }) {
     const [activeItem, setActiveItem] = useState(null);
     const [selectedContent, setSelectedContent] = useState(null); // State for popup content
     const [isPopupOpen, setIsPopupOpen] = useState(false); // State for popup visibility
+    const navigate = useNavigate(); // Hook to programmatically navigate
 
     const urls = [
         'https://bunmi2020.github.io/bnf_data/week_sixteen/serie_a.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/pl.json',
+        'https://bunmi2020.github.io/bnf_data/week_seventeen/pl.json',
         'https://bunmi2020.github.io/bnf_data/week_sixteen/bundesliga.json',
         'https://bunmi2020.github.io/bnf_data/week_sixteen/la_liga.json'
     ];
@@ -64,6 +67,8 @@ function WeekendFixtures({ setContent }) {
     }, [urls]);
 
     const handleItemClick = (item) => {
+        const fixtureSlug = encodeURIComponent(item.fixture.replace(/\s+/g, '-').toLowerCase()); 
+        navigate(`/fixture/${fixtureSlug}`); // Navigate to fixture permalink
         setContent(item);
         setSelectedContent(item);  // Add this line
         setIsPopupOpen(true); // Open the popup

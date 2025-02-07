@@ -98,8 +98,8 @@ function TeamStyle({ team }) {
     return (
                     
            <ul className='style_of_play'>
-                <li title='Goal scored per game'>GS pg: {team.goal_scored_pg}</li>
-                <li title='Goal conceded per game'>GC pg: {team.goals_concede_pg}</li>
+                <li title='Goal scored per game'><i className='small_letter'>GS pg:</i> {team.goal_scored_pg}</li>
+                <li title='Goal conceded per game'><i className='small_letter'>GC pg:</i> {team.goals_concede_pg}</li>
                 
             </ul>
         
@@ -191,10 +191,11 @@ function Summary ({ fixture, prediction }) {
         <div >
         
             <p>{prediction.discuss}</p>
-            <ul className='prediction_list'>
-                <li>BTS/GG: <span className='bold'>{prediction.ht || prediction.Both_teams_to_score}</span></li>
-                <li>FT total goals: <span className='bold'>{prediction.ft || prediction.fulltime_total_goals}</span></li>
-            </ul>
+            <div className='prediction_list'>
+                <pre><b>BTS/GG:</b> {prediction.ht || prediction.Both_teams_to_score}</pre>
+                <br />
+                <pre><b>FT total goals:</b> {prediction.ft || prediction.fulltime_total_goals}</pre>
+            </div>
         </div>
     );
 }

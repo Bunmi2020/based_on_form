@@ -210,10 +210,10 @@ function Summary ({ fixture, prediction }) {
         <div >
         
             <p>{prediction.discuss}</p>
-            <ul className='prediction_list'>
-                <li><span className='bold'>{prediction.win_or_draw}</span></li>
+            <div className='prediction_list'>
+                <pre>{prediction.win_or_draw}</pre>
                 
-            </ul>
+            </div>
         </div>
     );
 }

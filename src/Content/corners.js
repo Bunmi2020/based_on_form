@@ -168,10 +168,11 @@ function Summary ({ fixture, prediction }) {
         <div >
         
             <p>{prediction.discuss}</p>
-            <ul className='prediction_list'>
-                <li>FT Total Corners:<span className='bold'>{prediction.ht || prediction.full_time_total_corners}</span></li>
-                <li>Team with the Most Corners:<span className='bold'> {prediction.ft || prediction.win_corners}</span></li>
-            </ul>
+            <div className='prediction_list'>
+                <pre><b>FT Total Corners:</b> {prediction.ht || prediction.full_time_total_corners}</pre>
+                <br />
+                <pre><b>Team with the Most Corners:</b> {prediction.ft || prediction.win_corners}</pre>
+            </div>
         </div>
     );
 }

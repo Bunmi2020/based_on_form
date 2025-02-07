@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import './../../App.css';
 import up from './../../media/drop-up.png';
 import down from './../../media/drop-down.png';
+import { useNavigate } from 'react-router-dom';
 
 function BundesligaMenu({ setContent }) {
     const [menuItems, setMenuItems] = useState([]);
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [activeItem, setActiveItem] = useState(null);
     const [arrow, setArrow] = useState(down);
+    const navigate = useNavigate(); // Hook to programmatically navigate
     
     useEffect(() => {
         
@@ -37,6 +39,8 @@ function BundesligaMenu({ setContent }) {
     };
 
     const handleItemClick = (item) => {
+        const fixtureSlug = encodeURIComponent(item.fixture.replace(/\s+/g, '-').toLowerCase()); 
+        navigate(`/fixture/${fixtureSlug}`); // Navigate to fixture permalink
         setContent(item);
         setActiveItem(item.fixture);
     };

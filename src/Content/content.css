@@ -11,6 +11,10 @@
     
 }
 
+small_letter {
+    font-size: small;
+}
+
 .form_h2h {
     display: flex;
     flex-direction: row;
@@ -87,8 +91,14 @@
     font-weight: bold;
 }
 
-.prediction_list li {
+.prediction_list pre {
     margin: 3px;
+}
+
+pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .prediction p {

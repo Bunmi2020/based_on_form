@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './../../App.css';
 
-function WeekendFixtures({ setContent }) {
+function WeekdaysFixtures({ setContent }) {
     const [fixtures, setFixtures] = useState({
         friday: [],
         saturday: [],
         sunday: []
     });
     const [activeItem, setActiveItem] = useState(null);
-    const [selectedContent, setSelectedContent] = useState(null); // State for popup content
-    const [isPopupOpen, setIsPopupOpen] = useState(false); // State for popup visibility
 
     const urls = [
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/serie_a.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/pl.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/bundesliga.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/la_liga.json'
+        'https://bunmi2020.github.io/bnf_data/week_thirteen/serie_a.json',
+        'https://bunmi2020.github.io/bnf_data/week_thirteen/pl.json',
+        'https://bunmi2020.github.io/bnf_data/week_thirteen/bundesliga.json'
     ];
 
     useEffect(() => {
@@ -35,23 +32,20 @@ function WeekendFixtures({ setContent }) {
 
                 // Categorize fixtures by day
                 const categorizedFixtures = {
-                    friday: [],
-                    saturday: [],
-                    sunday: [],
-                    monday: []
+                    tuesday: [],
+                    wednesday: [],
+                    thursday: []
                 };
 
                 allFixtures.forEach(match => {
                     const day = match.day?.toLowerCase();
-                    if (day === 'friday') {
+                    if (day === 'tuesday') {
                         categorizedFixtures.friday.push(match);
-                    } else if (day === 'saturday') {
+                    } else if (day === 'wednesday') {
                         categorizedFixtures.saturday.push(match);
-                    } else if (day === 'sunday') {
+                    } else if (day === 'thursday') {
                         categorizedFixtures.sunday.push(match);
-                    } else if (day === 'monday') {
-                        categorizedFixtures.monday.push(match);
-                    }
+                    } 
                 });
 
                 setFixtures(categorizedFixtures);
@@ -61,13 +55,11 @@ function WeekendFixtures({ setContent }) {
         };
 
         fetchAllFixtures();
-    }, [urls]);
+    }, []);
 
     const handleItemClick = (item) => {
         setContent(item);
-        setSelectedContent(item);  // Add this line
-        setIsPopupOpen(true); // Open the popup
-        
+        setActiveItem(item.fixture);
         window.scrollTo(0, 0);
     };
 
@@ -96,4 +88,4 @@ function WeekendFixtures({ setContent }) {
     );
 }
 
-export default WeekendFixtures;
+export default WeekdaysFixtures;

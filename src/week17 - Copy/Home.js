@@ -3,7 +3,8 @@ import ReactGA from 'react-ga4';
 import { HashLink } from 'react-router-hash-link';
 import '../App.css';
 import './Home.css';
-
+import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import facebook from '../media/facebook.png';
 import twitter from '../media/twitter.png';
 
@@ -13,7 +14,7 @@ import Goals from '../Content/goals';
 import WinOrDraw from '../Content/win_or_draw';
 import PLMenu from './league_menu/pl';
 import SerieAMenu from './league_menu/serie_a';
-
+import Ligue1Menu from './league_menu/ligue_1';
 import Sidebar from './sideBar';
 import menu from '../media/menu-bar.png';
 import chat from '../media/chat.png';
@@ -28,12 +29,15 @@ import WeekendFixtures from './day_fixture/weekend';
 
  
 
-function JanFive () {
+function FebOne () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
-    title: "Fifth Jan Home",
+    title: "First Feb Home",
   });
+
+  const { fixtureSlug } = useParams(); // Get fixture slug from URL
+  const navigate = useNavigate();
 
   const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component
   const [isToggle, setIsToggle] = useState(false);
@@ -45,32 +49,59 @@ function JanFive () {
   const [content, setContent] = useState(null); // State to track the selected fixture content
   const [fixtures, setFixtures] = useState([]); // Store flattened fixtures
   const [isVisible, setIsVisible] = useState(true);
+  const [loading, setLoading] = useState(!!fixtureSlug); // Only show loading if fixtureSlug exists
 
   // Fetch data from multiple URLs
   const urls = [
       'https://bunmi2020.github.io/bnf_data/week_sixteen/serie_a.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/pl.json',
+        'https://bunmi2020.github.io/bnf_data/week_seventeen/ligue_1.json',
         'https://bunmi2020.github.io/bnf_data/week_sixteen/bundesliga.json',
         'https://bunmi2020.github.io/bnf_data/week_sixteen/la_liga.json'
   ];
 
   useEffect(() => {
     const fetchFixtures = async () => {
-      try {
-        const responses = await Promise.all(urls.map(url => fetch(url)));
-        const data = await Promise.all(responses.map(response => response.json()));
+        try {
+            const responses = await Promise.all(urls.map(url => fetch(url)));
+            const data = await Promise.all(responses.map(response => response.json()));
 
-        // Flatten the data (merge arrays into a single array)
-        const flattenedFixtures = data.flat();
-        setFixtures(flattenedFixtures); // Store the flattened fixtures
+            const flattenedFixtures = data.flat();
+            setFixtures(flattenedFixtures);
 
-      } catch (error) {
-        console.error('Error fetching fixtures:', error);
-      }
+            // If we're on a fixture page, find and set that fixture's content
+            if (fixtureSlug) {
+                const match = flattenedFixtures.find(fixture =>
+                    encodeURIComponent(fixture.fixture.replace(/\s+/g, '-').toLowerCase()) === fixtureSlug
+                );
+                setContent(match || null);
+            }
+        } catch (error) {
+            console.error('Error fetching fixtures:', error);
+        } finally {
+            setLoading(false);
+        }
     };
 
     fetchFixtures();
-  });
+}, [fixtureSlug]);
+
+useEffect(() => {
+  const fetchFixtures = async () => {
+    try {
+      const responses = await Promise.all(urls.map(url => fetch(url)));
+      const data = await Promise.all(responses.map(response => response.json()));
+
+      // Flatten the data (merge arrays into a single array)
+      const flattenedFixtures = data.flat();
+      setFixtures(flattenedFixtures); // Store the flattened fixtures
+
+    } catch (error) {
+      console.error('Error fetching fixtures:', error);
+    }
+  };
+
+  fetchFixtures();
+});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,19 +148,24 @@ function JanFive () {
   }, [prevScrollPos]);
 
   const handleMenuItemClick = (item) => {
+    const fixtureSlug = encodeURIComponent(item.fixture.replace(/\s+/g, '-').toLowerCase());
+    navigate(`/fixture/${fixtureSlug}`);
     setContent(item);
-    setSelectedContent(item);  // Add this line
-    setIsPopupOpen(true); // Open the popup
+    setSelectedContent(item);
+    setIsPopupOpen(true);
     if (screenWidth < 960) {
-      setIsToggle(false); // Close the mobile menu
+        setIsToggle(false);
     }
-  };
-
-  const closePopup = () => {
-    setIsPopupOpen(false);
-    setSelectedContent(null);
-    setContent(null); // Ensure default content comes back
 };
+
+const closePopup = () => {
+  navigate('/'); // Go back to home page
+  setIsPopupOpen(false);
+  setSelectedContent(null);
+  setContent(null);
+};
+
+if (loading) return <p>Loading fixture details...</p>;
 
   function handleReload(url) {
     window.location.href = url;
@@ -182,7 +218,7 @@ function JanFive () {
         {(isToggle || screenWidth > 959) && (
           <div className='Side_menu'>
             
-            <PLMenu setContent={handleMenuItemClick} />
+            <Ligue1Menu setContent={handleMenuItemClick} />
             <SerieAMenu setContent={handleMenuItemClick} />
             <BundesligaMenu setContent={handleMenuItemClick} />
             <LaligaMenu setContent={handleMenuItemClick} />
@@ -255,4 +291,4 @@ function JanFive () {
   );
 }
 
-export default JanFive;
+export default FebOne;

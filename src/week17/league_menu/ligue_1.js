@@ -3,15 +3,14 @@ import './../../App.css';
 import up from './../../media/drop-up.png';
 import down from './../../media/drop-down.png';
 
-function BundesligaMenu({ setContent }) {
+function Ligue1Menu({ setContent }) {
     const [menuItems, setMenuItems] = useState([]);
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [activeItem, setActiveItem] = useState(null);
     const [arrow, setArrow] = useState(down);
     
     useEffect(() => {
-        
-        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_sixteen/bundesliga.json';
+        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_seventeen/ligue_1.json';
 
         fetch(apiUrl, {
             method: 'GET',
@@ -31,7 +30,7 @@ function BundesligaMenu({ setContent }) {
         });
     }, []);
 
-    const toggleDropdown = () => { 
+    const toggleDropdown = () => {
         setDropdownVisible(!isDropdownVisible);
         setArrow(isDropdownVisible ? down : up); // Toggle arrow direction
     };
@@ -41,10 +40,11 @@ function BundesligaMenu({ setContent }) {
         setActiveItem(item.fixture);
     };
 
+
     return (
         <div id="League_menu" className="League_menu">
             <li id='league' className='League_menu' onClick={toggleDropdown}>
-                Bundesliga <img src={arrow} alt="Menu" style={{ width: '20px', margin: 'auto 10px', padding: '5px', float: 'right'}} />
+                Ligue 1 <img src={arrow} alt="Menu" style={{ width: '20px', margin: 'auto 10px', padding: '5px', float: 'right'}} />
             </li>
             {isDropdownVisible && (
                 <ul className="dropdown_menu">
@@ -64,4 +64,4 @@ function BundesligaMenu({ setContent }) {
     );
 }
 
-export default BundesligaMenu;
+export default Ligue1Menu;
