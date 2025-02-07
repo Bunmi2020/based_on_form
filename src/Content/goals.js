@@ -193,8 +193,9 @@ function Summary ({ fixture, prediction }) {
             <p>{prediction.discuss}</p>
             <div className='prediction_list'>
                 <pre><b>BTS/GG:</b> {prediction.ht || prediction.Both_teams_to_score}</pre>
-                <br />
+                <hr/>
                 <pre><b>FT total goals:</b> {prediction.ft || prediction.fulltime_total_goals}</pre>
+                <hr/>
             </div>
         </div>
     );

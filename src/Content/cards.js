@@ -235,8 +235,9 @@ function Summary ({ fixture, prediction }) {
             <p>{prediction.discuss}</p>
             <div className='prediction_list'>
                 <pre><b>Halftime - total-cards/Booking:</b> {prediction.ht} </pre>
-                <br />
+                <hr/>
                 <pre><b>Fulltime - total-cards/Bookings:</b> {prediction.ft}</pre>
+                <hr/>
             </div>
         </div>
     );

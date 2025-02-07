@@ -105,6 +105,15 @@ pre {
     margin: 10px 15px;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #8f8e8e;
+    margin: 1em 0;
+    padding: 0;
+}
+
 .head_to_head table {
     width: 100%;
     border-collapse: collapse;

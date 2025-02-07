@@ -212,6 +212,7 @@ function Summary ({ fixture, prediction }) {
             <p>{prediction.discuss}</p>
             <div className='prediction_list'>
                 <pre>{prediction.win_or_draw}</pre>
+                <hr/>
                 
             </div>
         </div>
