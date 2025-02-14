@@ -54,12 +54,30 @@
     }
 }
 
+.all_predictions_menu {
+        position: fixed;
+        margin: 0px;
+        z-index: 9;
+       right: 2%;
+       top: 20%;
+      float: right;
+      cursor: pointer;
+}
 @media (max-width: 960px) {
     .Side_menu {
         position: fixed;
-        top: 10%;
+        top: 15%;
         margin: 0px;
         z-index: 9;
+    }
+
+    .all_predictions_menu {
+        position: fixed;
+        margin: 0px;
+        z-index: 9;
+       top: 15%;
+      float: right;
+      cursor: pointer;
     }
 
     .Home {
@@ -127,6 +145,15 @@
 
 .comment_button {
     width: 35px;
+    height: 35px;
+     margin: auto 10px;
+      
+      float: right;
+      cursor: pointer;
+}
+
+.prediction_button {
+    width: 100px;
     height: 35px;
      margin: auto 10px;
       
@@ -271,3 +298,14 @@ header {
 .search-results li:hover {
     background-color: rgba(242, 202, 212, 0.3);
 }
+
+
+.day_title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #000;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 7px;
+}
+

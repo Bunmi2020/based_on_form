@@ -2,18 +2,16 @@ import React, { useEffect, useState } from 'react';
 import './../../App.css';
 import up from './../../media/drop-up.png';
 import down from './../../media/drop-down.png';
-import { useNavigate } from 'react-router-dom';
 
-function BundesligaMenu({ setContent }) {
+function LaligaMenu({ setContent }) {
     const [menuItems, setMenuItems] = useState([]);
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [activeItem, setActiveItem] = useState(null);
     const [arrow, setArrow] = useState(down);
-    const navigate = useNavigate(); // Hook to programmatically navigate
     
+
     useEffect(() => {
-        
-        const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_sixteen/bundesliga.json';
+             const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_eighteen/la_liga.json';
 
         fetch(apiUrl, {
             method: 'GET',
@@ -33,14 +31,12 @@ function BundesligaMenu({ setContent }) {
         });
     }, []);
 
-    const toggleDropdown = () => { 
+    const toggleDropdown = () => {
         setDropdownVisible(!isDropdownVisible);
         setArrow(isDropdownVisible ? down : up); // Toggle arrow direction
     };
 
     const handleItemClick = (item) => {
-        const fixtureSlug = encodeURIComponent(item.fixture.replace(/\s+/g, '-').toLowerCase()); 
-        navigate(`/fixture/${fixtureSlug}`); // Navigate to fixture permalink
         setContent(item);
         setActiveItem(item.fixture);
     };
@@ -48,7 +44,7 @@ function BundesligaMenu({ setContent }) {
     return (
         <div id="League_menu" className="League_menu">
             <li id='league' className='League_menu' onClick={toggleDropdown}>
-                Bundesliga <img src={arrow} alt="Menu" style={{ width: '20px', margin: 'auto 10px', padding: '5px', float: 'right'}} />
+                La Liga <img src={arrow} alt="Menu" style={{ width: '20px', margin: 'auto 10px', padding: '5px', float: 'right'}} />
             </li>
             {isDropdownVisible && (
                 <ul className="dropdown_menu">
@@ -68,4 +64,4 @@ function BundesligaMenu({ setContent }) {
     );
 }
 
-export default BundesligaMenu;
+export default LaligaMenu;

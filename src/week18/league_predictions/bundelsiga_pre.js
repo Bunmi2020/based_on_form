@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import '../App.css';
-import './Home.css';
+import '../../App.css';
+import '../Home.css';
+import './style.css';
 import ReactGA from 'react-ga4';
-import './comment/comment.css';
-import { auth } from './comment/firebaseConfig';
-import AuthPre from './comment/Authpre';
+import '../comment/comment.css';
+import { auth } from '../comment/firebaseConfig';
+import AuthPre from '../comment/Authpre';
 import { NavLink } from 'react-router-dom';
 import {Helmet} from "react-helmet";
 
@@ -13,7 +14,7 @@ function BundesligaPredictions() {
     ReactGA.send({
         hitType:"pageview",
         page:"/bundesliga_predictions_week_22",
-        title:"Week 20 Bundesliga Predictions",
+        title:"Week 22 Bundesliga Predictions",
     });
     
     const [fixtures, setFixtures] = useState({
@@ -24,7 +25,7 @@ function BundesligaPredictions() {
     });
     
 
-    const urls = ['https://bunmi2020.github.io/bnf_data/week_seventeen/bundesliga.json'];
+    const urls = ['https://bunmi2020.github.io/bnf_data/week_eighteen/bundesliga.json'];
     useEffect(() => {
         const fetchAllFixtures = async () => {
             try {
@@ -106,9 +107,9 @@ function BundesligaPredictions() {
     return (
         <div>
         <Helmet>
-            <title>Week 20 Bundesliga Predictions</title>
+            <title>Week 22 Bundesliga Predictions</title>
             <meta name="description" content="Explore all Bundesliga Predictions predictions!! This week's Bundesliga Predictions predictions, with accurate football betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your football betting strategy." />
-            <meta name="keywords" content="Week 20 Bundesliga Predictions, this week's Bundesliga Predictions predictions, football predictions, free betting prediction and insights, free football predictions, free football betting tips, free football betting predictions, football match analysis, sports betting insights, best football prediction site, accurate football betting tips, free football predictions, football betting form, football betting predictions today, basedonform.com" />
+            <meta name="keywords" content="Week 22 Bundesliga Predictions, this week's Bundesliga Predictions predictions, football predictions, free betting prediction and insights, free football predictions, free football betting tips, free football betting predictions, football match analysis, sports betting insights, best football prediction site, accurate football betting tips, free football predictions, football betting form, football betting predictions today, basedonform.com" />
 
             <script id="hydro_config" type="text/javascript">
           {`
@@ -119,21 +120,48 @@ function BundesligaPredictions() {
             <script id="hydro_script" src="https://track.hydro.online/"></script>
           </Helmet>
         
-            <header 
+          <header 
                 style={{
+                    flexDirection: 'row',
+                    display: 'flex',
                     position: isScrollingUp ? 'sticky' : 'relative',
                     top: isScrollingUp ? '0' : 'auto',
                     transition: 'top 0.5s ease-in',
                 }}
+                className="bottom_header"
             >
-             <h1 style={{ margin: 'auto', cursor: 'pointer' }}>
-                  <NavLink to="/" className="navbar__a" onClick={handleToTop}>
-                    Based on Form
-                  </NavLink>
-              </h1>
+                                            <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                                                <NavLink to="/serie_a_predictions_week_25" className="navbar__a" onClick={handleToTop}>
+                                                  Serie A Predictions
+                                                  </NavLink>
+                                              </li>
+                                              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                                                  <NavLink to="/pl_predictions_week_25" className="navbar__a" onClick={handleToTop}>
+                                                  Premier League Predictions
+                                                  </NavLink>
+                                              </li>
+                                              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                                                  <NavLink to="/laliga_predictions_week_24" className="navbar__a" onClick={handleToTop}>
+                                                  La Liga Predictions
+                                                  </NavLink>
+                                              </li>
+                                              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                                                  <NavLink to="/ligue_1_predictions_week_22" className="navbar__a" onClick={handleToTop}>
+                                                  Ligue One Predictions
+                                                  </NavLink>
+                                              </li>
+                                              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                                                  <NavLink to="/bundesliga_predictions_week_22" className="navbar__a" onClick={handleToTop}>
+                                                  Bundesliga Predictions
+                                                  </NavLink>
+                                              </li>
             </header>
+            <div className="Home">
             {Object.keys(fixtures).map(day => (
                 <div key={day} id={`${day}_menu`} className="days_menu">
+                <h5 id={day} className='day_title'>
+                        {day.charAt(0).toUpperCase() + day.slice(1)} 
+                    </h5>
                 {user ? (
                     <div className="all_fixtures">
                         {fixtures[day].map((match, index) => (
@@ -185,6 +213,7 @@ function BundesligaPredictions() {
                 )}
                 </div>
             ))}
+            </div>
         </div>
     );
 }

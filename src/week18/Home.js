@@ -4,7 +4,6 @@ import { HashLink } from 'react-router-hash-link';
 import '../App.css';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
 import facebook from '../media/facebook.png';
 import twitter from '../media/twitter.png';
 
@@ -17,7 +16,7 @@ import SerieAMenu from './league_menu/serie_a';
 import Ligue1Menu from './league_menu/ligue_1';
 import Sidebar from './sideBar';
 import menu from '../media/menu-bar.png';
-import chat from '../media/chat.png';
+import predictz from '../media/prediction.png';
 
 import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -29,18 +28,18 @@ import WeekendFixtures from './day_fixture/weekend';
 
  
 
-function FebOne () {
+function FebTwo () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
-    title: "First Feb Home",
+    title: "Second Feb Home",
   });
 
-  const { fixtureSlug } = useParams(); // Get fixture slug from URL
   const navigate = useNavigate();
 
   const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component
   const [isToggle, setIsToggle] = useState(false);
+  const [isToggle2, setIsToggle2] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [selectedContent, setSelectedContent] = useState(null); // State for popup content
   const [isPopupOpen, setIsPopupOpen] = useState(false); // State for popup visibility
@@ -49,41 +48,33 @@ function FebOne () {
   const [content, setContent] = useState(null); // State to track the selected fixture content
   const [fixtures, setFixtures] = useState([]); // Store flattened fixtures
   const [isVisible, setIsVisible] = useState(true);
-  const [loading, setLoading] = useState(!!fixtureSlug); // Only show loading if fixtureSlug exists
-
+  
   // Fetch data from multiple URLs
   const urls = [
-      'https://bunmi2020.github.io/bnf_data/week_sixteen/serie_a.json',
-        'https://bunmi2020.github.io/bnf_data/week_seventeen/ligue_1.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/bundesliga.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/la_liga.json'
+      'https://bunmi2020.github.io/bnf_data/week_eighteen/serie_a.json',
+        'https://bunmi2020.github.io/bnf_data/week_eighteen/ligue_1.json',
+        'https://bunmi2020.github.io/bnf_data/week_eighteen/bundesliga.json',
+        'https://bunmi2020.github.io/bnf_data/week_eighteen/la_liga.json',
+        'https://bunmi2020.github.io/bnf_data/week_eighteen/pl.json'
   ];
 
   useEffect(() => {
-    const fetchFixtures = async () => {
+      const fetchFixtures = async () => {
         try {
-            const responses = await Promise.all(urls.map(url => fetch(url)));
-            const data = await Promise.all(responses.map(response => response.json()));
-
-            const flattenedFixtures = data.flat();
-            setFixtures(flattenedFixtures);
-
-            // If we're on a fixture page, find and set that fixture's content
-            if (fixtureSlug) {
-                const match = flattenedFixtures.find(fixture =>
-                    encodeURIComponent(fixture.fixture.replace(/\s+/g, '-').toLowerCase()) === fixtureSlug
-                );
-                setContent(match || null);
-            }
+          const responses = await Promise.all(urls.map(url => fetch(url)));
+          const data = await Promise.all(responses.map(response => response.json()));
+  
+          // Flatten the data (merge arrays into a single array)
+          const flattenedFixtures = data.flat();
+          setFixtures(flattenedFixtures); // Store the flattened fixtures
+  
         } catch (error) {
-            console.error('Error fetching fixtures:', error);
-        } finally {
-            setLoading(false);
+          console.error('Error fetching fixtures:', error);
         }
-    };
-
-    fetchFixtures();
-}, [fixtureSlug]);
+      };
+  
+      fetchFixtures();
+    });
 
 useEffect(() => {
   const fetchFixtures = async () => {
@@ -148,15 +139,13 @@ useEffect(() => {
   }, [prevScrollPos]);
 
   const handleMenuItemClick = (item) => {
-    const fixtureSlug = encodeURIComponent(item.fixture.replace(/\s+/g, '-').toLowerCase());
-    navigate(`/fixture/${fixtureSlug}`);
     setContent(item);
-    setSelectedContent(item);
-    setIsPopupOpen(true);
+    setSelectedContent(item);  // Add this line
+    setIsPopupOpen(true); // Open the popup
     if (screenWidth < 960) {
-        setIsToggle(false);
+      setIsToggle(false); // Close the mobile menu
     }
-};
+  };
 
 const closePopup = () => {
   navigate('/'); // Go back to home page
@@ -165,7 +154,10 @@ const closePopup = () => {
   setContent(null);
 };
 
-if (loading) return <p>Loading fixture details...</p>;
+const handleToTop = () => {
+  window.scrollTo(0, 0); // Scroll to top
+ 
+};
 
   function handleReload(url) {
     window.location.href = url;
@@ -201,6 +193,7 @@ if (loading) return <p>Loading fixture details...</p>;
             className="mobile-menu-button"
             onClick={() => {
               setIsToggle(!isToggle);
+              setIsToggle2(false);
             }}
             style={{ width: '45px', height: '30px', background: 'none', float: 'left' }}
           >
@@ -212,7 +205,18 @@ if (loading) return <p>Loading fixture details...</p>;
             Based on Form
           </NavLink>
         </h1>
-        <HashLink smooth to="/#comments"><img className='comment_button' src={chat} alt="Comment_button" title="Comment" /></HashLink>
+        
+          <span
+              className="prediction_button"
+              onClick={() => {
+                setIsToggle2(!isToggle2);
+                setIsToggle(false);
+              }}
+              style={{ width: '45px', height: '30px', background: 'none', float: 'left' }}
+            >
+             <img title='Predictions only' src={predictz} alt="Menu" style={{ width: '40px', height: '35px' }} />
+            </span>
+        
       </header>
       <div className="Home">
         {(isToggle || screenWidth > 959) && (
@@ -222,9 +226,42 @@ if (loading) return <p>Loading fixture details...</p>;
             <SerieAMenu setContent={handleMenuItemClick} />
             <BundesligaMenu setContent={handleMenuItemClick} />
             <LaligaMenu setContent={handleMenuItemClick} />
+            <PLMenu setContent={handleMenuItemClick} />
             
           </div>
         )}
+
+        {(isToggle2) && (
+            <div className='all_predictions_menu'>
+              <li style={{ margin: 'auto', cursor: 'pointer', color: 'white' }}>
+                <NavLink to="/serie_a_predictions_week_25" className="navbar__a" onClick={handleToTop}>
+                  Serie A Predictions
+                  </NavLink>
+              </li>
+              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                  <NavLink to="/pl_predictions_week_25" className="navbar__a" onClick={handleToTop}>
+                  Premier League Predictions
+                  </NavLink>
+              </li>
+              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                  <NavLink to="/laliga_predictions_week_24" className="navbar__a" onClick={handleToTop}>
+                  La Liga Predictions
+                  </NavLink>
+              </li>
+              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                  <NavLink to="/ligue_1_predictions_week_22" className="navbar__a" onClick={handleToTop}>
+                  Ligue One Predictions
+                  </NavLink>
+              </li>
+              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                  <NavLink to="/bundesliga_predictions_week_22" className="navbar__a" onClick={handleToTop}>
+                  Bundesliga Predictions
+                  </NavLink>
+              </li>
+              
+            </div>
+          )}
+
         {!content && !isPopupOpen && !selectedContent ? (
                      
           <div className='content_default' id='default'>
@@ -291,4 +328,4 @@ if (loading) return <p>Loading fixture details...</p>;
   );
 }
 
-export default FebOne;
+export default FebTwo;

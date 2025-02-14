@@ -157,4 +157,15 @@ font-size: medium;
 
 .signup_info {
   font-size: medium;
+  color: black;
+}
+
+.auth_container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #cde7b3;
+  width: 300px;
 }

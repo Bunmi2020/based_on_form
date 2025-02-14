@@ -80,13 +80,13 @@ const AuthPre = ({ user }) => {
             <button onClick={handleLogout}>Sign out</button>
         </>
       ) : (
-        <>
-        <p className='signup_info'>Sign in to see the betting prediction and insight</p>
+        <div className='auth_container'>
+        <h4 className='signup_info'>Sign in to see the betting prediction and insight</h4>
           <button className='google_signin_button' onClick={signInWithGoogle}><img src={google} alt="Google" /> Sign in</button>
           <button className='facebook_signin_button' onClick={signInWithFacebook}><img src={facebook} alt="facebook" /> Sign in</button>
           {error && <p className='error_message'>{error}</p>}
           <p></p>
-        </>
+        </div>
       )}
     </div>
   );

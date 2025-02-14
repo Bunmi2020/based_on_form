@@ -3,51 +3,13 @@ import '../App.css';
 import { Helmet } from 'react-helmet';
 import facebook from '../media/facebook.png';
 import twitter from '../media/twitter.png';
+import { NavLink } from 'react-router-dom';
 function Sidebar() {
-  const [cornerPicks, setCornerPicks] = useState([]);
-  const [goalPicks, setGoalPicks] = useState([]);
-  const [cardPicks, setCardPicks] = useState([]);
 
-  useEffect(() => {
-    const apiUrl = 'https://bunmi2020.github.io/bnf_data/week_eleven/side_bar.json';
-
-    fetch(apiUrl, {
-      method: 'GET',
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        const topData = data[0]; // Accessing the top pick data
-
-        // Format the picks for each category
-        const formattedCornerPicks = Object.values(topData.corners_top_picks).map(match => ({
-          matchLabel: match[0],
-          matchDetail: match[1],
-        }));
-
-        const formattedGoalPicks = Object.values(topData.goals_top_picks).map(match => ({
-          matchLabel: match[0],
-          matchDetail: match[1],
-        }));
-
-        const formattedCardPicks = Object.values(topData.cards_top_picks).map(match => ({
-          matchLabel: match[0],
-          matchDetail: match[1],
-        }));
-
-        // Set the state with the formatted picks
-        setCornerPicks(formattedCornerPicks);
-        setGoalPicks(formattedGoalPicks);
-        setCardPicks(formattedCardPicks);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  const handleToTop = () => {
+    window.scrollTo(0, 0); // Scroll to top
+   
+  };
 
   return (
     <div id="Side_bar">
@@ -76,9 +38,39 @@ function Sidebar() {
       </Helmet>
 
       <div className='side_socials'>
-        <h3>Our Top Picks</h3>
 
-          <p>Check our social media pages for the top picks</p>
+      <div>
+      <h3>Predictions only</h3>
+        <li>
+                                <NavLink to="/serie_a_predictions_week_25" className="navbar__a" onClick={handleToTop}>
+                                Serie A Predictions
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/pl_predictions_week_25" className="navbar__a" onClick={handleToTop}>
+                                Premier League Predictions
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/laliga_predictions_week_24" className="navbar__a" onClick={handleToTop}>
+                                La Liga Predictions
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/ligue_1_predictions_week_22" className="navbar__a" onClick={handleToTop}>
+                                Ligue One Predictions
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/bundesliga_predictions_week_22" className="navbar__a" onClick={handleToTop}>
+                                Bundesliga Predictions
+                                </NavLink>
+                            </li>
+                            
+      </div>
+       
+
+          <p>Check our social media pages for top picks</p>
           <a href="https://www.x.com/basedonform" target="_blank" rel="noreferrer">
               <img src={twitter} alt="twitter" />
           </a>

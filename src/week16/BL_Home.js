@@ -9,7 +9,7 @@ import BundesligaPredictions from './bundelsigat';
 function BLHome() {
     ReactGA.send({
         hitType:"pageview",
-        page:"/bundesliga_predictions",
+        page:"/bundesliga_predictions_week_22",
         title:"Bundelsiga Predictions",
     });
     

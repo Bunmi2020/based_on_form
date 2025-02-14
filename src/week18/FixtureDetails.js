@@ -21,9 +21,11 @@ function FixtureDetails() {
 
     // List of fixture sources
     const urls = [
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/bundesliga.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/pl.json',
-        'https://bunmi2020.github.io/bnf_data/week_sixteen/la_liga.json'
+        'https://bunmi2020.github.io/bnf_data/week_eighteen/serie_a.json',
+        'https://bunmi2020.github.io/bnf_data/week_eighteen/ligue_1.json',
+        'https://bunmi2020.github.io/bnf_data/week_eighteen/bundesliga.json',
+        'https://bunmi2020.github.io/bnf_data/week_eighteen/la_liga.json',
+        'https://bunmi2020.github.io/bnf_data/week_eighteen/pl.json'
     ];
 
     useEffect(() => {

@@ -1,0 +1,67 @@
+.day_title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #000;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 7px;
+}
+
+.bottom_header {
+    display: flex;
+    flex-direction: row; /* Reverse the direction to display "current-week" first */
+    padding: 10px;
+    min-width: 360px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping of content */
+    position: relative; /* For shadow positioning */
+    scroll-behavior: smooth; /* Smooth scroll on load */
+  }
+  
+  .bottom_header::-webkit-scrollbar {
+    height: 2px; /* Set a small height for the scrollbar */
+    background: rgba(0, 0, 0, 0.1); /* Light background for the scrollbar track */
+  }
+  
+  .bottom_header::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color); /* Customize the scrollbar thumb */
+    border-radius: 10px;
+  }
+  
+  
+  
+  .navbar__a {
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .history_nav {
+    color: white;
+    margin: auto;
+  }
+
+  @media (max-width: 410px) {
+    .bottom_header button {
+      padding: 7px 10px;
+    }
+  
+  }
+  
+
+  .bottom_header li {
+    list-style: none;
+    text-decoration: none;
+    margin: auto 10px;
+    border: none;
+    background-color: var(--secondary-color);
+    border-radius: 7px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+
+ 
