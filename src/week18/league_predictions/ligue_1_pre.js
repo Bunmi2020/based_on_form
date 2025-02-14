@@ -103,6 +103,12 @@ function LigueOnePredictions() {
             window.scrollTo(0, 0); // Scroll to top
            
           };
+
+          function handleReload(url) {
+            window.location.href = url;
+            window.scrollTo(0, 0);
+          }
+        
     
 
     return (
@@ -120,6 +126,14 @@ function LigueOnePredictions() {
             <script type="text/javascript" async src="https://platform.foremedia.net/code/55519/analytics"></script>
             <script id="hydro_script" src="https://track.hydro.online/"></script>
           </Helmet>
+
+          <header>
+        <h1 style={{ margin: 'auto', cursor: 'pointer' }}>
+          <NavLink to="/" className="navbar__a" onClick={() => handleReload('/')}>
+            Based on Form
+          </NavLink>
+        </h1>
+        </header>
         
             <header 
                 style={{
