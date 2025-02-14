@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.430dee08.css",
-    "main.js": "/static/js/main.adf38c03.js",
+    "main.css": "/static/css/main.6013f15b.css",
+    "main.js": "/static/js/main.3425b268.js",
     "static/js/453.b06b44aa.chunk.js": "/static/js/453.b06b44aa.chunk.js",
     "static/media/football-488714_1920.jpg": "/static/media/football-488714_1920.869676a27145840bc0ab.jpg",
     "static/media/logo.png": "/static/media/logo.0cfbdfd0f2c5d4e232b3.png",
     "static/media/iph_2.jpg": "/static/media/iph_2.889b4fd5477ebe989a5b.jpg",
     "static/media/iph_6.jpg": "/static/media/iph_6.5b86075b27e558d71d6c.jpg",
     "static/media/whistle.png": "/static/media/whistle.042ab5edab7ac7027853.png",
+    "static/media/prediction.png": "/static/media/prediction.83ac7301363ad05ed39b.png",
     "static/media/and_6.jpg": "/static/media/and_6.d1e75969732f62845687.jpg",
     "static/media/and_3.jpg": "/static/media/and_3.403a165f61af9e36fd24.jpg",
     "static/media/and_1.jpg": "/static/media/and_1.36db2be2b8b5241bb8e0.jpg",
@@ -23,12 +24,12 @@
     "static/media/linkedin.png": "/static/media/linkedin.f249b38224ca41a0b909.png",
     "index.html": "/index.html",
     "static/media/desktop1.PNG": "/static/media/desktop1.b5ce2992aeeb62a3b48f.PNG",
-    "main.430dee08.css.map": "/static/css/main.430dee08.css.map",
-    "main.adf38c03.js.map": "/static/js/main.adf38c03.js.map",
+    "main.6013f15b.css.map": "/static/css/main.6013f15b.css.map",
+    "main.3425b268.js.map": "/static/js/main.3425b268.js.map",
     "453.b06b44aa.chunk.js.map": "/static/js/453.b06b44aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.430dee08.css",
-    "static/js/main.adf38c03.js"
+    "static/css/main.6013f15b.css",
+    "static/js/main.3425b268.js"
   ]
 }
