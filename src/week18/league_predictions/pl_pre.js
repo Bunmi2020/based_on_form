@@ -124,6 +124,13 @@ function PLPredictions() {
             </script>
             <script type="text/javascript" async src="https://platform.foremedia.net/code/55519/analytics"></script>
             <script id="hydro_script" src="https://track.hydro.online/"></script>
+
+            <meta name="google-adsense-account" content="ca-pub-4268079192646406"></meta>
+            <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4268079192646406"
+            crossorigin="anonymous"
+            ></script>
           </Helmet>
 
           <header>
