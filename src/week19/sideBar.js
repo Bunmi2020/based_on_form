@@ -41,16 +41,21 @@ function Sidebar() {
 
       <div>
       <h3>Predictions only</h3>                                
-                            <li>
-                                <NavLink to="/ligue_1_predictions_week_23" className="navbar__a" onClick={handleToTop}>
-                                Ligue One Predictions
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/bundesliga_predictions_week_23" className="navbar__a" onClick={handleToTop}>
-                                Bundesliga Predictions
-                                </NavLink>
-                            </li>
+            <li>
+                <NavLink to="/ligue_1_predictions_week_23" className="navbar__a" onClick={handleToTop}>
+                Ligue One Predictions
+                </NavLink>
+            </li>
+            <li>
+                <NavLink to="/bundesliga_predictions_week_23" className="navbar__a" onClick={handleToTop}>
+                Bundesliga Predictions
+                </NavLink>
+            </li>
+            <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                <NavLink to="/serie_a_predictions_week_26" className="navbar__a" onClick={handleToTop}>
+                Serie A Predictions
+                </NavLink>
+            </li>
                             
       </div>
        

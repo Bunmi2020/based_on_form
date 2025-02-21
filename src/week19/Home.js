@@ -222,6 +222,7 @@ const handleToTop = () => {
             
             <Ligue1Menu setContent={handleMenuItemClick} />
             <BundesligaMenu setContent={handleMenuItemClick} />
+            <SerieAMenu setContent={handleMenuItemClick} />
             
           </div>
         )}
@@ -240,6 +241,12 @@ const handleToTop = () => {
                   Bundesliga Predictions
                   </NavLink>
               </li>
+              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                  <NavLink to="/serie_a_predictions_week_26" className="navbar__a" onClick={handleToTop}>
+                  Serie A Predictions
+                  </NavLink>
+              </li>
+
               
             </div>
           )}
