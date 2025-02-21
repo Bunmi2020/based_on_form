@@ -14,7 +14,6 @@ import TopMenu from './header';
 import ConsentPopup from './consent';
 import { Helmet } from 'react-helmet';
 
-import JanTwo from './week13/Home';
 import JanThree from './week14/Home';
 import JanFour from './week15/Home';
 import JanFive from './week16/Home';
@@ -25,6 +24,12 @@ import LaLigaPredictions from './week18/league_predictions/laliga_pre';
 import PLPredictions from './week18/league_predictions/pl_pre';
 import SerieAPredictions from './week18/league_predictions/serie_a_pre';
 import FebTwo from './week18/Home';
+import FebThree from './week19/Home';
+import BundesligaPredictionsN from './week19/league_predictions/bundelsiga_pre';
+import SerieAPredictionsN from './week19/league_predictions/serie_a_pre';
+import PLPredictionsN from './week19/league_predictions/pl_pre';
+import LaLigaPredictionsN from './week19/league_predictions/laliga_pre';
+import LigueOnePredictionsN from './week19/league_predictions/ligue_1_pre';
 
 
 function App() {
@@ -44,14 +49,14 @@ function App() {
       <Routes >
           
           
-          <Route path="/" element={<FebTwo />} /> 
+          <Route path="/" element={<FebThree />} /> 
           
-          <Route path="/14-15_Jan" element={<JanTwo />} />
           <Route path="/17-20_Jan" element={<JanThree />} />
           <Route path="/24-27_Jan" element={<JanFour />} />
           <Route path="/31-3_Feb" element={<JanFive />} />
           <Route path="/7-10_Feb" element={<FebOne />} />
           <Route path="/14-17_Feb" element={<FebTwo />} />
+          <Route path="/21-23_Feb" element={<FebThree />} />
 
           <Route path="/about" element={<About />} />
           <Route path="/FAQ" element={<FAQ />} />
@@ -64,6 +69,12 @@ function App() {
           <Route path="/pl_predictions_week_25" element={<PLPredictions/>} />
           <Route path="/laliga_predictions_week_24" element={<LaLigaPredictions/>} />
           <Route path="/ligue_1_predictions_week_22" element={<LigueOnePredictions/>} />
+
+          <Route path="/bundesliga_predictions_week_23" element={<BundesligaPredictionsN/>} />
+          <Route path="/serie_a_predictions_week_26" element={<SerieAPredictionsN/>} />
+          <Route path="/pl_predictions_week_26" element={<PLPredictionsN/>} />
+          <Route path="/laliga_predictions_week_25" element={<LaLigaPredictionsN/>} />
+          <Route path="/ligue_1_predictions_week_23" element={<LigueOnePredictionsN/>} />
       </Routes>
       <ConsentPopup />
       <Footer />

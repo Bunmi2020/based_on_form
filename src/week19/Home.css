@@ -5,6 +5,23 @@
     padding: 10px;
 }
 
+.close-btn {
+    
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.content_header {
+    display: flex;
+    flex-direction: row;
+}
+
 @media (min-width: 960px) {
     .content, .content_body {
         min-width: 300px;
@@ -37,11 +54,30 @@
     }
 }
 
-@media (max-width: 960px) {
-    .Side_menu {
-        position: absolute;
+.all_predictions_menu {
+        position: fixed;
         margin: 0px;
         z-index: 9;
+       right: 2%;
+       top: 20%;
+      float: right;
+      cursor: pointer;
+}
+@media (max-width: 960px) {
+    .Side_menu {
+        position: fixed;
+        top: 15%;
+        margin: 0px;
+        z-index: 9;
+    }
+
+    .all_predictions_menu {
+        position: fixed;
+        margin: 0px;
+        z-index: 9;
+       top: 15%;
+      float: right;
+      cursor: pointer;
     }
 
     .Home {
@@ -106,8 +142,18 @@
         padding: 5px 10px;
     }
 }
+
 .comment_button {
     width: 35px;
+    height: 35px;
+     margin: auto 10px;
+      
+      float: right;
+      cursor: pointer;
+}
+
+.prediction_button {
+    width: 100px;
     height: 35px;
      margin: auto 10px;
       
@@ -131,8 +177,9 @@ header {
 
 
 .content_default {
-    background-color: #fff;
+    background-color: #f0f0f0;
     height: fit-content;
+    box-shadow: -5px -10px 10px rgba(36, 35, 35, 0.4);
     border-radius: 10px;
     font-family:'Times New Roman', Times, serif;
     text-align: left;
@@ -142,13 +189,14 @@ header {
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
-    color: #26702c;
+    color: #044b0a;
    
 }
 
 .content_default h2,.content_default h3 {
-    color: #a3b4e4;
-    font-style: Helvetica;
+    color: black;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
     
 }
 
@@ -189,7 +237,7 @@ header {
 
 
 .highlight_p {
-    color: #f09bac;
+    color: #d60832;
     font-size: Sans-serif;
     
 }
@@ -250,3 +298,14 @@ header {
 .search-results li:hover {
     background-color: rgba(242, 202, 212, 0.3);
 }
+
+
+.day_title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #000;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 7px;
+}
+

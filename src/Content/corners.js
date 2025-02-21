@@ -169,9 +169,9 @@ function Summary ({ fixture, prediction }) {
         
             <p>{prediction.discuss}</p>
             <div className='prediction_list'>
-                <pre><b>FT Total Corners:</b> {prediction.ht || prediction.full_time_total_corners}</pre>
+                <pre>{prediction.ht || prediction.full_time_total_corners}</pre>
                 <hr/>
-                <pre><b>Team with the Most Corners:</b> {prediction.ft || prediction.win_corners}</pre>
+                <pre>{prediction.ft || prediction.win_corners}</pre>
                 <hr/>
             </div>
         </div>

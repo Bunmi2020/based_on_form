@@ -1,74 +1,96 @@
 import React, { useEffect, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { HashLink } from 'react-router-hash-link';
-
+import '../App.css';
 import './Home.css';
+import { useNavigate } from 'react-router-dom';
+import facebook from '../media/facebook.png';
+import twitter from '../media/twitter.png';
 
 import Cards from '../Content/cards';
 import Corners from '../Content/corners';
 import Goals from '../Content/goals';
+import WinOrDraw from '../Content/win_or_draw';
 import PLMenu from './league_menu/pl';
 import SerieAMenu from './league_menu/serie_a';
 import Ligue1Menu from './league_menu/ligue_1';
-import LaligaMenu from './league_menu/la_liga';
 import Sidebar from './sideBar';
 import menu from '../media/menu-bar.png';
-import chat from '../media/chat.png';
+import predictz from '../media/prediction.png';
 
 import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import SearchBar from './search';
-import EredivisieMenu from './league_menu/eredivisie';
 import BundesligaMenu from './league_menu/bundesliga';
-import Friday from './day_fixture/friday';
-import Saturday from './day_fixture/saturday';
-import Sunday from './day_fixture/sunday';
+import LaligaMenu from './league_menu/la_liga';
+import WeekendFixtures from './day_fixture/weekend';
+
 
  
 
-function NovTwo () {
+function FebThree () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
-    title: "Home",
+    title: "Second Feb Home",
   });
+
+  const navigate = useNavigate();
 
   const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component
   const [isToggle, setIsToggle] = useState(false);
+  const [isToggle2, setIsToggle2] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [selectedContent, setSelectedContent] = useState(null); // State for popup content
+  const [isPopupOpen, setIsPopupOpen] = useState(false); // State for popup visibility
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [content, setContent] = useState(null); // State to track the selected fixture content
   const [fixtures, setFixtures] = useState([]); // Store flattened fixtures
   const [isVisible, setIsVisible] = useState(true);
-
+  
   // Fetch data from multiple URLs
   const urls = [
-    'https://bunmi2020.github.io/bnf_data/week_eleven/serie_a.json',
-    'https://bunmi2020.github.io/bnf_data/week_eleven/pl.json',
-    'https://bunmi2020.github.io/bnf_data/week_eleven/ligue_1.json',
-    'https://bunmi2020.github.io/bnf_data/week_eleven/eredivisie.json',
-    'https://bunmi2020.github.io/bnf_data/week_eleven/la_liga.json',
-    'https://bunmi2020.github.io/bnf_data/week_eleven/bundesliga.json'
+      
+        'https://bunmi2020.github.io/bnf_data/week_nineteen/ligue_1.json',
+        'https://bunmi2020.github.io/bnf_data/week_nineteen/bundesliga.json'
   ];
 
   useEffect(() => {
-    const fetchFixtures = async () => {
-      try {
-        const responses = await Promise.all(urls.map(url => fetch(url)));
-        const data = await Promise.all(responses.map(response => response.json()));
+      const fetchFixtures = async () => {
+        try {
+          const responses = await Promise.all(urls.map(url => fetch(url)));
+          const data = await Promise.all(responses.map(response => response.json()));
+  
+          // Flatten the data (merge arrays into a single array)
+          const flattenedFixtures = data.flat();
+          setFixtures(flattenedFixtures); // Store the flattened fixtures
+  
+        } catch (error) {
+          console.error('Error fetching fixtures:', error);
+        }
+      };
+  
+      fetchFixtures();
+    });
 
-        // Flatten the data (merge arrays into a single array)
-        const flattenedFixtures = data.flat();
-        setFixtures(flattenedFixtures); // Store the flattened fixtures
+useEffect(() => {
+  const fetchFixtures = async () => {
+    try {
+      const responses = await Promise.all(urls.map(url => fetch(url)));
+      const data = await Promise.all(responses.map(response => response.json()));
 
-      } catch (error) {
-        console.error('Error fetching fixtures:', error);
-      }
-    };
+      // Flatten the data (merge arrays into a single array)
+      const flattenedFixtures = data.flat();
+      setFixtures(flattenedFixtures); // Store the flattened fixtures
 
-    fetchFixtures();
-  });
+    } catch (error) {
+      console.error('Error fetching fixtures:', error);
+    }
+  };
+
+  fetchFixtures();
+});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,10 +138,24 @@ function NovTwo () {
 
   const handleMenuItemClick = (item) => {
     setContent(item);
+    setSelectedContent(item);  // Add this line
+    setIsPopupOpen(true); // Open the popup
     if (screenWidth < 960) {
       setIsToggle(false); // Close the mobile menu
     }
   };
+
+const closePopup = () => {
+  navigate('/'); // Go back to home page
+  setIsPopupOpen(false);
+  setSelectedContent(null);
+  setContent(null);
+};
+
+const handleToTop = () => {
+  window.scrollTo(0, 0); // Scroll to top
+ 
+};
 
   function handleReload(url) {
     window.location.href = url;
@@ -130,8 +166,8 @@ function NovTwo () {
     <div className="App">
       <Helmet>
       <title>Based on Form | Free 200+ Football Predictions & Betting Tips</title>
-          <meta name="description" content="Explore this week's free 200+ football predictions with accurate betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your sports betting strategy." />
-          <meta name="keywords" content="football score predictions, accurate betting tips, corner statistics, football match analysis, sports betting insights, weekly prediction scorecard" />
+        <meta name="description" content="Explore this week's free 200+ football predictions with accurate football betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your football betting strategy." />
+          <meta name="keywords" content="football predictions, free betting prediction and insights, free football predictions, free football betting tips, free football betting predictions, football match analysis, sports betting insights, best football prediction site, accurate football betting tips, free football predictions, football betting form, football betting predictions today, Premier League predictions, La Liga predictions, UEFA Champions League predictions, Europa League predictions, Europa conference League predictions, Serie A predictions, Ligue one, Ligue 1 predictions, based on form, base on form, Eredivisie predictions, basedonform.com" />
 
           <script type="text/javascript" async src="https://platform.foremedia.net/code/55519/analytics"></script>
           
@@ -155,6 +191,7 @@ function NovTwo () {
             className="mobile-menu-button"
             onClick={() => {
               setIsToggle(!isToggle);
+              setIsToggle2(false);
             }}
             style={{ width: '45px', height: '30px', background: 'none', float: 'left' }}
           >
@@ -166,39 +203,72 @@ function NovTwo () {
             Based on Form
           </NavLink>
         </h1>
-        <HashLink smooth to="/#comments"><img className='comment_button' src={chat} alt="Comment_button" title="Comment" /></HashLink>
+        
+          <span
+              className="prediction_button"
+              onClick={() => {
+                setIsToggle2(!isToggle2);
+                setIsToggle(false);
+              }}
+              style={{ width: '45px', height: '30px', background: 'none', float: 'left' }}
+            >
+             <img title='Predictions only' src={predictz} alt="Menu" style={{ width: '40px', height: '35px' }} />
+            </span>
+        
       </header>
       <div className="Home">
         {(isToggle || screenWidth > 959) && (
           <div className='Side_menu'>
             
-            <EredivisieMenu setContent={handleMenuItemClick} />
             <Ligue1Menu setContent={handleMenuItemClick} />
-            <PLMenu setContent={handleMenuItemClick} />
-            <SerieAMenu setContent={handleMenuItemClick} />
             <BundesligaMenu setContent={handleMenuItemClick} />
-            
-            <LaligaMenu setContent={handleMenuItemClick} />
             
           </div>
         )}
-        {!content ? (
+
+        {(isToggle2) && (
+            <div className='all_predictions_menu'>
+              
+             
+              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                  <NavLink to="/ligue_1_predictions_week_23" className="navbar__a" onClick={handleToTop}>
+                  Ligue One Predictions
+                  </NavLink>
+              </li>
+              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                  <NavLink to="/bundesliga_predictions_week_23" className="navbar__a" onClick={handleToTop}>
+                  Bundesliga Predictions
+                  </NavLink>
+              </li>
+              
+            </div>
+          )}
+
+        {!content && !isPopupOpen && !selectedContent ? (
                      
           <div className='content_default' id='default'>
             <h3>Welcome to Based on Form!</h3>
-            <h5>Your Ultimate Football Betting Companion</h5>
-            
-            <p className='highlight_p'>Ready to elevate your football betting game? Simply search or select a fixture to access match-specific betting insights and predictions.</p>
-            
-            <Friday fixtures={fixtures} setContent={setContent} />
-            <Saturday fixtures={fixtures} setContent={setContent} />
-            <Sunday fixtures={fixtures} setContent={setContent} />
+            <h5>Check our social media pages for the top picks</h5>
+            <div className='side_socials'>
+                
+                <a href="https://www.x.com/basedonform" target="_blank" rel="noreferrer">
+                    <img src={twitter} alt="twitter" />
+                </a>
+                <a href="https://www.facebook.com/basedonform" target="_blank" rel="noreferrer">
+                    <img src={facebook} alt="facebook" />
+                </a>
+            </div>
+            <WeekendFixtures fixtures={fixtures} setContent={handleMenuItemClick} />
+                      
             
           </div>
           
-        ) : (
+        ) : isPopupOpen && selectedContent && (
           <div className='content' id='main'>
+            <div className='content_header'>
             <SearchBar fixtures={fixtures} setContent={setContent} id='search'/>
+            <button title='close this fixture tab' className="close-btn" onClick={closePopup}>Close fixture</button>
+            </div>
             <ul className="content-menu"
              style={{
                       position: isScrollingUp ? 'sticky' : 'relative',
@@ -209,11 +279,14 @@ function NovTwo () {
               <li className={activeComponent === 'corners' ? 'active' : ''} onClick={() => setActiveComponent('corners')}>Corners</li>
               <li className={activeComponent === 'goals' ? 'active' : ''} onClick={() => setActiveComponent('goals')}>Goals</li>
               <li className={activeComponent === 'cards' ? 'active' : ''} onClick={() => setActiveComponent('cards')}>Cards</li>
+              <li className={activeComponent === 'win_or_draw' ? 'active' : ''} onClick={() => setActiveComponent('win_or_draw')}>Win/Draw</li>
+              
             </ul>
             <div className='content_body'>
               {activeComponent === 'corners' && <Corners content={content} />}
               {activeComponent === 'cards' && <Cards content={content} />}
               {activeComponent === 'goals' && <Goals content={content} />}
+              {activeComponent === 'win_or_draw' && <WinOrDraw content={content} />}
             </div>
             <HashLink smooth to="/#prediction"><span style={{ width: '4.5em', display: isVisible ? 'none' : 'flex', position: 'fixed',flexDirection: 'column',justifyContent: 'center', zIndex: 9, boxShadow: '3px, 2px, gray',
                             bottom: '0%',
@@ -221,11 +294,11 @@ function NovTwo () {
                             borderRadius: '10px',
                             className:'prediction_button',
                             right: '0%',
-                            fontSize: '20px',
+                            fontSize: '17px',
                             cursor: 'pointer',
                             color: 'white',
                             margin: '1em 0.5em',
-                            padding: '0.5em 1em'}}>{activeComponent}' prediction</span></HashLink>
+                            padding: '0.5em 1em'}}>Check Prediction</span></HashLink>
 
             </div>
         )}
@@ -237,4 +310,4 @@ function NovTwo () {
   );
 }
 
-export default NovTwo;
+export default FebThree;

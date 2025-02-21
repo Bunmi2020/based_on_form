@@ -8,13 +8,14 @@ import { auth } from '../comment/firebaseConfig';
 import AuthPre from '../comment/Authpre';
 import { NavLink } from 'react-router-dom';
 import {Helmet} from "react-helmet";
+import BottomHeader from './bottom_header';
 
-function PLPredictions() {
+function PLPredictionsN() {
 
     ReactGA.send({
         hitType:"pageview",
         page:"/pl_predictions_week_25",
-        title:"Week 25 Premier League Predictions",
+        title:"Week 26 Premier League Predictions",
     });
     
     const [fixtures, setFixtures] = useState({
@@ -25,7 +26,7 @@ function PLPredictions() {
     });
     
 
-    const urls = ['https://bunmi2020.github.io/bnf_data/week_eighteen/pl.json'];
+    const urls = ['https://bunmi2020.github.io/bnf_data/week_nineteen/pl.json'];
     useEffect(() => {
         const fetchAllFixtures = async () => {
             try {
@@ -113,9 +114,9 @@ function PLPredictions() {
     return (
         <div>
         <Helmet>
-            <title>Week 25 Premier League Predictions</title>
+            <title>Week 26 Premier League Predictions</title>
             <meta name="description" content="Explore all Premier League Predictions predictions!! This week's Premier League Predictions predictions, with accurate football betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your football betting strategy." />
-            <meta name="keywords" content="Week 25 Premier League Predictions, this week's Premier League Predictions predictions, football predictions, free betting prediction and insights, free football predictions, free football betting tips, free football betting predictions, football match analysis, sports betting insights, best football prediction site, accurate football betting tips, free football predictions, football betting form, football betting predictions today, basedonform.com" />
+            <meta name="keywords" content="Week 26 Premier League Predictions, this week's Premier League Predictions predictions, football predictions, free betting prediction and insights, free football predictions, free football betting tips, free football betting predictions, football match analysis, sports betting insights, best football prediction site, accurate football betting tips, free football predictions, football betting form, football betting predictions today, basedonform.com" />
 
             <script id="hydro_config" type="text/javascript">
           {`
@@ -140,42 +141,8 @@ function PLPredictions() {
           </NavLink>
         </h1>
         </header>
-            <header 
-                            style={{
-                                flexDirection: 'row',
-                                display: 'flex',
-                                position: isScrollingUp ? 'sticky' : 'relative',
-                                top: isScrollingUp ? '0' : 'auto',
-                                transition: 'top 0.5s ease-in',
-                            }}
-                            className="bottom_header"
-                        >
-                                            <li style={{ margin: 'auto', cursor: 'pointer' }}>
-                                                        <NavLink to="/serie_a_predictions_week_25" className="navbar__a" onClick={handleToTop}>
-                                                              Serie A Predictions
-                                                              </NavLink>
-                                                          </li>
-                                                          <li style={{ margin: 'auto', cursor: 'pointer' }}>
-                                                              <NavLink to="/pl_predictions_week_25" className="navbar__a" onClick={handleToTop}>
-                                                              Premier League Predictions
-                                                              </NavLink>
-                                                          </li>
-                                                          <li style={{ margin: 'auto', cursor: 'pointer' }}>
-                                                              <NavLink to="/laliga_predictions_week_24" className="navbar__a" onClick={handleToTop}>
-                                                              La Liga Predictions
-                                                              </NavLink>
-                                                          </li>
-                                                          <li style={{ margin: 'auto', cursor: 'pointer' }}>
-                                                              <NavLink to="/ligue_1_predictions_week_22" className="navbar__a" onClick={handleToTop}>
-                                                              Ligue One Predictions
-                                                              </NavLink>
-                                                          </li>
-                                                          <li style={{ margin: 'auto', cursor: 'pointer' }}>
-                                                              <NavLink to="/bundesliga_predictions_week_22" className="navbar__a" onClick={handleToTop}>
-                                                              Bundesliga Predictions
-                                                              </NavLink>
-                                                          </li>
-                        </header>
+           
+        <BottomHeader />
             <div className="Home">
             {Object.keys(fixtures).map(day => (
                 <div key={day} id={`${day}_menu`} className="days_menu">
@@ -238,4 +205,4 @@ function PLPredictions() {
     );
 }
 
-export default PLPredictions;
+export default PLPredictionsN;

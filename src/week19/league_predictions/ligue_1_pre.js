@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../App.css';
 import '../Home.css';
+
 import './style.css';
 import ReactGA from 'react-ga4';
 import '../comment/comment.css';
@@ -8,13 +9,14 @@ import { auth } from '../comment/firebaseConfig';
 import AuthPre from '../comment/Authpre';
 import { NavLink } from 'react-router-dom';
 import {Helmet} from "react-helmet";
+import BottomHeader from './bottom_header';
 
-function PLPredictions() {
+function LigueOnePredictionsN() {
 
     ReactGA.send({
         hitType:"pageview",
-        page:"/pl_predictions_week_25",
-        title:"Week 25 Premier League Predictions",
+        page:"/ligue_1_predictions_week_22",
+        title:"Week 23 Ligue One Predictions",
     });
     
     const [fixtures, setFixtures] = useState({
@@ -25,7 +27,7 @@ function PLPredictions() {
     });
     
 
-    const urls = ['https://bunmi2020.github.io/bnf_data/week_eighteen/pl.json'];
+    const urls = ['https://bunmi2020.github.io/bnf_data/week_nineteen/ligue_1.json'];
     useEffect(() => {
         const fetchAllFixtures = async () => {
             try {
@@ -111,11 +113,11 @@ function PLPredictions() {
     
 
     return (
-        <div>
+        <div >
         <Helmet>
-            <title>Week 25 Premier League Predictions</title>
-            <meta name="description" content="Explore all Premier League Predictions predictions!! This week's Premier League Predictions predictions, with accurate football betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your football betting strategy." />
-            <meta name="keywords" content="Week 25 Premier League Predictions, this week's Premier League Predictions predictions, football predictions, free betting prediction and insights, free football predictions, free football betting tips, free football betting predictions, football match analysis, sports betting insights, best football prediction site, accurate football betting tips, free football predictions, football betting form, football betting predictions today, basedonform.com" />
+            <title>Week 23 Ligue One Predictions</title>
+            <meta name="description" content="Explore all Ligue One Predictions predictions!! This week's Ligue One Predictions predictions, with accurate football betting tips, corner statistics, and match data and analysis, across the top five leagues and the Eredivisie, to elevate your football betting strategy." />
+            <meta name="keywords" content="Week 23 Ligue One Predictions, this week's Ligue One Predictions predictions, football predictions, free betting prediction and insights, free football predictions, free football betting tips, free football betting predictions, football match analysis, sports betting insights, best football prediction site, accurate football betting tips, free football predictions, football betting form, football betting predictions today, basedonform.com" />
 
             <script id="hydro_config" type="text/javascript">
           {`
@@ -140,62 +142,28 @@ function PLPredictions() {
           </NavLink>
         </h1>
         </header>
-            <header 
-                            style={{
-                                flexDirection: 'row',
-                                display: 'flex',
-                                position: isScrollingUp ? 'sticky' : 'relative',
-                                top: isScrollingUp ? '0' : 'auto',
-                                transition: 'top 0.5s ease-in',
-                            }}
-                            className="bottom_header"
-                        >
-                                            <li style={{ margin: 'auto', cursor: 'pointer' }}>
-                                                        <NavLink to="/serie_a_predictions_week_25" className="navbar__a" onClick={handleToTop}>
-                                                              Serie A Predictions
-                                                              </NavLink>
-                                                          </li>
-                                                          <li style={{ margin: 'auto', cursor: 'pointer' }}>
-                                                              <NavLink to="/pl_predictions_week_25" className="navbar__a" onClick={handleToTop}>
-                                                              Premier League Predictions
-                                                              </NavLink>
-                                                          </li>
-                                                          <li style={{ margin: 'auto', cursor: 'pointer' }}>
-                                                              <NavLink to="/laliga_predictions_week_24" className="navbar__a" onClick={handleToTop}>
-                                                              La Liga Predictions
-                                                              </NavLink>
-                                                          </li>
-                                                          <li style={{ margin: 'auto', cursor: 'pointer' }}>
-                                                              <NavLink to="/ligue_1_predictions_week_22" className="navbar__a" onClick={handleToTop}>
-                                                              Ligue One Predictions
-                                                              </NavLink>
-                                                          </li>
-                                                          <li style={{ margin: 'auto', cursor: 'pointer' }}>
-                                                              <NavLink to="/bundesliga_predictions_week_22" className="navbar__a" onClick={handleToTop}>
-                                                              Bundesliga Predictions
-                                                              </NavLink>
-                                                          </li>
-                        </header>
+        
+        <BottomHeader />
             <div className="Home">
-            {Object.keys(fixtures).map(day => (
-                <div key={day} id={`${day}_menu`} className="days_menu">
-                <h5 id={day} className='day_title'>
+                {Object.keys(fixtures).map(day => (
+                    <div key={day} id={`${day}_menu`} className="days_menu">
+                    <h5 id={day} className='day_title'>
                         {day.charAt(0).toUpperCase() + day.slice(1)} 
                     </h5>
-                {user ? (
-                    <div className="all_fixtures">
-                        {fixtures[day].map((match, index) => (
-                            <div>
-                            <li
-                                key={index}
-                                id={`${match.fixture}`}
-                                className=""
-                            >
-                                {match.fixture}
+                    {user ? (
+                        <div className="all_fixtures">
+                            {fixtures[day].map((match, index) => (
+                                <div>
+                                <li
+                                    key={index}
+                                    id={`${match.fixture}`}
+                                    className=""
+                                >
+                                    {match.fixture}
+                                    
                                 
-                               
-                            </li>
-                            
+                                </li>
+                                
                             <div className="prediction"  id ="prediction">
                                 
                                 <div className='prediction_list'>
@@ -221,21 +189,22 @@ function PLPredictions() {
                                     <hr/>
                                 </div>
                             </div>
-                               
 
-                            </div>
-                        ))}
+                                </div>
+                            ))}
 
+                        </div>
+                    ) : (
+                                    
+                        <AuthPre />
+                    )}
                     </div>
-                ) : (
-                                
-                    <AuthPre />
-                )}
-                </div>
-            ))}
-            </div>
+                ))}
+
+                
+        </div>
         </div>
     );
 }
 
-export default PLPredictions;
+export default LigueOnePredictionsN;
