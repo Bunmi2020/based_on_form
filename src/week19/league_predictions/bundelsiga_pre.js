@@ -166,22 +166,23 @@ function BundesligaPredictionsN() {
                                 <div className="prediction"  id ="prediction">
                                 
                                     <div className='prediction_list'>
-                                        <pre> {match.prediction?.cards?.ht || 'N/A'}</pre>
+                                        <pre><b>HT cards: </b>{match.prediction?.cards?.ht || 'N/A'}</pre>
                                         <hr/>
-                                        <pre> {match.prediction?.cards?.ft || 'N/A'}</pre>
-                                        <hr/>
-                                    </div>
-                                    <div className='prediction_list'>
-                                        <pre> {match.prediction?.corners.full_time_total_corners || 'N/A'}</pre>
-                                        <hr/>
-                                        <pre> {match.prediction?.corners.win_corners || 'N/A'}</pre>
+                                        <pre><b>FT total cards: </b>{match.prediction?.cards?.ft || 'N/A'}</pre>
                                         <hr/>
                                     </div>
                                     <div className='prediction_list'>
-                                        <pre> {match.prediction?.goals.Both_teams_to_score || 'N/A'}</pre>
+                                        <pre><b>FT total corners: </b>{match.prediction?.corners.full_time_total_corners || 'N/A'}</pre>
                                         <hr/>
-                                        <pre> {match.prediction?.goals.fulltime_total_goals || 'N/A'}</pre>
+                                        <pre>{match.prediction?.corners.win_corners || 'N/A'}</pre>
                                         <hr/>
+                                    </div>
+                                    <div className='prediction_list'>
+                                         <pre><b>FT total goals: </b>{match.prediction?.goals.fulltime_total_goals || 'N/A'}</pre>
+                                        <hr/>
+                                        <pre>{match.prediction?.goals.Both_teams_to_score || 'N/A'}</pre>
+                                        <hr/>
+                                       
                                     </div>
                                     <div className='prediction_list'>
                                         <pre>{match.prediction?.win_draw.win_or_draw || 'N/A'}</pre>
