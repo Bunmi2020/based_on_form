@@ -6,9 +6,9 @@ import './content.css';
 
 import RefIcon from './../media/whistle.png';
 
-import { auth } from '../week14/comment/firebaseConfig';
+import { auth } from '../week19/comment/firebaseConfig';
 import { Helmet } from 'react-helmet';
-import AuthPre from '../week14/comment/Authpre';
+import AuthPre from '../week19/comment/Authpre';
 
 
 function Cards({ content }) {

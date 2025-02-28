@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { HashLink } from 'react-router-hash-link';
-
+import '../App.css';
 import './Home.css';
-
+import { useNavigate } from 'react-router-dom';
 import facebook from '../media/facebook.png';
 import twitter from '../media/twitter.png';
 
@@ -13,10 +13,10 @@ import Goals from '../Content/goals';
 import WinOrDraw from '../Content/win_or_draw';
 import PLMenu from './league_menu/pl';
 import SerieAMenu from './league_menu/serie_a';
-
+import Ligue1Menu from './league_menu/ligue_1';
 import Sidebar from './sideBar';
 import menu from '../media/menu-bar.png';
-import chat from '../media/chat.png';
+import predictz from '../media/prediction.png';
 
 import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -28,47 +28,72 @@ import WeekendFixtures from './day_fixture/weekend';
 
  
 
-function JanThree () {
+function FebFour () {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
-    title: "Third Jan Home",
+    title: "Third Feb Home",
   });
+
+  const navigate = useNavigate();
 
   const [activeComponent, setActiveComponent] = useState('corners'); // State to track active component
   const [isToggle, setIsToggle] = useState(false);
+  const [isToggle2, setIsToggle2] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [selectedContent, setSelectedContent] = useState(null); // State for popup content
+  const [isPopupOpen, setIsPopupOpen] = useState(false); // State for popup visibility
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [content, setContent] = useState(null); // State to track the selected fixture content
   const [fixtures, setFixtures] = useState([]); // Store flattened fixtures
   const [isVisible, setIsVisible] = useState(true);
-
+  
   // Fetch data from multiple URLs
   const urls = [
-      'https://bunmi2020.github.io/bnf_data/week_fourteen/serie_a.json',
-        'https://bunmi2020.github.io/bnf_data/week_fourteen/pl.json',
-        'https://bunmi2020.github.io/bnf_data/week_fourteen/bundesliga.json',
-        'https://bunmi2020.github.io/bnf_data/week_fourteen/la_liga.json'
+      
+        'https://bunmi2020.github.io/bnf_data/week_twenty/ligue_1.json',
+        'https://bunmi2020.github.io/bnf_data/week_twenty/bundesliga.json',
+        'https://bunmi2020.github.io/bnf_data/week_twenty/serie_a.json',
+        'https://bunmi2020.github.io/bnf_data/week_twenty/la_liga.json'
+
   ];
 
   useEffect(() => {
-    const fetchFixtures = async () => {
-      try {
-        const responses = await Promise.all(urls.map(url => fetch(url)));
-        const data = await Promise.all(responses.map(response => response.json()));
+      const fetchFixtures = async () => {
+        try {
+          const responses = await Promise.all(urls.map(url => fetch(url)));
+          const data = await Promise.all(responses.map(response => response.json()));
+  
+          // Flatten the data (merge arrays into a single array)
+          const flattenedFixtures = data.flat();
+          setFixtures(flattenedFixtures); // Store the flattened fixtures
+  
+        } catch (error) {
+          console.error('Error fetching fixtures:', error);
+        }
+      };
+  
+      fetchFixtures();
+    });
 
-        // Flatten the data (merge arrays into a single array)
-        const flattenedFixtures = data.flat();
-        setFixtures(flattenedFixtures); // Store the flattened fixtures
+useEffect(() => {
+  const fetchFixtures = async () => {
+    try {
+      const responses = await Promise.all(urls.map(url => fetch(url)));
+      const data = await Promise.all(responses.map(response => response.json()));
 
-      } catch (error) {
-        console.error('Error fetching fixtures:', error);
-      }
-    };
+      // Flatten the data (merge arrays into a single array)
+      const flattenedFixtures = data.flat();
+      setFixtures(flattenedFixtures); // Store the flattened fixtures
 
-    fetchFixtures();
-  });
+    } catch (error) {
+      console.error('Error fetching fixtures:', error);
+    }
+  };
+
+  fetchFixtures();
+});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,10 +141,24 @@ function JanThree () {
 
   const handleMenuItemClick = (item) => {
     setContent(item);
+    setSelectedContent(item);  // Add this line
+    setIsPopupOpen(true); // Open the popup
     if (screenWidth < 960) {
       setIsToggle(false); // Close the mobile menu
     }
   };
+
+const closePopup = () => {
+  navigate('/'); // Go back to home page
+  setIsPopupOpen(false);
+  setSelectedContent(null);
+  setContent(null);
+};
+
+const handleToTop = () => {
+  window.scrollTo(0, 0); // Scroll to top
+ 
+};
 
   function handleReload(url) {
     window.location.href = url;
@@ -155,6 +194,7 @@ function JanThree () {
             className="mobile-menu-button"
             onClick={() => {
               setIsToggle(!isToggle);
+              setIsToggle2(false);
             }}
             style={{ width: '45px', height: '30px', background: 'none', float: 'left' }}
           >
@@ -166,20 +206,61 @@ function JanThree () {
             Based on Form
           </NavLink>
         </h1>
-        <HashLink smooth to="/#comments"><img className='comment_button' src={chat} alt="Comment_button" title="Comment" /></HashLink>
+        
+          <span
+              className="prediction_button"
+              onClick={() => {
+                setIsToggle2(!isToggle2);
+                setIsToggle(false);
+              }}
+              style={{ width: '45px', height: '30px', background: 'none', float: 'left' }}
+            >
+             <img title='Predictions only' src={predictz} alt="Menu" style={{ width: '40px', height: '35px' }} />
+            </span>
+        
       </header>
       <div className="Home">
         {(isToggle || screenWidth > 959) && (
           <div className='Side_menu'>
             
-            <PLMenu setContent={handleMenuItemClick} />
-            <SerieAMenu setContent={handleMenuItemClick} />
+            <Ligue1Menu setContent={handleMenuItemClick} />
             <BundesligaMenu setContent={handleMenuItemClick} />
+            <SerieAMenu setContent={handleMenuItemClick} />
             <LaligaMenu setContent={handleMenuItemClick} />
             
           </div>
         )}
-        {!content ? (
+
+        {(isToggle2) && (
+            <div className='all_predictions_menu'>
+              
+             
+              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                  <NavLink to="/ligue_1_predictions_week_24" className="navbar__a" onClick={handleToTop}>
+                  Ligue One Predictions
+                  </NavLink>
+              </li>
+              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                  <NavLink to="/bundesliga_predictions_week_24" className="navbar__a" onClick={handleToTop}>
+                  Bundesliga Predictions
+                  </NavLink>
+              </li>
+              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                  <NavLink to="/serie_a_predictions_week_27" className="navbar__a" onClick={handleToTop}>
+                  Serie A Predictions
+                  </NavLink>
+              </li>
+              <li style={{ margin: 'auto', cursor: 'pointer' }}>
+                  <NavLink to="/laliga_predictions_week_27" className="navbar__a" onClick={handleToTop}>
+                  La Liga Predictions
+                  </NavLink>
+              </li>
+
+              
+            </div>
+          )}
+
+        {!content && !isPopupOpen && !selectedContent ? (
                      
           <div className='content_default' id='default'>
             <h3>Welcome to Based on Form!</h3>
@@ -193,14 +274,17 @@ function JanThree () {
                     <img src={facebook} alt="facebook" />
                 </a>
             </div>
-            <WeekendFixtures fixtures={fixtures} setContent={setContent} />
+            <WeekendFixtures fixtures={fixtures} setContent={handleMenuItemClick} />
                       
             
           </div>
           
-        ) : (
+        ) : isPopupOpen && selectedContent && (
           <div className='content' id='main'>
+            <div className='content_header'>
             <SearchBar fixtures={fixtures} setContent={setContent} id='search'/>
+            <button title='close this fixture tab' className="close-btn" onClick={closePopup}>Close fixture</button>
+            </div>
             <ul className="content-menu"
              style={{
                       position: isScrollingUp ? 'sticky' : 'relative',
@@ -212,6 +296,7 @@ function JanThree () {
               <li className={activeComponent === 'goals' ? 'active' : ''} onClick={() => setActiveComponent('goals')}>Goals</li>
               <li className={activeComponent === 'cards' ? 'active' : ''} onClick={() => setActiveComponent('cards')}>Cards</li>
               <li className={activeComponent === 'win_or_draw' ? 'active' : ''} onClick={() => setActiveComponent('win_or_draw')}>Win/Draw</li>
+              
             </ul>
             <div className='content_body'>
               {activeComponent === 'corners' && <Corners content={content} />}
@@ -241,4 +326,4 @@ function JanThree () {
   );
 }
 
-export default JanThree;
+export default FebFour;
